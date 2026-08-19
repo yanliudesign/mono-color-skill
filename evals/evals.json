@@ -1,0 +1,23 @@
+{
+  "skill_name": "mono-color",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用 mono-color 做一张关于凌晨便利店的竖版海报，文案是‘still open’。",
+      "expected_output": "A generated vertical cobalt one-ink poster on warm paper, using an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把我提供的一张人物照片改成单色编辑杂志封面，保留人物身份和表情，不要照抄参考图排版。",
+      "expected_output": "A generated one-ink editorial cover that preserves the supplied portrait, transforms it through halftone print treatment, and materially changes at least four structural features from the reference.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "做一张关于蕨类植物观察笔记的绿色孔版印刷图，标题‘field note 07’。",
+      "expected_output": "A generated botanical-green archival plate on warm paper with a screened fern image, disciplined metadata, large negative space, and no cobalt or extra colors.",
+      "files": []
+    }
+  ]
+}
