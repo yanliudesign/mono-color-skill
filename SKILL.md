@@ -1,13 +1,13 @@
 ---
 name: mono-color
-description: Generate original monochrome editorial print images from any theme, sentence, article idea, object, or reference photo. Always use this skill when the user asks for 单色海报、单色调视觉、蓝色/绿色孔版印刷、risograph、网点照片、复古编辑排版、zine poster, monochrome editorial poster, or asks to use the mono-color style. It preserves a warm paper base, one-ink palette, halftone imagery, large negative space, terse editorial language, and strong serif/grotesk/mono typography while never copying a source composition, wording, logo, or artwork. Produce both the final generation prompt and the generated raster image unless the user explicitly asks for prompt only.
+description: Generate original one-ink or controlled two-ink editorial print images from any theme, sentence, article idea, object, or reference photo. Always use this skill when the user asks for 单色海报、双色印刷、单色调视觉、蓝色/绿色孔版印刷、risograph、网点照片、复古编辑排版、zine poster, monochrome editorial poster, duotone print, or asks to use the mono-color style. It preserves a warm paper base, no more than two printing inks, halftone imagery, active negative space, terse human language, and strong serif/grotesk/mono typography while never copying a source composition, wording, logo, or artwork. Produce both the final generation prompt and the generated raster image unless the user explicitly asks for prompt only.
 ---
 
 # Monocolor Editorial Print
 
 Turn any user theme or image into an original printed editorial artifact with one stable visual language:
 
-> warm paper + one ink + reproduced image + typographic tension + concise human voice
+> warm paper + one or two inks + reproduced image + typographic tension + concise human voice
 
 Do not imitate any one reference. Recombine the system below into a new composition every time.
 
@@ -38,16 +38,46 @@ When the user supplies an image, preserve its identity and core factual content.
 
 ### 1. Color System
 
-Use exactly one chromatic ink per image over warm uncoated paper.
+Default to one ink. Use two inks only when the content needs information separation, object contrast, or visible overprint tension. The paper substrate does not count as an ink.
 
 - **Paper:** ivory, bone, or slightly gray recycled stock; target feeling `#F2F0E8` to `#FAF7ED`.
-- **Default ink:** saturated cobalt/ultramarine, visually near `#2148B8`.
-- **Alternate ink:** botanical green, visually near `#008A4B`, when the subject is botanical, ecological, archival, or explicitly green.
-- The alternate is a subject-driven branch, not a second color. Never place cobalt and green together.
-- Let darker ink density create apparent navy/black and lighter halftone density create pale tints. These are one ink, not extra colors.
-- Keep the paper visible. Never tint the whole page into a digital monochrome wash.
+- **Plate limit:** use one printing plate by default and never more than two ink plates.
+- **Ink density:** darker coverage may appear near-black and sparse halftones may appear pale. These are density changes, not extra inks.
+- **Paper exposure:** keep the paper visible. Never tint the whole page into a digital monochrome wash.
 
-This constraint makes the work feel mechanically printed rather than color-graded.
+#### One-Ink Palette
+
+- **Cobalt / Ultramarine:** `#2148B8`, the default for technology, knowledge, cities, music, and cultural subjects.
+- **Royal Blue:** `#2058D4`, a brighter branch for youth culture, fashion, movement, and energetic editorial pages.
+- **Botanical Green:** `#008A4B`, for botanical, ecological, archival, and explicitly green subjects.
+- **Mint Green:** `#5EB783`, for observation journals, soft natural subjects, and quiet editorial photography.
+- **Terracotta Orange:** `#C65F38`, for classical art, food, travel, summer, and tactile objects.
+- **Signal Red:** `#C83232`, for declarations, music, events, and civic or public-culture subjects.
+- **Aubergine:** `#63365F`, for literature, cinema, night, and intimate cultural subjects.
+- **Charcoal:** `#30343A`, for architecture, photography, research, and restrained publications.
+
+#### Two-Ink Recipes
+
+Use a known pair rather than improvising arbitrary colors:
+
+- **Powder Blue + Signal Red:** `#9EB8D3` + `#C83232` for guides, announcements, and information-heavy editorial pages.
+- **Cobalt + Terracotta:** `#2148B8` + `#C65F38` for travel, summer, food, and lifestyle subjects.
+- **Botanical Green + Oxblood:** `#008A4B` + `#8F3434` for plants, natural wine, bookstores, and archives.
+- **Charcoal + Signal Red:** `#30343A` + `#C83232` for architecture, exhibitions, reports, and conceptual work.
+- **Electric Blue + Carbon:** `#173AE3` + `#242321` for high-contrast cultural events and image-led editorial pages.
+- **Mint Green + Charcoal:** `#5EB783` + `#302D2E` for journals, essays, observations, and long-form reading.
+- **Ultramarine + Safety Orange:** `#263E99` + `#E55D2B` for movement, objects, youth culture, and active urban subjects.
+- **Cyan + Brick Red:** `#159DDA` + `#B64032` for repeated products, exhibitions, and playful information systems.
+- **Tangerine + Slate Blue:** `#E46C2D` + `#4773A5` for markets, festivals, illustrated notices, and large typographic compositions.
+
+#### Print Modes
+
+1. **Pure one-ink:** one ink carries image, typography, and rules through density changes. This remains the default.
+2. **Chromatic ink + black:** the chromatic plate carries the photograph or dominant graphic; carbon or charcoal carries long text and precision labels.
+3. **Complementary duotone:** one dominant ink occupies 70%-85% of the printed area; the accent ink occupies 15%-30% and has a specific role such as dates, annotations, or selected objects.
+4. **Overprint duotone:** two plates may overlap. The darker mixed appearance in overlap zones is a physical consequence of two inks and does not count as a third ink.
+
+Assign each plate a role before composing. Never scatter two colors as arbitrary decoration. These constraints keep the result mechanically printed rather than digitally color-graded.
 
 ### 2. Space and Grid
 
@@ -63,15 +93,15 @@ Negative space is active pacing, not leftover room.
 
 ### 3. Image Treatment
 
-Convert all photographs and illustrations into the selected ink plus paper:
+Convert all photographs and illustrations into the selected ink plate or plates plus paper:
 
 - coarse halftone, risograph grain, cyanotype-like exposure, photocopy breakup, or newspaper screening;
 - visible dots at close range, recognizable subject at thumbnail scale;
 - clipped highlights where paper shows through and dense shadows where ink pools;
-- mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift;
+- mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift between plates;
 - medium contrast; avoid glossy photographic depth.
 
-Use one dominant image zone occupying 28%-62% of the page, or 1-3 isolated specimens whose combined area stays in that range. Do not build a scrapbook collage.
+Use one dominant image zone occupying 28%-62% of the page, 1-3 isolated specimens whose combined area stays in that range, or one repeated object system. Dense overlap is allowed only in the **overprint collage** family; it must still read as two printing plates rather than scrapbook decoration.
 
 ### 4. Typography
 
@@ -118,7 +148,13 @@ Choose the layout from the content, not at random:
    - Yes: choose **ruled information poster**.
 4. Is the subject botanical, collected, or taxonomic?
    - Yes: choose **archival plate** and consider botanical green.
-5. Otherwise choose **editorial cover**.
+5. Is one ordinary object repeated as the main rhythm?
+   - Yes: choose **object field**.
+6. Does the concept depend on two images, colors, or type layers physically crossing?
+   - Yes: choose **overprint collage** and use overprint duotone.
+7. Is the content reflective, dated, or essay-like with a primary photograph and readable text?
+   - Yes: choose **editorial journal**.
+8. Otherwise choose **editorial cover**.
 
 ### Layout Families
 
@@ -128,6 +164,9 @@ Choose the layout from the content, not at random:
 - **Ruled information poster:** thin one-ink rules form a top or bottom metadata band; the center remains open and expressive.
 - **Archival plate:** title, one rectangular image plate, and a disciplined multi-column caption block.
 - **Editorial cover:** title near one edge, one dominant image zone, sparse issue-like microcopy, no fake masthead brand.
+- **Object field:** one recognizable object repeated at varied scale, crop, or angle to form a printed rhythm; keep one open zone for title and facts.
+- **Overprint collage:** two ink plates carry separate object, image, geometric, or typographic layers and cross in selected zones; use overlap deliberately, not everywhere.
+- **Editorial journal:** one primary screened photograph, a strong title or date, and 2-3 disciplined text columns with enough size and contrast for real reading.
 
 Do not use the same family for consecutive outputs when prior outputs are visible.
 
@@ -135,7 +174,7 @@ Do not use the same family for consecutive outputs when prior outputs are visibl
 
 Write the final prompt in five compact paragraphs, in this order:
 
-1. **Canvas and ink:** ratio, warm paper, exact single ink, flat scanned page.
+1. **Canvas and ink:** ratio, warm paper, exact one- or two-ink palette, print mode, plate roles, and flat scanned page.
 2. **Original composition:** chosen layout family, margins, empty-space percentage, grid, and one deliberate disruption.
 3. **Subject:** what appears, how a supplied image is preserved/cropped, image size, and halftone treatment.
 4. **Typography and words:** hierarchy, type voices, exact short display text, placement, rules/table if used.
@@ -166,12 +205,12 @@ Never reproduce a reference's exact object arrangement, line breaks, labels, dat
 
 Always exclude:
 
-- multiple chromatic inks, gradients, rainbow accents, neon, or full-color photography;
+- more than two printing inks, unassigned accent colors, gradients, rainbow accents, neon, or full-color photography;
 - clean vector-flat digital poster aesthetics;
 - beige lifestyle minimalism or monochrome color wash;
 - glossy mockups, 3D depth, cinematic lighting, lens blur, hard shadows;
 - centered template symmetry, card grids, UI panels, stickers, decorative blobs;
-- dense collage, grunge overload, torn-paper scrapbook styling;
+- scrapbook collage, uncontrolled overlap, grunge overload, or torn-paper styling;
 - long paragraphs, marketing copy, CTA buttons, logos, URLs, QR codes;
 - exact imitation of a supplied poster or recognizable artist signature.
 
@@ -180,7 +219,8 @@ Always exclude:
 1. Generate the image with the compiled prompt.
 2. Inspect it at full size and thumbnail size.
 3. Regenerate once when any of these fail:
-   - more than one chromatic ink appears;
+   - a one-ink composition shows a second ink, or a two-ink composition shows a third printing ink;
+   - a two-ink composition lacks clear plate roles or uses the accent across more than 30% without a subject-driven reason;
    - the page reads as digitally color-graded rather than physically printed;
    - empty paper falls outside 25%-55%;
    - the subject is unrecognizable;
@@ -204,7 +244,8 @@ Always exclude:
 
 **本次配方**
 
-- Ink: [cobalt or botanical green]
+- Mode: [pure one-ink / chromatic + black / complementary duotone / overprint duotone]
+- Ink: [exact one- or two-ink palette and hex values]
 - Layout: [layout family]
 - Type: [editorial voice + utility voice]
 - Process: [halftone/risograph/cyanotype/photocopy treatment]
@@ -213,7 +254,8 @@ Always exclude:
 
 ## Final Quality Gate
 
-- Is there one warm paper and exactly one chromatic ink?
+- Is there one warm paper and no more than two printing inks?
+- If there are two inks, does each plate have a clear role and does the accent remain controlled?
 - Does 25%-55% of the page remain visibly empty?
 - Is the image reproduced through dots or mechanical print texture rather than a color filter?
 - Is there one dominant zone and one deliberate disruption?
@@ -230,3 +272,6 @@ Always exclude:
 - “做一个绿色植物主题的孔版印刷 poster。”
 - “沿用之前那套单色、留白、复古印刷的视觉。”
 - “Make this portrait into a one-ink editorial zine cover.”
+- “用蓝橙双色叠印做一张城市骑行活动视觉。”
+- “把这个产品做成重复物件构图的双色孔版印刷封面。”
+- “用绿色照片和黑色正文做一页观察日志。”
