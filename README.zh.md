@@ -72,28 +72,28 @@
 
 | 图例 | 油墨 | Hex |
 |---|---|---|
-| ![钴蓝](https://img.shields.io/badge/■■■■-2148B8?style=flat-square&labelColor=2148B8&color=2148B8) | 钴蓝 / 群青 | `#2148B8` |
-| ![皇家蓝](https://img.shields.io/badge/■■■■-2058D4?style=flat-square&labelColor=2058D4&color=2058D4) | 皇家蓝 | `#2058D4` |
-| ![植物绿](https://img.shields.io/badge/■■■■-008A4B?style=flat-square&labelColor=008A4B&color=008A4B) | 植物绿 | `#008A4B` |
-| ![薄荷绿](https://img.shields.io/badge/■■■■-5EB783?style=flat-square&labelColor=5EB783&color=5EB783) | 薄荷绿 | `#5EB783` |
-| ![陶土橙](https://img.shields.io/badge/■■■■-C65F38?style=flat-square&labelColor=C65F38&color=C65F38) | 陶土橙 | `#C65F38` |
-| ![信号红](https://img.shields.io/badge/■■■■-C83232?style=flat-square&labelColor=C83232&color=C83232) | 信号红 | `#C83232` |
-| ![茄紫](https://img.shields.io/badge/■■■■-63365F?style=flat-square&labelColor=63365F&color=63365F) | 茄紫 | `#63365F` |
-| ![炭黑](https://img.shields.io/badge/■■■■-30343A?style=flat-square&labelColor=30343A&color=30343A) | 炭黑 | `#30343A` |
+| ![钴蓝](./swatches/cobalt.svg) | 钴蓝 / 群青 | `#2148B8` |
+| ![皇家蓝](./swatches/royal-blue.svg) | 皇家蓝 | `#2058D4` |
+| ![植物绿](./swatches/botanical-green.svg) | 植物绿 | `#008A4B` |
+| ![薄荷绿](./swatches/mint-green.svg) | 薄荷绿 | `#5EB783` |
+| ![陶土橙](./swatches/terracotta.svg) | 陶土橙 | `#C65F38` |
+| ![信号红](./swatches/signal-red.svg) | 信号红 | `#C83232` |
+| ![茄紫](./swatches/aubergine.svg) | 茄紫 | `#63365F` |
+| ![炭黑](./swatches/charcoal.svg) | 炭黑 | `#30343A` |
 
 **双色配方：**粉蓝 + 信号红、钴蓝 + 陶土橙、植物绿 + 酒红、炭黑 + 信号红、电光蓝 + 碳黑、薄荷绿 + 炭黑、群青 + 安全橙、青蓝 + 砖红、橘色 + 灰蓝。
 
 | 图例 | 双色配方 | Hex |
 |---|---|---|
-| ![粉蓝](https://img.shields.io/badge/■-9EB8D3?style=flat-square&labelColor=9EB8D3&color=9EB8D3) ![信号红](https://img.shields.io/badge/■-C83232?style=flat-square&labelColor=C83232&color=C83232) | 粉蓝 + 信号红 | `#9EB8D3` + `#C83232` |
-| ![钴蓝](https://img.shields.io/badge/■-2148B8?style=flat-square&labelColor=2148B8&color=2148B8) ![陶土橙](https://img.shields.io/badge/■-C65F38?style=flat-square&labelColor=C65F38&color=C65F38) | 钴蓝 + 陶土橙 | `#2148B8` + `#C65F38` |
-| ![植物绿](https://img.shields.io/badge/■-008A4B?style=flat-square&labelColor=008A4B&color=008A4B) ![酒红](https://img.shields.io/badge/■-8F3434?style=flat-square&labelColor=8F3434&color=8F3434) | 植物绿 + 酒红 | `#008A4B` + `#8F3434` |
-| ![炭黑](https://img.shields.io/badge/■-30343A?style=flat-square&labelColor=30343A&color=30343A) ![信号红](https://img.shields.io/badge/■-C83232?style=flat-square&labelColor=C83232&color=C83232) | 炭黑 + 信号红 | `#30343A` + `#C83232` |
-| ![电光蓝](https://img.shields.io/badge/■-173AE3?style=flat-square&labelColor=173AE3&color=173AE3) ![碳黑](https://img.shields.io/badge/■-242321?style=flat-square&labelColor=242321&color=242321) | 电光蓝 + 碳黑 | `#173AE3` + `#242321` |
-| ![薄荷绿](https://img.shields.io/badge/■-5EB783?style=flat-square&labelColor=5EB783&color=5EB783) ![炭黑](https://img.shields.io/badge/■-302D2E?style=flat-square&labelColor=302D2E&color=302D2E) | 薄荷绿 + 炭黑 | `#5EB783` + `#302D2E` |
-| ![群青](https://img.shields.io/badge/■-263E99?style=flat-square&labelColor=263E99&color=263E99) ![安全橙](https://img.shields.io/badge/■-E55D2B?style=flat-square&labelColor=E55D2B&color=E55D2B) | 群青 + 安全橙 | `#263E99` + `#E55D2B` |
-| ![青蓝](https://img.shields.io/badge/■-159DDA?style=flat-square&labelColor=159DDA&color=159DDA) ![砖红](https://img.shields.io/badge/■-B64032?style=flat-square&labelColor=B64032&color=B64032) | 青蓝 + 砖红 | `#159DDA` + `#B64032` |
-| ![橘色](https://img.shields.io/badge/■-E46C2D?style=flat-square&labelColor=E46C2D&color=E46C2D) ![灰蓝](https://img.shields.io/badge/■-4773A5?style=flat-square&labelColor=4773A5&color=4773A5) | 橘色 + 灰蓝 | `#E46C2D` + `#4773A5` |
+| ![粉蓝与信号红](./swatches/powder-blue-signal-red.svg) | 粉蓝 + 信号红 | `#9EB8D3` + `#C83232` |
+| ![钴蓝与陶土橙](./swatches/cobalt-terracotta.svg) | 钴蓝 + 陶土橙 | `#2148B8` + `#C65F38` |
+| ![植物绿与酒红](./swatches/botanical-green-oxblood.svg) | 植物绿 + 酒红 | `#008A4B` + `#8F3434` |
+| ![炭黑与信号红](./swatches/charcoal-signal-red.svg) | 炭黑 + 信号红 | `#30343A` + `#C83232` |
+| ![电光蓝与碳黑](./swatches/electric-blue-carbon.svg) | 电光蓝 + 碳黑 | `#173AE3` + `#242321` |
+| ![薄荷绿与炭黑](./swatches/mint-green-charcoal.svg) | 薄荷绿 + 炭黑 | `#5EB783` + `#302D2E` |
+| ![群青与安全橙](./swatches/ultramarine-safety-orange.svg) | 群青 + 安全橙 | `#263E99` + `#E55D2B` |
+| ![青蓝与砖红](./swatches/cyan-brick-red.svg) | 青蓝 + 砖红 | `#159DDA` + `#B64032` |
+| ![橘色与灰蓝](./swatches/tangerine-slate-blue.svg) | 橘色 + 灰蓝 | `#E46C2D` + `#4773A5` |
 
 双色作品通常由主墨承担 70%–85% 的印刷面积，辅墨承担 15%–30%，并只负责日期、注释、特定物件或叠印交叉等明确任务。纸色不算第三色，两块印版重叠后形成的深色也不算第三种油墨。
 
