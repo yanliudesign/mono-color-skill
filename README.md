@@ -45,6 +45,17 @@ This reference set defines the visual territory, not compositions to reproduce. 
 | **Type** | Serif editorial voice + condensed sans or monospaced utility voice |
 | **Output** | Generated raster image, exact production prompt, and a short recipe |
 
+## Use cases
+
+- **Posters:** events, parties, art exhibitions, city walks, and conceptual posters
+- **Social media:** Xiaohongshu covers, WeChat article headers, podcast covers, and cultural commentary illustrations
+- **Brand materials:** postcards, invitations, tickets, programs, menus, and packaging stickers
+- **Keepsakes:** travel journals, photo album covers, and anniversary cards
+- **Books and publications:** covers, title pages, chapter openers, and zine interiors
+- **Words:** literary excerpts, poetry, and personal declarations
+
+All of these formats can use a single ink to reduce production costs while retaining a distinctive visual identity.
+
 ## How it works
 
 ```text
