@@ -19,14 +19,19 @@ Turn a theme, sentence, object, or supplied photograph into an original editoria
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
 
-## Examples
+## Visual references
 
-| Portrait study | Summer field note |
-|:---:|:---:|
-| <img src="./examples/portrait-study.png" alt="Cobalt one-ink portrait study with halftone photography and editorial typography" width="420"> | <img src="./examples/long-afternoon.png" alt="Cobalt one-ink summer field note with a screened pool scene and generous negative space" width="420"> |
-| **Cobalt · image field · halftone portrait** | **Cobalt · archival field note · screened illustration** |
+| 01 | 02 | 03 |
+|:---:|:---:|:---:|
+| <img src="./examples/reference-01.png" alt="Mono-color editorial print reference 01" width="280"> | <img src="./examples/reference-02.png" alt="Mono-color editorial print reference 02" width="280"> | <img src="./examples/reference-03.png" alt="Mono-color editorial print reference 03" width="280"> |
+| 04 | 05 | 06 |
+| <img src="./examples/reference-04.png" alt="Mono-color editorial print reference 04" width="280"> | <img src="./examples/reference-05.png" alt="Mono-color editorial print reference 05" width="280"> | <img src="./examples/reference-06.png" alt="Mono-color editorial print reference 06" width="280"> |
+| 07 | 08 | 09 |
+| <img src="./examples/reference-07.png" alt="Mono-color editorial print reference 07" width="280"> | <img src="./examples/reference-08.png" alt="Mono-color editorial print reference 08" width="280"> | <img src="./examples/reference-09.png" alt="Mono-color editorial print reference 09" width="280"> |
+| 10 | 11 | 12 |
+| <img src="./examples/reference-10.png" alt="Mono-color editorial print reference 10" width="280"> | <img src="./examples/reference-11.jpg" alt="Mono-color editorial print reference 11" width="280"> | <img src="./examples/reference-12.jpg" alt="Mono-color editorial print reference 12" width="280"> |
 
-These are original outputs made with the skill, not templates to reproduce. Each new result selects its own subject, crop, grid, type hierarchy, and print treatment.
+This reference set defines the visual territory, not compositions to reproduce. Each new result rebuilds the subject, crop, grid, type hierarchy, and print treatment from scratch.
 
 ## What it does
 
@@ -153,7 +158,7 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 ```text
 mono-color-skill/
-├── examples/         # Original output examples shown in the READMEs
+├── examples/         # Visual references shown in the READMEs
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
 ├── README.zh.md      # 中文说明

@@ -19,14 +19,19 @@
 
 它保留的是一套视觉系统，而不是照抄参考图。每次构图都会根据主体、意图、文字和图像角色重新建立。
 
-## 示例
+## 视觉参考
 
-| 肖像研究 | 夏日观察笔记 |
-|:---:|:---:|
-| <img src="./examples/portrait-study.png" alt="钴蓝单色肖像研究，使用网点照片与编辑字体" width="420"> | <img src="./examples/long-afternoon.png" alt="钴蓝单色夏日观察笔记，使用网点泳池场景与大面积留白" width="420"> |
-| **钴蓝 · 图像场 · 网点肖像** | **钴蓝 · 档案观察笔记 · 网点插画** |
+| 01 | 02 | 03 |
+|:---:|:---:|:---:|
+| <img src="./examples/reference-01.png" alt="单色编辑印刷视觉参考 01" width="280"> | <img src="./examples/reference-02.png" alt="单色编辑印刷视觉参考 02" width="280"> | <img src="./examples/reference-03.png" alt="单色编辑印刷视觉参考 03" width="280"> |
+| 04 | 05 | 06 |
+| <img src="./examples/reference-04.png" alt="单色编辑印刷视觉参考 04" width="280"> | <img src="./examples/reference-05.png" alt="单色编辑印刷视觉参考 05" width="280"> | <img src="./examples/reference-06.png" alt="单色编辑印刷视觉参考 06" width="280"> |
+| 07 | 08 | 09 |
+| <img src="./examples/reference-07.png" alt="单色编辑印刷视觉参考 07" width="280"> | <img src="./examples/reference-08.png" alt="单色编辑印刷视觉参考 08" width="280"> | <img src="./examples/reference-09.png" alt="单色编辑印刷视觉参考 09" width="280"> |
+| 10 | 11 | 12 |
+| <img src="./examples/reference-10.png" alt="单色编辑印刷视觉参考 10" width="280"> | <img src="./examples/reference-11.jpg" alt="单色编辑印刷视觉参考 11" width="280"> | <img src="./examples/reference-12.jpg" alt="单色编辑印刷视觉参考 12" width="280"> |
 
-这些是使用本 skill 创作的原创输出，不是供复刻的固定模板。每次新作品都会重新选择主体、裁切、网格、字体层级与印刷处理。
+这组图片用于界定视觉方向，不是供复刻的固定构图。每次新作品都会从头建立主体、裁切、网格、字体层级与印刷处理。
 
 ## 它能做什么
 
@@ -148,7 +153,7 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ```text
 mono-color-skill/
-├── examples/         # README 中展示的原创输出示例
+├── examples/         # README 中展示的视觉参考
 ├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
 ├── README.md         # 英文说明
 ├── README.zh.md      # 中文说明
