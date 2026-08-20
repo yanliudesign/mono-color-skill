@@ -155,6 +155,46 @@ Turn this product into a Cyan + Brick Red repeated-object cover.
 Keep one open zone for the title and factual microcopy.
 ```
 
+```text
+Make a Signal Red one-ink party poster for a rooftop gathering.
+Use “after sunset” as the headline and keep the date small.
+```
+
+```text
+Design a Charcoal + Signal Red exhibition poster about concrete architecture.
+Use the red plate only for the date, location, and one geometric interruption.
+```
+
+```text
+Create a cobalt city-walk poster from this street photograph.
+Turn the buildings into coarse halftones and title it “north by foot”.
+```
+
+```text
+Make a Terracotta Orange Xiaohongshu cover about a weekend flea market.
+Use one oversized Chinese headline and leave at least one third of the paper empty.
+```
+
+```text
+Turn this host portrait into an Aubergine one-ink podcast cover.
+Keep the face recognizable and use “the quiet hour” as the episode title.
+```
+
+```text
+Create a Botanical Green + Oxblood invitation for an independent bookstore opening.
+Let green carry the paper texture and image; reserve oxblood for event details.
+```
+
+```text
+Transform these travel photographs into a Cobalt + Terracotta postcard series.
+Keep the same grid across the set, but vary each crop and handwritten annotation.
+```
+
+```text
+Design a Mint Green + Charcoal poetry title page for the line “we kept the window open”.
+Use no photograph, generous paper space, and one small archival-style note.
+```
+
 ## Delivery format
 
 One run returns:
