@@ -19,6 +19,15 @@ Turn a theme, sentence, object, or supplied photograph into an original editoria
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
 
+## Examples
+
+| Portrait study | Summer field note |
+|:---:|:---:|
+| <img src="./examples/portrait-study.png" alt="Cobalt one-ink portrait study with halftone photography and editorial typography" width="420"> | <img src="./examples/long-afternoon.png" alt="Cobalt one-ink summer field note with a screened pool scene and generous negative space" width="420"> |
+| **Cobalt · image field · halftone portrait** | **Cobalt · archival field note · screened illustration** |
+
+These are original outputs made with the skill, not templates to reproduce. Each new result selects its own subject, crop, grid, type hierarchy, and print treatment.
+
 ## What it does
 
 | System | Direction |
@@ -144,6 +153,7 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 ```text
 mono-color-skill/
+├── examples/         # Original output examples shown in the READMEs
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
 ├── README.zh.md      # 中文说明
