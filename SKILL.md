@@ -124,6 +124,17 @@ Assign each plate a role before composing. Never scatter two colors as arbitrary
 
 Negative space is active pacing, not leftover room.
 
+### Reference-Derived Composition Grammar
+
+The reference set shares an object-and-type construction, not a generic retro mood. Build every page from these four moves:
+
+1. **One object dominates.** Use one person, animal, ordinary object, or repeated specimen as the visual anchor. Let it occupy 45%-80% of the page and crop it decisively at one or more edges when scale creates tension. Do not spread several small atmospheric props across the page.
+2. **Type collides with the object.** Let one headline cross, cover, split around, or align tightly against the dominant image. Keep enough contrast for the words to remain readable. Do not place every line in a detached safe zone above the image.
+3. **Paper cuts through the image.** Use clipped highlights, irregular cutout gaps, halftone fade-outs, or plate knockouts so exposed paper becomes a visible shape inside the composition, not only an outer margin.
+4. **One manual gesture interrupts the system.** Choose one circled fact, hand-drawn line, registration mark, tiny symbol, rotated label, or ruled data strip. Use one gesture family only; multiple doodle styles turn the page into scrapbook decoration.
+
+Choose one dominant object and one dominant typographic event before adding secondary information. If either is missing, simplify rather than filling the page with mood-setting decoration.
+
 ### 3. Image Treatment
 
 Convert all photographs and illustrations into the selected ink plate or plates plus paper:
@@ -134,7 +145,7 @@ Convert all photographs and illustrations into the selected ink plate or plates 
 - mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift between plates;
 - medium contrast; avoid glossy photographic depth.
 
-Use one dominant image zone occupying 28%-62% of the page, 1-3 isolated specimens whose combined area stays in that range, or one repeated object system. Dense overlap is allowed only in the **overprint collage** family; it must still read as two printing plates rather than scrapbook decoration.
+Use one dominant image zone occupying 45%-80% of the page, 1-3 isolated specimens whose combined area stays in that range, or one repeated object system. A ruled information poster may reduce the image zone to 32%-55% only when real supplied information needs the space. Dense overlap is allowed only in the **overprint collage** family; it must still read as two printing plates rather than scrapbook decoration.
 
 ### 4. Typography
 
@@ -169,6 +180,8 @@ Write like an independent cultural poster, field journal, or community print not
 
 If text must be invented, prefer forms such as a plain declaration, an object label, a date-like note, or a small contradiction. Never reuse wording visible in reference images.
 
+For romantic, intimate, nostalgic, or poetic prompts, express feeling through one observable relationship: two figures sharing one edge, an object carrying signs of use, a crop that implies closeness, or a small distance between forms. Do not default to string lights, wine glasses, fluttering fabric, stars, flowers, sunset silhouettes, or cinematic haze. Those props describe a romance category; a specific relationship creates romance while preserving the reference set's graphic directness.
+
 ## Composition Decision Flow
 
 Choose the layout from the content, not at random. Walk this list from top to bottom and use the first matching rule unless the user explicitly requests a layout:
@@ -193,10 +206,10 @@ Choose the layout from the content, not at random. Walk this list from top to bo
 
 ### Layout Families
 
-- **Image field:** large screened image in the middle or lower half; headline separated by open paper; compact footer.
+- **Image field:** large screened image crossing at least one page edge; headline overlaps or locks tightly to it; compact footer.
 - **Specimen annotation:** 1-3 isolated cutouts with numbered labels, one oversized phrase, and asymmetric empty space.
 - **Type-led declaration:** headline controls the page; a smaller screened image interrupts or grounds it.
-- **Ruled information poster:** thin one-ink rules form a top or bottom metadata band; the center remains open and expressive.
+- **Ruled information poster:** one dominant screened object or scene is crossed by a headline; thin one-ink rules form one metadata band and the date remains subordinate.
 - **Archival plate:** title, one rectangular image plate, and a disciplined multi-column caption block.
 - **Editorial cover:** title near one edge, one dominant image zone, sparse issue-like microcopy, no fake masthead brand.
 - **Object field:** one recognizable object repeated at varied scale, crop, or angle to form a printed rhythm; keep one open zone for title and facts.
@@ -208,10 +221,10 @@ Choose the layout from the content, not at random. Walk this list from top to bo
 Write the final prompt in five compact paragraphs, in this order:
 
 1. **Canvas and ink:** ratio, warm paper, exact one- or two-ink palette, print mode, plate roles, and flat scanned page.
-2. **Original composition:** chosen layout family, margins, empty-space percentage, grid, and one deliberate disruption.
-3. **Subject:** what appears, how a supplied image is preserved/cropped, image size, and halftone treatment.
-4. **Typography and words:** hierarchy, type voices, exact short display text, placement, rules/table if used.
-5. **Material and avoids:** dots, fibers, bleed, misregistration, plus the hard negative constraints.
+2. **Original composition:** chosen layout family, margins, empty-space percentage, grid, dominant object scale and edge crop, and one manual gesture.
+3. **Subject:** what appears, how a supplied image is preserved/cropped, image size, halftone treatment, and where exposed paper cuts through it.
+4. **Typography and words:** hierarchy, type voices, exact short display text, and the explicit overlap, crossing, split, or tight alignment between headline and dominant object; include a ruled data strip only when needed.
+5. **Material and avoids:** dots, fibers, bleed, misregistration, plus the hard negative constraints and any topic-specific cliches to exclude.
 
 Describe only visible outcomes. Do not mention reference artists, studios, sample posters, or “in the style of.”
 
@@ -291,7 +304,10 @@ Always exclude:
 - If there are two inks, does each plate have a clear role and does the accent remain controlled?
 - Does 25%-55% of the page remain visibly empty?
 - Is the image reproduced through dots or mechanical print texture rather than a color filter?
-- Is there one dominant zone and one deliberate disruption?
+- Does one object occupy 45%-80% of the page, except for a justified information-heavy layout?
+- Does the headline visibly cross, cover, split around, or lock tightly to the dominant object?
+- Does exposed paper form a visible shape inside the image through highlights, gaps, fade-outs, or knockouts?
+- Is there exactly one manual gesture family rather than several decorative doodle styles?
 - Does the type hierarchy use a 5x-12x scale jump and no more than three type voices?
 - Is the language terse, specific, and non-commercial?
 - Is the user's supplied subject preserved?

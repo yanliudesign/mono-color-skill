@@ -161,6 +161,22 @@
         "must_not": ["exact reconstruction", "copied line breaks", "copied logo"]
       },
       "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "做一张信号红单色屋顶 party 海报，主标题是‘日落之后’，日期保持小号。要浪漫，但保持 mono-color 参考图的编辑印刷感。",
+      "expected_output": "A Signal Red event poster where one cropped rooftop subject dominates, the exact headline physically interacts with the image, the date stays subordinate, and romance comes from a specific spatial relationship rather than generic atmospheric props.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#C83232"],
+        "plate_roles": ["dominant rooftop subject, headline, date, and rules"],
+        "layout": "ruled information poster",
+        "exact_text": "日落之后",
+        "generates_image": true,
+        "must_not": ["invented date", "string lights", "wine glasses", "cinematic haze", "detached safe-zone headline"]
+      },
+      "files": []
     }
   ]
 }

@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased
+
+### Changed
+
+- Refined the composition grammar from all 12 visual references: one dominant object, type-image collision, paper knockouts, and one controlled manual gesture.
+- Romantic prompts now use a specific observable relationship instead of generic atmospheric props.
+- Added a rooftop-party regression case for romantic one-ink event posters.
+
 ## 1.2.0 - 2026-08-22
 
 ### Added
