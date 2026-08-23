@@ -40,8 +40,8 @@ if data.get("skill_name") != "mono-color" or data.get("schema_version") != 1:
     fail("unexpected skill_name or schema_version")
 
 evals = data.get("evals")
-if not isinstance(evals, list) or len(evals) < 11:
-    fail("at least 11 evaluation cases are required")
+if not isinstance(evals, list) or len(evals) < 12:
+    fail("at least 12 evaluation cases are required")
 
 ids = [case.get("id") for case in evals]
 if len(ids) != len(set(ids)):

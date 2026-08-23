@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "references": [
+    {
+      "id": "ref_01",
+      "file": "examples/reference-01.png",
+      "typography": ["oversized high-contrast serif", "monospaced object annotations", "lowercase conversational headline"],
+      "colors": ["ultramarine image plate", "warm gray display type", "uncoated white paper"],
+      "layout": ["one dominant edge-cropped object", "small specimens orbit the hero", "headline split between top and bottom"],
+      "style": ["coarse halftone", "photocopied grain", "object catalog"],
+      "signature_moves": ["scale jump between display and labels", "paper cuts through the object"]
+    },
+    {
+      "id": "ref_02",
+      "file": "examples/reference-02.png",
+      "typography": ["lowercase serif masthead", "small grotesk metadata", "compact three-column credits"],
+      "colors": ["botanical green one-ink", "white paper"],
+      "layout": ["framed image field", "masthead above image", "three text columns below"],
+      "style": ["single-plate photograph", "soft grain", "quiet editorial cover"],
+      "signature_moves": ["image occupies most of page", "strict frame with generous outer margin"]
+    },
+    {
+      "id": "ref_03",
+      "file": "examples/reference-03.png",
+      "typography": ["oversized neo-grotesk", "small italic aside", "script signature", "dense bold supporting lines"],
+      "colors": ["cobalt one-ink", "warm paper"],
+      "layout": ["visible modular grid", "headline crosses photographs", "facts occupy remote cells"],
+      "style": ["low-fidelity photo wash", "ruled information system", "registration softness"],
+      "signature_moves": ["giant title crosses image", "many scale levels share one grid"]
+    },
+    {
+      "id": "ref_04",
+      "file": "examples/reference-04.png",
+      "typography": ["blackletter display label", "monospaced system data", "tiny boxed status text"],
+      "colors": ["terracotta one-ink", "black display title", "aged ivory paper"],
+      "layout": ["large centered disk", "figure anchored at bottom", "data frame spans background"],
+      "style": ["archival terminal", "pixel dissolve", "photocopy distress", "technical footer"],
+      "signature_moves": ["classical figure meets machine data", "image dissolves into square particles"]
+    },
+    {
+      "id": "ref_05",
+      "file": "examples/reference-05.png",
+      "typography": ["giant Didone serif", "plain grotesk event data", "hand-drawn notes"],
+      "colors": ["carbon halftone", "electric blue annotation", "white paper"],
+      "layout": ["repeated objects leave the page", "title spans full width", "curved annotation path"],
+      "style": ["very coarse halftone", "marker loops", "repeated object field"],
+      "signature_moves": ["one blue line travels through the whole page", "objects repeat at changing scales"]
+    },
+    {
+      "id": "ref_06",
+      "file": "examples/reference-06.png",
+      "typography": ["geometric sans wordmark", "monospaced vendor list", "handwritten speech bubble"],
+      "colors": ["cyan plate", "coral plate", "warm paper"],
+      "layout": ["one central illustrated specimen", "credits conform to object edges", "small title in upper corner"],
+      "style": ["two-color engraving", "visible overprint", "pencil annotation"],
+      "signature_moves": ["text columns become part of the fish silhouette", "plates overlap without perfect registration"]
+    },
+    {
+      "id": "ref_07",
+      "file": "examples/reference-07.png",
+      "typography": ["modular striped display sans", "bold italic event data", "compact body grotesk"],
+      "colors": ["powder blue image plate", "signal red information plate", "cream paper"],
+      "layout": ["vertical title block", "centered narrow photograph", "two text columns below"],
+      "style": ["color-separated photograph", "editorial information grid", "thin registration marks"],
+      "signature_moves": ["display title rotates ninety degrees", "red facts overlap the pale photograph"]
+    },
+    {
+      "id": "ref_08",
+      "file": "examples/reference-08.png",
+      "typography": ["heavy grotesk", "rotated edge labels", "underlined date stacks"],
+      "colors": ["royal blue image plate", "black instrument plate", "white paper"],
+      "layout": ["diagonal hybrid object", "text rotates around all edges", "large open corners"],
+      "style": ["surreal photo composite", "one-color wash", "cut-and-paste collision"],
+      "signature_moves": ["two unrelated objects merge into one hero", "orientation changes create movement"]
+    },
+    {
+      "id": "ref_09",
+      "file": "examples/reference-09.png",
+      "typography": ["condensed serif capitals", "vertical display words", "bold grotesk information block"],
+      "colors": ["cobalt typography plate", "signal red engraving plate", "textured white paper"],
+      "layout": ["hero exits left and bottom edges", "vertical title crosses subject", "small information island at bottom"],
+      "style": ["line engraving", "transparent overprint", "paper fiber"],
+      "signature_moves": ["blue text visibly overprints red animal", "large empty field remains on the right"]
+    },
+    {
+      "id": "ref_10",
+      "file": "examples/reference-10.png",
+      "typography": ["neutral neo-grotesk", "stacked date block", "vertical multilingual metadata"],
+      "colors": ["spring green photo plate", "black text", "pale pink paper"],
+      "layout": ["fragmented portrait columns", "paper knockouts split faces", "metadata forms right edge"],
+      "style": ["flat photo tint", "hard collage seams", "mid-century cultural poster"],
+      "signature_moves": ["white paper creates active silhouettes", "same image language repeats in irregular columns"]
+    },
+    {
+      "id": "ref_11",
+      "file": "examples/reference-11.jpg",
+      "typography": ["heavy grotesk date labels", "stacked compact title mark", "minimal supporting type"],
+      "colors": ["magenta hero plate", "teal accent plate", "white paper"],
+      "layout": ["large central animal crop", "information locked to top left", "small marks scatter around edges"],
+      "style": ["coarse duotone halftone", "diagram doodles", "food-poster energy"],
+      "signature_moves": ["small teal figure collides with magenta animal", "decorative debris stays subordinate"]
+    },
+    {
+      "id": "ref_12",
+      "file": "examples/reference-12.jpg",
+      "typography": ["modular mirrored display mark", "condensed event text", "small sponsor line"],
+      "colors": ["violet information plate", "safety orange engraving plate", "cool white paper"],
+      "layout": ["title and date balance upper corners", "single fish fills lower center", "sponsor strip anchors bottom"],
+      "style": ["fine line engraving", "clean duotone separation", "institutional event poster"],
+      "signature_moves": ["two plates never compete for the same role", "one oversized specimen carries the page"]
+    }
+  ]
+}

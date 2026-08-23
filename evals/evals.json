@@ -177,6 +177,38 @@
         "must_not": ["invented date", "string lights", "wine glasses", "cinematic haze", "detached safe-zone headline"]
       },
       "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "做一张夏日骑行的海报，浪漫自由一点。",
+      "expected_output": "A warm-paper summer cycling poster with one dominant cropped rider, a fresh 2-8 word English headline, and a romantic sense of freedom expressed through movement, open direction, and spatial rhythm rather than decorative cliches.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#C65F38"],
+        "plate_roles": ["dominant cyclist, English typography, and one manual gesture"],
+        "layout": "editorial cover",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["Chinese invented copy", "motivational slogan", "decorative summer props", "detached safe-zone headline"]
+      },
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "把我提供的维京长船照片做得更抽象、艺术、松弛一些，用钴蓝和陶土橙，不要太写实。",
+      "expected_output": "A generated abstract editorial cover that extracts the square sail, curved hull, mast, and wave direction into deterministic geometric masses, broken contours, repeated marks, and active paper without reducing the source to a photographic duotone filter.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["hull structure, wave rhythm, typography, and broken contours", "square sail and one navigation annotation"],
+        "layout": "editorial cover",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["full photographic scene", "generic boat symbol", "evenly scattered accent ink", "random anchor movement", "third ink"]
+      },
+      "files": []
     }
   ]
 }

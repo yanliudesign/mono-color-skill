@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "roles": [
+    {
+      "id": "type_poetic",
+      "name": "Poetic",
+      "display": "high-contrast serif or restrained italic",
+      "support": "small grotesk or mono",
+      "scale_ratio": "7:1 to 12:1",
+      "behavior": ["asymmetric line breaks", "may cross the subject", "tight display leading"],
+      "use_for": ["reflection", "travel", "summer", "music", "night"]
+    },
+    {
+      "id": "type_civic",
+      "name": "Civic",
+      "display": "heavy grotesk",
+      "support": "condensed grotesk or mono",
+      "scale_ratio": "8:1 to 14:1",
+      "behavior": ["date remains subordinate", "headline locks to object", "facts align to one edge"],
+      "use_for": ["event", "announcement", "public culture"]
+    },
+    {
+      "id": "type_archival",
+      "name": "Archival",
+      "display": "restrained serif or grotesk",
+      "support": "monospaced annotation",
+      "scale_ratio": "4:1 to 8:1",
+      "behavior": ["specimen labels", "numbered facts", "one ruled alignment"],
+      "use_for": ["specimen", "research", "journal", "architecture"]
+    },
+    {
+      "id": "type_typographic",
+      "name": "Typographic",
+      "display": "oversized grotesk or serif",
+      "support": "minimal mono",
+      "scale_ratio": "12:1 to 20:1",
+      "behavior": ["phrase is the dominant object", "one word may leave the page", "no detached safe-zone title"],
+      "use_for": ["declaration", "poetry", "text-led cover"]
+    }
+  ]
+}

@@ -195,12 +195,36 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ## 稳定性与验证
 
-生成 Prompt 前，skill 会先把每次请求解析成固定的 recipe manifest。用户未指定时，统一采用 `3:4` 比例、暖象牙纸、35% 留白、粗网点，以及确定性的配色和版式选择规则。用户的明确要求仍然优先，但不能突破双色上限与原创性规则。
+生成 Prompt 前，skill 会先把每次请求解析成固定的 recipe manifest。用户未指定时，统一采用 `3:4` 比例、暖象牙纸、35% 留白、粗网点，以及确定性的配色和版式选择规则。输入照片默认采用保真再现；当用户要求抽象、艺术、松弛、实验性或降低写实度时，会切换为确定性的符号提取，并保留 2-4 个身份锚点。用户的明确要求仍然优先，但不能突破双色上限与原创性规则。
+
+`design-system/` 目录把视觉语法变成可以复用、检查的数据，分别保存颜色 token、字体角色、构图几何、载体识别信号和受控印刷偏差。参考板、生成配方和校验器共用同一套 ID，避免视觉规则只存在于描述性文字里。
+
+“可控偶然”只发生在印刷表现层：每份配方通过固定 seed 选择 2–3 种有边界的效果，例如油墨浓淡、干墨破边、网点漂移、套印偏移或一处断开的手工笔触。相同输入会复现同样的偏差，同时不移动核心构图、不损伤文字可读性。
+
+![可控偶然 mono-color 海报](./examples/vibe-coding-5-minutes-relaxed.png)
+
+![Mono-color 视觉系统参考总表](./examples/mono-color-design-system-board.png)
+
+`design-system/reference-analysis.json` 记录了 12 张参考图的证据映射，并可编译为四张 1800×2400 专项总表：
+
+| 字体 | 颜色 |
+| --- | --- |
+| ![字体视觉系统](./examples/visual-system-typography.png) | ![颜色视觉系统](./examples/visual-system-color.png) |
+| **排版** | **风格** |
+| ![排版视觉系统](./examples/visual-system-layout.png) | ![风格视觉系统](./examples/visual-system-style.png) |
+
+修改 catalog 后，可以重新导出综合总表或四张专项总表：
+
+```bash
+python3 scripts/build_design_system_board.py
+python3 scripts/build_reference_system_boards.py
+```
 
 评测契约覆盖默认输入、人物照片、植物主题、双色叠印、活动信息、长文本、仅输出 Prompt、颜色冲突、重复物件和照抄参考图等情况。本地运行：
 
 ```bash
 python3 scripts/validate_evals.py
+python3 scripts/validate_design_system.py
 ```
 
 每次 pull request 和推送到 `main` 时，GitHub Actions 都会运行同一套检查。
@@ -210,8 +234,9 @@ python3 scripts/validate_evals.py
 ```text
 mono-color-skill/
 ├── .github/workflows/ # 持续验证
+├── design-system/    # 机器可读的视觉 token 与组合模式
 ├── examples/         # README 中展示的视觉参考
-├── scripts/          # 评测契约校验脚本
+├── scripts/          # 评测与设计系统校验脚本
 ├── swatches/         # 单色与双色色板
 ├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
 ├── README.md         # 英文说明

@@ -9,7 +9,7 @@
     "schema_version": { "const": 1 },
     "evals": {
       "type": "array",
-      "minItems": 11,
+      "minItems": 12,
       "items": {
         "type": "object",
         "required": ["id", "prompt", "expected_output", "assertions", "files"],

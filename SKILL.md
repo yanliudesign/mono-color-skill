@@ -27,41 +27,53 @@ Extract four things before composing:
 
 - **Subject:** the one person, object, scene, or idea that must remain recognizable.
 - **Intent:** poetic observation, announcement, field note, personal statement, cultural poster, or specimen page.
-- **Words:** exact supplied text, or no display text when none is requested. If the user explicitly asks for invented copy, choose one phrase of 2-8 words before building the manifest and preserve it across retries.
+- **Words:** preserve exact supplied text in its original language. When no text is supplied, invent one English display phrase of 2-8 words and preserve it across retries. Omit display text only when the user explicitly requests a text-free image.
 - **Image role:** hero photograph, isolated specimen, cropped fragment, texture source, or no supplied image.
+- **Representation:** faithful reproduction or abstract symbol extraction. Choose abstract symbol extraction when the user asks for abstract, artistic, loose, experimental, less realistic, or less photographic treatment.
 
 For a complex topic, choose one concrete visual metaphor. Do not illustrate every point.
 
-When the user supplies an image, preserve its identity and core factual content. Crop, isolate, enlarge, simplify, or convert it to halftone; do not replace the subject or invent branded details.
+When the user supplies an image, preserve its identity and core factual content. In faithful reproduction, crop, isolate, enlarge, simplify, or convert it to halftone. In abstract symbol extraction, preserve 2-4 identifying anchors while replacing photographic description with simplified masses, contours, repeated marks, and exposed paper. Never replace the subject or invent branded details.
 
 ### Recipe Manifest
 
 Before writing the generation prompt, resolve the input into this manifest. Do not skip fields and do not expose the manifest unless the user asks for process details.
 
+Use the machine-readable catalogs in `design-system/` as the source of truth for palette IDs, typography roles, composition geometry, carrier signals, and controlled print imperfections. Read only the relevant catalog for the current decision. The prose below explains intent; when an exact value differs, the catalog wins.
+
 ```yaml
 subject: <one recognizable subject>
 intent: <one intent from Input Reading>
 exact_text: <user text, generated 2-8 word phrase, or none>
+text_language: <language of supplied text, otherwise English>
+representation: <faithful reproduction or abstract symbol extraction>
 ratio: <explicit ratio or 3:4>
+carrier: <one carrier ID from design-system/carriers.json or none>
 mode: <pure one-ink, chromatic + black, complementary duotone, or overprint duotone>
-inks: <named ink or approved pair with exact hex values>
+palette: <one palette ID from design-system/colors.json>
+inks: <the palette's named ink or approved pair with exact hex values>
 plate_roles: <one explicit role per ink plate>
-layout: <one layout family>
+layout: <one composition ID from design-system/compositions.json>
 empty_paper: <explicit percentage>
 image_treatment: <one mechanical reproduction process>
-type_hierarchy: <one hierarchy>
+type_hierarchy: <one role ID from design-system/typography.json>
 disruption: <one deliberate disruption>
+imperfection_seed: <stable hash derived from the resolved recipe>
+imperfections: <2-3 effect IDs from design-system/imperfections.json>
 ```
 
 Use these defaults whenever the user has not made the choice:
 
 - ratio: `3:4`;
+- representation: `faithful reproduction`, unless the user asks for abstract, artistic, loose, experimental, less realistic, or less photographic treatment;
+- text language: English for all invented display text, labels, and microcopy;
 - paper: warm ivory `#F5F1E8`;
 - mode and ink: pure one-ink cobalt `#2148B8`, unless the subject maps directly to another named one-ink palette below;
 - empty paper: `35%`;
 - image treatment: coarse halftone;
 - type hierarchy: Poetic for reflective language, Civic for events, Archival for specimens, and Typographic when the supplied phrase is the subject;
 - disruption: one off-center image crop; use one oversized word instead when there is no image.
+- imperfections: choose 2-3 effects using a stable hash of subject, exact text, palette, and layout; preserve the same seed across retries.
 
 Explicit user choices override defaults unless they violate the two-ink limit or the originality firewall. For identical inputs, resolve the same manifest; do not vary palette, layout, percentages, or process merely for novelty. This stabilizes the design procedure while image-generation details may still vary.
 
@@ -145,6 +157,28 @@ Convert all photographs and illustrations into the selected ink plate or plates 
 - mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift between plates;
 - medium contrast; avoid glossy photographic depth.
 
+#### Abstract Looseness
+
+When `representation` is `abstract symbol extraction`, transform the supplied image into a small visual vocabulary instead of applying a stylized filter to the whole photograph:
+
+1. Name 2-4 **identity anchors** that make the subject recognizable, such as a square sail, curved hull, mast, and wave direction. Preserve their relationship, not their photographic detail.
+2. Convert the anchors into **one dominant mass**, **one structural contour**, and **one repeated rhythm**. Use flat plate shapes, broken hand-drawn lines, short strokes, dots, or paper cutouts; omit incidental scenery and fine surface description.
+3. Let paper replace at least 35% of the source scene. Crop one anchor at a page edge and allow one type or line element to cross it. Abstraction must create active space, not merely blur or posterize the photo.
+4. Keep the abstract geometry deterministic. Apply looseness through slightly irregular contours, uneven repeated marks, and the recipe's 2-3 controlled print imperfections; do not randomly move anchors between retries.
+5. Stop before the subject becomes generic. At thumbnail scale, at least two identity anchors must still communicate the original subject without relying on the caption.
+
+For complementary duotone abstraction, assign the dominant ink to structure and rhythm, and reserve the accent ink for one identity anchor or one annotation. Do not distribute the accent evenly across the page.
+
+#### Controlled Chance
+
+Keep composition, wording, palette, and hierarchy deterministic. Introduce looseness only in the reproduction layer by selecting 2-3 effects from `design-system/imperfections.json` with the resolved recipe's stable seed.
+
+- Let uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken manual gesture create the analog variation.
+- Apply variation to large type, image plates, solid shapes, or the single gesture family; never distort microcopy or factual text.
+- Keep all effect values inside the catalog ranges. The same resolved input must reproduce the same marks and offsets.
+- In one-ink work, registration drift may appear only as a pale second impression of the same ink. It does not add another color.
+- Do not use controlled chance to move the dominant object, change line breaks, alter the grid, or compensate for an unresolved composition.
+
 Use one dominant image zone occupying 45%-80% of the page, 1-3 isolated specimens whose combined area stays in that range, or one repeated object system. A ruled information poster may reduce the image zone to 32%-55% only when real supplied information needs the space. Dense overlap is allowed only in the **overprint collage** family; it must still read as two printing plates rather than scrapbook decoration.
 
 ### 4. Typography
@@ -166,6 +200,7 @@ Rules:
 - Use one dramatic scale jump: largest text is 5-12 times the microcopy size.
 - Prefer lowercase for intimate statements and uppercase for public declarations.
 - Keep display copy to 2-8 words and all other copy sparse.
+- Default all invented words to natural English, even when the user's request is written in another language. Preserve user-supplied wording exactly and do not translate it unless asked.
 - Use exact readable wording only when the user supplies it or it carries the concept. Otherwise use plausible microtype as texture and do not invent organizations, URLs, sponsors, or event facts.
 - No gradient type, outline effects, drop shadows, inflated 3D letters, or generic luxury-fashion spacing.
 
@@ -173,12 +208,14 @@ Rules:
 
 Write like an independent cultural poster, field journal, or community print notice:
 
-- terse, direct, observant, slightly poetic;
+- terse, observant, romantic, and free-spirited without becoming sentimental;
 - human and specific rather than inspirational;
 - quiet confidence, dry wit, or factual clarity;
 - no sales language, CTA, hype, productivity slogans, or brand manifesto voice.
 
-If text must be invented, prefer forms such as a plain declaration, an object label, a date-like note, or a small contradiction. Never reuse wording visible in reference images.
+For summer, movement, travel, leisure, music, and night subjects, make romantic freedom the default emotional register. Express it through a physical sensation, an open direction, an unhurried gesture, or a small relationship between subject and space. Favor fresh English fragments such as an observation or invitation, never a generic motivational slogan. For factual, civic, scientific, or archival subjects, let clarity override this romantic default.
+
+If text must be invented, prefer an English observation, plain declaration, object label, or small contradiction. Never reuse wording visible in reference images or repeat a stock phrase across unrelated outputs.
 
 For romantic, intimate, nostalgic, or poetic prompts, express feeling through one observable relationship: two figures sharing one edge, an object carrying signs of use, a crop that implies closeness, or a small distance between forms. Do not default to string lights, wine glasses, fluttering fabric, stars, flowers, sunset silhouettes, or cinematic haze. Those props describe a romance category; a specific relationship creates romance while preserving the reference set's graphic directness.
 
@@ -195,7 +232,8 @@ Choose the layout from the content, not at random. Walk this list from top to bo
 4. Does the concept explicitly depend on two images, colors, or type layers physically crossing?
    - Yes: choose **overprint collage** and use overprint duotone.
 5. Is there one supplied portrait or scene photograph?
-   - Yes: choose **image field**.
+   - Yes, and representation is faithful reproduction: choose **image field**.
+   - Yes, and representation is abstract symbol extraction: choose **editorial cover** by default; choose **overprint collage** only when two extracted layers must physically cross.
 6. Are there 1-3 supplied isolated objects intended for labels or comparison?
    - Yes: choose **specimen annotation**.
 7. Is the user's phrase itself the main visual subject?
@@ -222,7 +260,7 @@ Write the final prompt in five compact paragraphs, in this order:
 
 1. **Canvas and ink:** ratio, warm paper, exact one- or two-ink palette, print mode, plate roles, and flat scanned page.
 2. **Original composition:** chosen layout family, margins, empty-space percentage, grid, dominant object scale and edge crop, and one manual gesture.
-3. **Subject:** what appears, how a supplied image is preserved/cropped, image size, halftone treatment, and where exposed paper cuts through it.
+3. **Subject:** what appears; for faithful reproduction, describe preservation, crop, size, halftone treatment, and paper exposure; for abstract symbol extraction, name the 2-4 identity anchors, dominant mass, structural contour, repeated rhythm, omitted detail, and where exposed paper cuts through the scene.
 4. **Typography and words:** hierarchy, type voices, exact short display text, and the explicit overlap, crossing, split, or tight alignment between headline and dominant object; include a ruled data strip only when needed.
 5. **Material and avoids:** dots, fibers, bleed, misregistration, plus the hard negative constraints and any topic-specific cliches to exclude.
 

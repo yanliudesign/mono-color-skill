@@ -18,7 +18,10 @@ jobs:
           python-version: "3.12"
       - name: Validate evaluation contract
         run: python scripts/validate_evals.py
+      - name: Validate visual design system
+        run: python scripts/validate_design_system.py
       - name: Check JSON syntax
         run: |
           python -m json.tool evals/evals.json >/dev/null
           python -m json.tool evals/schema.json >/dev/null
+          for catalog in design-system/*.json; do python -m json.tool "$catalog" >/dev/null; done

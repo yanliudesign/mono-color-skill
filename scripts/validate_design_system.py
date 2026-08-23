@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+import json
+import re
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SYSTEM_DIR = ROOT / "design-system"
+HEX_COLOR = re.compile(r"^#[0-9A-F]{6}$")
+RATIO = re.compile(r"^[1-9][0-9]*:[1-9][0-9]*$")
+EXPECTED_FILES = {
+    "colors.json",
+    "typography.json",
+    "compositions.json",
+    "carriers.json",
+    "imperfections.json",
+    "reference-analysis.json",
+}
+
+
+def fail(message: str) -> None:
+    print(f"design-system validation failed: {message}", file=sys.stderr)
+    raise SystemExit(1)
+
+
+def load(name: str) -> dict:
+    path = SYSTEM_DIR / name
+    if not path.exists():
+        fail(f"missing {name}")
+    with path.open(encoding="utf-8") as source:
+        data = json.load(source)
+    if data.get("schema_version") != 1:
+        fail(f"{name} must use schema_version 1")
+    return data
+
+
+def require_unique(items: list[dict], label: str) -> set[str]:
+    ids = [item.get("id") for item in items]
+    if any(not isinstance(item_id, str) or not item_id for item_id in ids):
+        fail(f"every {label} needs a non-empty id")
+    if len(ids) != len(set(ids)):
+        fail(f"{label} ids must be unique")
+    return set(ids)
+
+
+actual_files = {path.name for path in SYSTEM_DIR.glob("*.json")}
+if actual_files != EXPECTED_FILES:
+    fail(f"expected catalog files {sorted(EXPECTED_FILES)}, found {sorted(actual_files)}")
+
+colors = load("colors.json")
+typography = load("typography.json")
+compositions = load("compositions.json")
+carriers = load("carriers.json")
+imperfections = load("imperfections.json")
+reference_analysis = load("reference-analysis.json")
+
+paper = colors.get("paper", {})
+if not HEX_COLOR.fullmatch(paper.get("hex", "")) or paper.get("counts_as_ink") is not False:
+    fail("paper must use an uppercase hex color and must not count as ink")
+
+inks = colors.get("inks", [])
+ink_ids = require_unique(inks, "ink")
+if any(not HEX_COLOR.fullmatch(ink.get("hex", "")) for ink in inks):
+    fail("every ink must use an uppercase hex color")
+
+palettes = colors.get("palettes", [])
+require_unique(palettes, "palette")
+for palette in palettes:
+    palette_inks = palette.get("ink_ids", [])
+    if not 1 <= len(palette_inks) <= 2:
+        fail(f"{palette['id']} must reference one or two inks")
+    unknown = set(palette_inks) - ink_ids
+    if unknown:
+        fail(f"{palette['id']} references unknown inks {sorted(unknown)}")
+    if palette.get("mode") == "pure one-ink" and len(palette_inks) != 1:
+        fail(f"{palette['id']} one-ink mode must reference exactly one ink")
+    if palette.get("mode") != "pure one-ink" and len(palette_inks) != 2:
+        fail(f"{palette['id']} two-ink mode must reference exactly two inks")
+
+roles = typography.get("roles", [])
+require_unique(roles, "typography role")
+for role in roles:
+    if not role.get("display") or not role.get("support") or not role.get("behavior"):
+        fail(f"{role['id']} needs display, support, and behavior rules")
+
+layouts = compositions.get("compositions", [])
+require_unique(layouts, "composition")
+for composition in layouts:
+    subject_range = composition.get("dominant_subject_percent", [])
+    paper_range = composition.get("empty_paper_percent", [])
+    if len(subject_range) != 2 or not 0 < subject_range[0] <= subject_range[1] <= 100:
+        fail(f"{composition['id']} has an invalid subject range")
+    if len(paper_range) != 2 or not 0 < paper_range[0] <= paper_range[1] <= 100:
+        fail(f"{composition['id']} has an invalid paper range")
+    if composition.get("manual_gesture_limit") != 1:
+        fail(f"{composition['id']} must allow exactly one manual gesture family")
+
+carrier_items = carriers.get("carriers", [])
+require_unique(carrier_items, "carrier")
+for carrier in carrier_items:
+    ratios = carrier.get("ratios", [])
+    if not ratios or any(not RATIO.fullmatch(ratio) for ratio in ratios):
+        fail(f"{carrier['id']} has an invalid ratio")
+    if not carrier.get("required_signals") or not carrier.get("forbidden_signals"):
+        fail(f"{carrier['id']} needs required and forbidden visual signals")
+
+selection = imperfections.get("selection", {})
+if selection.get("effect_count") != [2, 3] or selection.get("preserve_across_retries") is not True:
+    fail("imperfections must select 2-3 stable effects across retries")
+if not selection.get("seed_strategy"):
+    fail("imperfections need a deterministic seed strategy")
+imperfection_items = imperfections.get("effects", [])
+require_unique(imperfection_items, "imperfection")
+if len(imperfection_items) < 5:
+    fail("imperfections need at least five controlled effect families")
+for imperfection in imperfection_items:
+    ranges = [value for key, value in imperfection.items() if key.endswith("_percent") or key.endswith("_mm")]
+    if len(ranges) != 1 or len(ranges[0]) != 2 or not 0 < ranges[0][0] <= ranges[0][1]:
+        fail(f"{imperfection['id']} needs one valid effect range")
+    if not imperfection.get("applies_to"):
+        fail(f"{imperfection['id']} needs an application boundary")
+if len(imperfections.get("guardrails", [])) < 5:
+    fail("imperfections need readability and structural guardrails")
+
+references = reference_analysis.get("references", [])
+reference_ids = require_unique(references, "reference")
+if len(references) != 12 or reference_ids != {f"ref_{index:02d}" for index in range(1, 13)}:
+    fail("reference analysis must contain exactly ref_01 through ref_12")
+for reference in references:
+    source_path = ROOT / reference.get("file", "")
+    if not source_path.is_file():
+        fail(f"{reference['id']} points to a missing source image")
+    for axis in ("typography", "colors", "layout", "style", "signature_moves"):
+        if not reference.get(axis):
+            fail(f"{reference['id']} needs observations for {axis}")
+
+print(
+    "Validated mono-color design system: "
+    f"{len(inks)} inks, {len(palettes)} palettes, {len(roles)} type roles, "
+    f"{len(layouts)} compositions, {len(carrier_items)} carriers, "
+    f"{len(imperfection_items)} imperfections, {len(references)} references."
+)

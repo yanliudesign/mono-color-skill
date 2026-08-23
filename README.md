@@ -208,12 +208,36 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 ## Stability and validation
 
-Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, warm ivory paper, 35% empty paper, coarse halftone, and deterministic palette and layout rules. Explicit user choices still take precedence within the two-ink and originality limits.
+Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, warm ivory paper, 35% empty paper, coarse halftone, and deterministic palette and layout rules. Supplied photos default to faithful reproduction; requests for abstract, artistic, loose, experimental, or less realistic treatment switch to deterministic symbol extraction that preserves 2-4 identity anchors. Explicit user choices still take precedence within the two-ink and originality limits.
+
+The `design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
+
+Controlled chance stays in the reproduction layer: each recipe deterministically selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
+
+![Controlled-chance mono-color poster](./examples/vibe-coding-5-minutes-relaxed.png)
+
+![Mono-color visual system reference board](./examples/mono-color-design-system-board.png)
+
+The twelve-source evidence map in `design-system/reference-analysis.json` also compiles into four focused 1800×2400 boards:
+
+| Typography | Color |
+| --- | --- |
+| ![Typography system](./examples/visual-system-typography.png) | ![Color system](./examples/visual-system-color.png) |
+| **Layout** | **Style** |
+| ![Layout system](./examples/visual-system-layout.png) | ![Style system](./examples/visual-system-style.png) |
+
+Regenerate the complete board or the four reference-derived boards after editing a catalog:
+
+```bash
+python3 scripts/build_design_system_board.py
+python3 scripts/build_reference_system_boards.py
+```
 
 The evaluation contract covers defaults, supplied portraits, botanical work, overprint, event information, long-form text, prompt-only output, conflicting color requests, repeated objects, and reference-copying requests. Run it locally with:
 
 ```bash
 python3 scripts/validate_evals.py
+python3 scripts/validate_design_system.py
 ```
 
 GitHub Actions runs the same contract on every pull request and push to `main`.
@@ -223,8 +247,9 @@ GitHub Actions runs the same contract on every pull request and push to `main`.
 ```text
 mono-color-skill/
 ├── .github/workflows/ # Continuous validation
+├── design-system/    # Machine-readable visual tokens and patterns
 ├── examples/         # Visual references shown in the READMEs
-├── scripts/          # Evaluation contract validator
+├── scripts/          # Evaluation and design-system validators
 ├── swatches/         # One-ink and two-ink palette previews
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
