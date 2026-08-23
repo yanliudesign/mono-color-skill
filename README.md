@@ -6,9 +6,10 @@
 
 **A one-ink and controlled two-ink editorial image skill for posters, zines, portraits, packaging, and visual field notes.**
 
-[![Version](https://img.shields.io/badge/VERSION-1.1.0-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
+[![Version](https://img.shields.io/badge/VERSION-1.2.0-2ea44f?style=flat-square&labelColor=333)](./CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/mono-color-skill?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/mono-color-skill/stargazers)
+[![Validate skill](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
 [![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./SKILL.md)
@@ -205,16 +206,33 @@ One run returns:
 
 If image generation is unavailable, the skill returns the production-ready prompt and states the limitation.
 
+## Stability and validation
+
+Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, warm ivory paper, 35% empty paper, coarse halftone, and deterministic palette and layout rules. Explicit user choices still take precedence within the two-ink and originality limits.
+
+The evaluation contract covers defaults, supplied portraits, botanical work, overprint, event information, long-form text, prompt-only output, conflicting color requests, repeated objects, and reference-copying requests. Run it locally with:
+
+```bash
+python3 scripts/validate_evals.py
+```
+
+GitHub Actions runs the same contract on every pull request and push to `main`.
+
 ## Repository layout
 
 ```text
 mono-color-skill/
+├── .github/workflows/ # Continuous validation
 ├── examples/         # Visual references shown in the READMEs
+├── scripts/          # Evaluation contract validator
+├── swatches/         # One-ink and two-ink palette previews
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
 ├── README.zh.md      # 中文说明
+├── CHANGELOG.md      # Release history
 └── evals/
-		└── evals.json    # Representative trigger and output expectations
+		├── evals.json    # Representative prompts and deterministic assertions
+		└── schema.json   # Evaluation contract schema
 ```
 
 ## Originality

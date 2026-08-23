@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mono-color skill evaluations",
+  "type": "object",
+  "required": ["skill_name", "schema_version", "evals"],
+  "additionalProperties": false,
+  "properties": {
+    "skill_name": { "const": "mono-color" },
+    "schema_version": { "const": 1 },
+    "evals": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "prompt", "expected_output", "assertions", "files"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "prompt": { "type": "string", "minLength": 8 },
+          "expected_output": { "type": "string", "minLength": 20 },
+          "assertions": {
+            "type": "object",
+            "required": ["ratio", "mode", "ink_hexes", "plate_roles", "layout", "exact_text", "generates_image", "must_not"],
+            "additionalProperties": false,
+            "properties": {
+              "ratio": { "type": "string", "pattern": "^[1-9][0-9]*:[1-9][0-9]*$" },
+              "mode": {
+                "enum": ["pure one-ink", "chromatic + black", "complementary duotone", "overprint duotone"]
+              },
+              "ink_hexes": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 2,
+                "items": { "type": "string", "pattern": "^#[0-9A-F]{6}$" }
+              },
+              "plate_roles": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 2,
+                "items": { "type": "string", "minLength": 3 }
+              },
+              "layout": {
+                "enum": ["image field", "specimen annotation", "type-led declaration", "ruled information poster", "archival plate", "editorial cover", "object field", "overprint collage", "editorial journal"]
+              },
+              "exact_text": { "type": ["string", "null"] },
+              "generates_image": { "type": "boolean" },
+              "must_not": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 3 }
+              }
+            }
+          },
+          "files": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

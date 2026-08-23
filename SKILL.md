@@ -27,12 +27,45 @@ Extract four things before composing:
 
 - **Subject:** the one person, object, scene, or idea that must remain recognizable.
 - **Intent:** poetic observation, announcement, field note, personal statement, cultural poster, or specimen page.
-- **Words:** exact supplied text, or one invented phrase of 2-8 words plus optional factual microcopy.
+- **Words:** exact supplied text, or no display text when none is requested. If the user explicitly asks for invented copy, choose one phrase of 2-8 words before building the manifest and preserve it across retries.
 - **Image role:** hero photograph, isolated specimen, cropped fragment, texture source, or no supplied image.
 
 For a complex topic, choose one concrete visual metaphor. Do not illustrate every point.
 
 When the user supplies an image, preserve its identity and core factual content. Crop, isolate, enlarge, simplify, or convert it to halftone; do not replace the subject or invent branded details.
+
+### Recipe Manifest
+
+Before writing the generation prompt, resolve the input into this manifest. Do not skip fields and do not expose the manifest unless the user asks for process details.
+
+```yaml
+subject: <one recognizable subject>
+intent: <one intent from Input Reading>
+exact_text: <user text, generated 2-8 word phrase, or none>
+ratio: <explicit ratio or 3:4>
+mode: <pure one-ink, chromatic + black, complementary duotone, or overprint duotone>
+inks: <named ink or approved pair with exact hex values>
+plate_roles: <one explicit role per ink plate>
+layout: <one layout family>
+empty_paper: <explicit percentage>
+image_treatment: <one mechanical reproduction process>
+type_hierarchy: <one hierarchy>
+disruption: <one deliberate disruption>
+```
+
+Use these defaults whenever the user has not made the choice:
+
+- ratio: `3:4`;
+- paper: warm ivory `#F5F1E8`;
+- mode and ink: pure one-ink cobalt `#2148B8`, unless the subject maps directly to another named one-ink palette below;
+- empty paper: `35%`;
+- image treatment: coarse halftone;
+- type hierarchy: Poetic for reflective language, Civic for events, Archival for specimens, and Typographic when the supplied phrase is the subject;
+- disruption: one off-center image crop; use one oversized word instead when there is no image.
+
+Explicit user choices override defaults unless they violate the two-ink limit or the originality firewall. For identical inputs, resolve the same manifest; do not vary palette, layout, percentages, or process merely for novelty. This stabilizes the design procedure while image-generation details may still vary.
+
+Resolve generic color words consistently: blue to Cobalt, green to Botanical Green, orange to Terracotta Orange, red to Signal Red, purple to Aubergine, and black to Charcoal. For generic green + black, use Mint Green + Charcoal. For generic blue + orange, use Cobalt + Terracotta. Exact named inks always take precedence over these aliases.
 
 ## Visual DNA
 
@@ -82,7 +115,7 @@ Assign each plate a role before composing. Never scatter two colors as arbitrary
 ### 2. Space and Grid
 
 - Use a flat, front-facing paper canvas with no mockup, frame, desk, or cast shadow.
-- Default to a vertical poster between 3:4 and 4:5. Respect a user-specified ratio.
+- Default to a `3:4` vertical poster. Respect a user-specified ratio.
 - Keep 25%-55% of the canvas as visibly empty paper.
 - Use generous outer margins: 5%-9% of page width.
 - Align most elements to one invisible left edge or a simple 2-3 column editorial grid.
@@ -138,23 +171,25 @@ If text must be invented, prefer forms such as a plain declaration, an object la
 
 ## Composition Decision Flow
 
-Choose the layout from the content, not at random:
+Choose the layout from the content, not at random. Walk this list from top to bottom and use the first matching rule unless the user explicitly requests a layout:
 
-1. Is there one strong supplied photograph?
-   - Yes: choose **image field** or **specimen annotation**.
-2. Is the user's phrase itself the main idea?
-   - Yes: choose **type-led declaration**.
-3. Is the content an event, method, schedule, or factual announcement?
+1. Is the content an event, method, schedule, or factual announcement?
    - Yes: choose **ruled information poster**.
-4. Is the subject botanical, collected, or taxonomic?
+2. Is the subject botanical, collected, or taxonomic?
    - Yes: choose **archival plate** and consider botanical green.
-5. Is one ordinary object repeated as the main rhythm?
+3. Is one ordinary object explicitly requested as a repeated rhythm?
    - Yes: choose **object field**.
-6. Does the concept depend on two images, colors, or type layers physically crossing?
+4. Does the concept explicitly depend on two images, colors, or type layers physically crossing?
    - Yes: choose **overprint collage** and use overprint duotone.
-7. Is the content reflective, dated, or essay-like with a primary photograph and readable text?
+5. Is there one supplied portrait or scene photograph?
+   - Yes: choose **image field**.
+6. Are there 1-3 supplied isolated objects intended for labels or comparison?
+   - Yes: choose **specimen annotation**.
+7. Is the user's phrase itself the main visual subject?
+   - Yes: choose **type-led declaration**.
+8. Is the content reflective, dated, or essay-like with a primary photograph and readable text?
    - Yes: choose **editorial journal**.
-8. Otherwise choose **editorial cover**.
+9. Otherwise choose **editorial cover**.
 
 ### Layout Families
 
@@ -167,8 +202,6 @@ Choose the layout from the content, not at random:
 - **Object field:** one recognizable object repeated at varied scale, crop, or angle to form a printed rhythm; keep one open zone for title and facts.
 - **Overprint collage:** two ink plates carry separate object, image, geometric, or typographic layers and cross in selected zones; use overlap deliberately, not everywhere.
 - **Editorial journal:** one primary screened photograph, a strong title or date, and 2-3 disciplined text columns with enough size and contrast for real reading.
-
-Do not use the same family for consecutive outputs when prior outputs are visible.
 
 ## Prompt Compiler
 

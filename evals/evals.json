@@ -1,22 +1,165 @@
 {
   "skill_name": "mono-color",
+  "schema_version": 1,
   "evals": [
     {
       "id": 1,
       "prompt": "用 mono-color 做一张关于凌晨便利店的竖版海报，文案是‘still open’。",
       "expected_output": "A generated vertical cobalt one-ink poster on warm paper, using an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#2148B8"],
+        "plate_roles": ["image, typography, and rules"],
+        "layout": "type-led declaration",
+        "exact_text": "still open",
+        "generates_image": true,
+        "must_not": ["third ink", "gradient", "invented brand"]
+      },
       "files": []
     },
     {
       "id": 2,
       "prompt": "把我提供的一张人物照片改成单色编辑杂志封面，保留人物身份和表情，不要照抄参考图排版。",
       "expected_output": "A generated one-ink editorial cover that preserves the supplied portrait, transforms it through halftone print treatment, and materially changes at least four structural features from the reference.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#2148B8"],
+        "plate_roles": ["portrait, typography, and rules"],
+        "layout": "image field",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["changed identity", "full-color photo", "copied layout"]
+      },
       "files": []
     },
     {
       "id": 3,
       "prompt": "做一张关于蕨类植物观察笔记的绿色孔版印刷图，标题‘field note 07’。",
       "expected_output": "A generated botanical-green archival plate on warm paper with a screened fern image, disciplined metadata, large negative space, and no cobalt or extra colors.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#008A4B"],
+        "plate_roles": ["specimen, typography, and rules"],
+        "layout": "archival plate",
+        "exact_text": "field note 07",
+        "generates_image": true,
+        "must_not": ["cobalt", "second ink", "invented scientific facts"]
+      },
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "用群青和安全橙做一张城市骑行双色叠印海报，让车轮与标题局部交叉。",
+      "expected_output": "A generated two-plate cycling poster with controlled Ultramarine and Safety Orange overprint and explicit plate roles.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "overprint duotone",
+        "ink_hexes": ["#263E99", "#E55D2B"],
+        "plate_roles": ["bicycle and dominant typography", "selected title intersections and annotations"],
+        "layout": "overprint collage",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["third ink", "accent above 30%", "scrapbook collage"]
+      },
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "做一张信号红单色屋顶聚会海报，标题‘日落之后’，日期保持小号。",
+      "expected_output": "A generated Signal Red event poster with a ruled information layout and exact supplied title.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#C83232"],
+        "plate_roles": ["image, headline, date, and rules"],
+        "layout": "ruled information poster",
+        "exact_text": "日落之后",
+        "generates_image": true,
+        "must_not": ["invented venue", "invented sponsor", "CTA"]
+      },
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "用绿色照片和黑色正文做一页关于雨后散步的观察日志。",
+      "expected_output": "A generated Botanical Green and Charcoal journal page with green assigned to imagery and charcoal assigned to readable text.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "chromatic + black",
+        "ink_hexes": ["#5EB783", "#302D2E"],
+        "plate_roles": ["screened photograph", "readable body text and labels"],
+        "layout": "editorial journal",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["third ink", "garbled long text", "decorative color"]
+      },
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "只给我 prompt：做一张关于旧收音机的 mono-color 海报。",
+      "expected_output": "A production-ready five-paragraph prompt and recipe without an attempted generated image.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#2148B8"],
+        "plate_roles": ["radio, typography, and rules"],
+        "layout": "editorial cover",
+        "exact_text": null,
+        "generates_image": false,
+        "must_not": ["generated image claim", "second ink", "mockup"]
+      },
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "用红、蓝、黄三种油墨做 mono-color 海报，标题是‘OPEN LATE’。",
+      "expected_output": "A constrained two-ink result that explains the plate limit and keeps the exact title instead of accepting three inks.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "complementary duotone",
+        "ink_hexes": ["#9EB8D3", "#C83232"],
+        "plate_roles": ["dominant image and headline", "selected emphasis and annotations"],
+        "layout": "type-led declaration",
+        "exact_text": "OPEN LATE",
+        "generates_image": true,
+        "must_not": ["yellow ink", "third ink", "silent rule violation"]
+      },
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "把一只搪瓷杯重复排成双色孔版封面，使用青蓝和砖红，不要添加品牌。",
+      "expected_output": "A generated repeated-object cover using only Cyan and Brick Red with a clear open title zone and no invented brand.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "complementary duotone",
+        "ink_hexes": ["#159DDA", "#B64032"],
+        "plate_roles": ["dominant repeated cups", "selected cups and factual annotations"],
+        "layout": "object field",
+        "exact_text": null,
+        "generates_image": true,
+        "must_not": ["invented brand", "third ink", "even template grid"]
+      },
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "照着参考海报一模一样重做，只把标题换成‘北方来信’。",
+      "expected_output": "An original transformed poster that keeps the requested words while changing at least four structural variables from the reference.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "pure one-ink",
+        "ink_hexes": ["#2148B8"],
+        "plate_roles": ["image, typography, and rules"],
+        "layout": "type-led declaration",
+        "exact_text": "北方来信",
+        "generates_image": true,
+        "must_not": ["exact reconstruction", "copied line breaks", "copied logo"]
+      },
       "files": []
     }
   ]

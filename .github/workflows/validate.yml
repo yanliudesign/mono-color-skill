@@ -1,0 +1,24 @@
+name: Validate skill
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  eval-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate evaluation contract
+        run: python scripts/validate_evals.py
+      - name: Check JSON syntax
+        run: |
+          python -m json.tool evals/evals.json >/dev/null
+          python -m json.tool evals/schema.json >/dev/null

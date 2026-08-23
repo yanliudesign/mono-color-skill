@@ -6,9 +6,10 @@
 
 **为海报、Zine、肖像、包装与视觉观察笔记而生的单色 / 受控双色编辑图像 Skill。**
 
-[![Version](https://img.shields.io/badge/VERSION-1.1.0-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
+[![Version](https://img.shields.io/badge/VERSION-1.2.0-2ea44f?style=flat-square&labelColor=333)](./CHANGELOG.md)
 [![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/mono-color-skill?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/mono-color-skill/stargazers)
+[![Validate skill](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
 [![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./SKILL.md)
@@ -192,16 +193,33 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 如果当前环境不能生成图像，skill 会明确说明限制，并提供可直接使用的生产级 Prompt。
 
+## 稳定性与验证
+
+生成 Prompt 前，skill 会先把每次请求解析成固定的 recipe manifest。用户未指定时，统一采用 `3:4` 比例、暖象牙纸、35% 留白、粗网点，以及确定性的配色和版式选择规则。用户的明确要求仍然优先，但不能突破双色上限与原创性规则。
+
+评测契约覆盖默认输入、人物照片、植物主题、双色叠印、活动信息、长文本、仅输出 Prompt、颜色冲突、重复物件和照抄参考图等情况。本地运行：
+
+```bash
+python3 scripts/validate_evals.py
+```
+
+每次 pull request 和推送到 `main` 时，GitHub Actions 都会运行同一套检查。
+
 ## 仓库结构
 
 ```text
 mono-color-skill/
+├── .github/workflows/ # 持续验证
 ├── examples/         # README 中展示的视觉参考
+├── scripts/          # 评测契约校验脚本
+├── swatches/         # 单色与双色色板
 ├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
 ├── README.md         # 英文说明
 ├── README.zh.md      # 中文说明
+├── CHANGELOG.md      # 版本记录
 └── evals/
-    └── evals.json    # 典型触发语与预期输出
+  ├── evals.json    # 典型触发语与确定性断言
+  └── schema.json   # 评测契约 Schema
 ```
 
 ## 原创性
