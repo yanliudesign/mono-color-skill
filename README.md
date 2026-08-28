@@ -16,7 +16,7 @@
 
 </div>
 
-Turn a theme, sentence, object, or supplied photograph into an original editorial print. The skill defaults to one ink and opens a controlled two-ink branch when the content needs information separation, object contrast, or overprint tension. Warm paper, screened imagery, active negative space, and sharp typographic contrast keep both modes inside one recognizable visual system.
+Turn a theme, sentence, object, or supplied photograph into an original editorial print. The skill defaults to controlled two-ink with one dominant plate and one narrowly assigned accent plate. Explicit one-ink or monochrome requests remain pure one-ink. Warm paper, screened imagery, active negative space, and sharp typographic contrast keep both modes inside one recognizable visual system.
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
 
@@ -39,7 +39,7 @@ This reference set defines the visual territory, not compositions to reproduce. 
 | System | Direction |
 |---|---|
 | **Input** | A theme, phrase, object, article idea, or supplied photograph |
-| **Palette** | Warm uncoated paper + one ink by default, or one of nine controlled two-ink recipes |
+| **Palette** | Warm uncoated paper + a controlled two-ink recipe by default; explicit one-ink requests stay one-ink |
 | **Modes** | Pure one-ink, chromatic + black, complementary duotone, or overprint duotone |
 | **Image** | Halftone, risograph grain, cyanotype exposure, or photocopy breakup |
 | **Space** | 25%–55% visible empty paper on an asymmetric editorial grid |
@@ -62,7 +62,7 @@ All of these formats can use a single ink to reduce production costs while retai
 ```text
 1  Read the input       →  identify subject, intent, words, and image role
 2  Choose the layout    →  image, specimen, declaration, object field, overprint, journal, or cover
-3  Assign the plates    →  default to one ink; give each plate a clear role when using two
+3  Assign the plates    →  default to two assigned roles; switch to one plate when explicitly requested
 4  Compose the page     →  preserve 25%–55% silence and add one deliberate disruption
 5  Generate and inspect →  check ink count, identity, hierarchy, texture, and originality
 ```
@@ -100,7 +100,7 @@ In two-ink work, the dominant plate normally carries 70%–85% of the printed ar
 
 ## Visual rules
 
-1. **No more than two printing inks.** One ink is the default; two inks require distinct plate roles and a subject-driven reason.
+1. **No more than two printing inks.** Controlled two-ink is the default: 70%–85% dominant plate and 15%–30% accent plate, each with a distinct role. Explicit one-ink requests use one plate.
 2. **Paper stays visible.** The result is a printed page, not a digitally tinted monochrome wash.
 3. **Mechanical reproduction leads.** Photographs become dots, grain, clipped highlights, ink pooling, and mild registration drift between plates.
 4. **Silence has structure.** Empty paper occupies 25%–55% of the canvas and controls pacing.
@@ -210,7 +210,9 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, warm ivory paper, 35% empty paper, coarse halftone, and deterministic palette and layout rules. Supplied photos default to faithful reproduction; requests for abstract, artistic, loose, experimental, or less realistic treatment switch to deterministic symbol extraction that preserves 2-4 identity anchors. Explicit user choices still take precedence within the two-ink and originality limits.
 
-The `design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
+The `design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, visual rhythm, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
+
+`design-system/rhythm.json` defines relaxation as uneven energy rather than uniformly reduced intensity. Each page selects one audacious focal event—oversized type, an extreme crop, one giant detail, a concentrated overprint, or an abnormal scale relationship—then releases the rest through paper, pale screening, and sparse functional type. Without a supplied photograph, people become 2-4 identifying anchors and partial crops instead of complete stock figures or a safe headline-left/photo-right split. Empty paper and unresolved edges now respond to the focal event instead of fixed quotas.
 
 Controlled chance stays in the reproduction layer: each recipe deterministically selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
 
@@ -247,7 +249,7 @@ GitHub Actions runs the same contract on every pull request and push to `main`.
 ```text
 mono-color-skill/
 ├── .github/workflows/ # Continuous validation
-├── design-system/    # Machine-readable visual tokens and patterns
+├── design-system/    # Machine-readable color, composition, rhythm, and print patterns
 ├── examples/         # Visual references shown in the READMEs
 ├── scripts/          # Evaluation and design-system validators
 ├── swatches/         # One-ink and two-ink palette previews
