@@ -6,6 +6,13 @@
     "role": "substrate",
     "counts_as_ink": false
   },
+  "defaults": {
+    "palette_id": "palette_cobalt_terracotta",
+    "mode": "controlled two-ink",
+    "dominant_percent": [70, 85],
+    "accent_percent": [15, 30],
+    "one_ink_when": ["explicit one-ink request", "explicit monochrome request", "one named ink without a second color"]
+  },
   "inks": [
     {"id": "ink_cobalt", "name": "Cobalt", "hex": "#2148B8", "moods": ["knowledge", "city", "music", "culture"]},
     {"id": "ink_royal_blue", "name": "Royal Blue", "hex": "#2058D4", "moods": ["youth", "fashion", "movement"]},
