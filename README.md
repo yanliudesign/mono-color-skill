@@ -220,11 +220,21 @@ Controlled chance stays in the reproduction layer: each recipe deterministically
 
 The twelve-source evidence map in `design-system/reference-analysis.json` also compiles into four focused 1800×2400 boards:
 
-| Typography | Color |
-| --- | --- |
-| ![Typography system](./examples/visual-system-typography.png) | ![Color system](./examples/visual-system-color.png) |
-| **Layout** | **Style** |
-| ![Layout system](./examples/visual-system-layout.png) | ![Style system](./examples/visual-system-style.png) |
+### Typography
+
+![Typography system](./examples/visual-system-typography.png)
+
+### Color
+
+![Color system](./examples/visual-system-color.png)
+
+### Layout
+
+![Layout system](./examples/visual-system-layout.png)
+
+### Style
+
+![Style system](./examples/visual-system-style.png)
 
 Regenerate the complete board or the four reference-derived boards after editing a catalog:
 
