@@ -64,8 +64,18 @@ for case in evals:
         "generates_image",
         "must_not",
     }
-    if set(assertions) != required:
-        fail(f"{label} assertions must contain exactly {sorted(required)}")
+    optional = {
+        "visual_tension",
+        "empty_paper_percent",
+        "unresolved_edge_count",
+        "focal_event_count",
+        "release_zone_required",
+        "focal_event",
+    }
+    missing = required - set(assertions)
+    unknown = set(assertions) - required - optional
+    if missing or unknown:
+        fail(f"{label} assertions have missing {sorted(missing)} or unknown {sorted(unknown)} fields")
     if not RATIO.fullmatch(assertions["ratio"]):
         fail(f"{label} has an invalid ratio")
     if assertions["mode"] not in ALLOWED_MODES:
@@ -84,5 +94,17 @@ for case in evals:
         fail(f"{label} ink count does not match its mode")
     if not assertions["must_not"]:
         fail(f"{label} needs at least one negative assertion")
+    if "visual_tension" in assertions and assertions["visual_tension"] not in {"relaxed", "balanced", "assertive"}:
+        fail(f"{label} has an unknown visual tension")
+    if "empty_paper_percent" in assertions and not 25 <= assertions["empty_paper_percent"] <= 55:
+        fail(f"{label} has an invalid empty-paper percentage")
+    if "unresolved_edge_count" in assertions and assertions["unresolved_edge_count"] not in {0, 1}:
+        fail(f"{label} has an invalid unresolved-edge count")
+    if "focal_event_count" in assertions and assertions["focal_event_count"] != 1:
+        fail(f"{label} must select exactly one focal event")
+    if "release_zone_required" in assertions and assertions["release_zone_required"] is not True:
+        fail(f"{label} must require one release zone")
+    if "focal_event" in assertions and len(assertions["focal_event"].strip()) < 3:
+        fail(f"{label} has an invalid focal event")
 
 print(f"Validated {len(evals)} mono-color evaluation cases.")
