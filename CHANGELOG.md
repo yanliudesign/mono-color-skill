@@ -6,6 +6,15 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 
+- Controlled two-ink is now the default: one dominant plate carries 70%-85% and one assigned accent plate carries 15%-30%; explicit one-ink requests remain pure one-ink.
+- Replaced rigid relaxed-mode budgets with an uneven-energy system: one audacious focal event plus one broad release zone.
+- Removed fixed relaxed headline-size, empty-paper, high-energy-device, and unresolved-edge requirements.
+- Theme-only people now resolve into 2-4 identifying fragments and reject the safe headline-left/complete-photo-right split.
+- Updated summer movement regressions to require a thumbnail-readable focal event instead of uniformly restrained styling.
+- Added deterministic relaxed, balanced, and assertive visual-tension profiles with explicit focal-event, release-zone, and subject-behavior rules.
+- Theme-only people now default to ordinary in-between gestures and partial editorial crops instead of polished advertising hero poses.
+- Added one deterministic unresolved-edge behavior per recipe so relaxed compositions can remain intentionally open without becoming random or illegible.
+- Added `design-system/rhythm.json`, validation coverage, and relaxed movement regression assertions.
 - Added an abstract-looseness path for supplied photos: requests for less realism now extract 2-4 identity anchors into deterministic masses, contours, rhythms, paper cutouts, and bounded print imperfections instead of applying a photographic duotone filter.
 - Added deterministic controlled chance: each recipe selects 2-3 bounded print imperfections with a stable seed while preserving composition and readability.
 - Added a machine-readable imperfection catalog and a relaxed-print poster example with dry-edge breakup, halftone drift, a pale second impression, and one broken gesture.
