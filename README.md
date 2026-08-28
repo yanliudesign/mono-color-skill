@@ -216,8 +216,6 @@ The `design-system/` catalogs make the visual grammar reusable and inspectable. 
 
 Controlled chance stays in the reproduction layer: each recipe deterministically selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
 
-![Controlled-chance mono-color poster](./examples/vibe-coding-5-minutes-relaxed.png)
-
 ![Mono-color visual system reference board](./examples/mono-color-design-system-board.png)
 
 The twelve-source evidence map in `design-system/reference-analysis.json` also compiles into four focused 1800×2400 boards:
