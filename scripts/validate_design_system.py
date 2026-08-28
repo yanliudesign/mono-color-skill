@@ -15,6 +15,7 @@ EXPECTED_FILES = {
     "compositions.json",
     "carriers.json",
     "imperfections.json",
+    "rhythm.json",
     "reference-analysis.json",
 }
 
@@ -53,6 +54,7 @@ typography = load("typography.json")
 compositions = load("compositions.json")
 carriers = load("carriers.json")
 imperfections = load("imperfections.json")
+rhythm = load("rhythm.json")
 reference_analysis = load("reference-analysis.json")
 
 paper = colors.get("paper", {})
@@ -65,7 +67,14 @@ if any(not HEX_COLOR.fullmatch(ink.get("hex", "")) for ink in inks):
     fail("every ink must use an uppercase hex color")
 
 palettes = colors.get("palettes", [])
-require_unique(palettes, "palette")
+palette_ids = require_unique(palettes, "palette")
+defaults = colors.get("defaults", {})
+if defaults.get("palette_id") not in palette_ids:
+    fail("color defaults must reference a known palette")
+if defaults.get("mode") != "controlled two-ink":
+    fail("color defaults must select controlled two-ink mode")
+if defaults.get("dominant_percent") != [70, 85] or defaults.get("accent_percent") != [15, 30]:
+    fail("color defaults must preserve the 70-85 / 15-30 plate ratio")
 for palette in palettes:
     palette_inks = palette.get("ink_ids", [])
     if not 1 <= len(palette_inks) <= 2:
@@ -123,6 +132,29 @@ for imperfection in imperfection_items:
 if len(imperfections.get("guardrails", [])) < 5:
     fail("imperfections need readability and structural guardrails")
 
+profiles = rhythm.get("profiles", [])
+profile_ids = require_unique(profiles, "rhythm profile")
+if rhythm.get("default_profile") not in profile_ids:
+    fail("rhythm default_profile must reference a known profile")
+if len(rhythm.get("focal_events", [])) < 5 or len(rhythm.get("release_devices", [])) < 5:
+    fail("rhythm needs meaningful focal-event and release-device catalogs")
+if len(rhythm.get("optional_unresolved_edges", [])) < 4:
+    fail("rhythm needs at least four optional unresolved-edge behaviors")
+for profile in profiles:
+    paper_range = profile.get("empty_paper_percent", [])
+    if len(paper_range) != 2 or not 0 < paper_range[0] <= paper_range[1] <= 100:
+        fail(f"{profile['id']} has an invalid empty-paper range")
+    if profile.get("focal_event_count") != 1 or profile.get("release_zone_count") != 1:
+        fail(f"{profile['id']} must select one focal event and one release zone")
+    if profile.get("unresolved_edge") != "optional":
+        fail(f"{profile['id']} must keep unresolved edges optional")
+    if not profile.get("default_for") or not profile.get("subject_behavior") or not profile.get("energy_distribution"):
+        fail(f"{profile['id']} needs routing, energy-distribution, and subject-behavior rules")
+if len(rhythm.get("failure_signals", [])) < 5:
+    fail("rhythm needs at least five observable failure signals")
+if len(rhythm.get("guardrails", [])) < 5:
+    fail("rhythm needs at least five guardrails")
+
 references = reference_analysis.get("references", [])
 reference_ids = require_unique(references, "reference")
 if len(references) != 12 or reference_ids != {f"ref_{index:02d}" for index in range(1, 13)}:
@@ -139,5 +171,6 @@ print(
     "Validated mono-color design system: "
     f"{len(inks)} inks, {len(palettes)} palettes, {len(roles)} type roles, "
     f"{len(layouts)} compositions, {len(carrier_items)} carriers, "
-    f"{len(imperfection_items)} imperfections, {len(references)} references."
+    f"{len(imperfection_items)} imperfections, {len(profiles)} rhythm profiles, "
+    f"{len(references)} references."
 )
