@@ -203,8 +203,6 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 “可控偶然”只发生在印刷表现层：每份配方通过固定 seed 选择 2–3 种有边界的效果，例如油墨浓淡、干墨破边、网点漂移、套印偏移或一处断开的手工笔触。相同输入会复现同样的偏差，同时不移动核心构图、不损伤文字可读性。
 
-![可控偶然 mono-color 海报](./examples/vibe-coding-5-minutes-relaxed.png)
-
 ![Mono-color 视觉系统参考总表](./examples/mono-color-design-system-board.png)
 
 `design-system/reference-analysis.json` 记录了 12 张参考图的证据映射，并可编译为四张 1800×2400 专项总表：
