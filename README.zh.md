@@ -207,11 +207,21 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 `design-system/reference-analysis.json` 记录了 12 张参考图的证据映射，并可编译为四张 1800×2400 专项总表：
 
-| 字体 | 颜色 |
-| --- | --- |
-| ![字体视觉系统](./examples/visual-system-typography.png) | ![颜色视觉系统](./examples/visual-system-color.png) |
-| **排版** | **风格** |
-| ![排版视觉系统](./examples/visual-system-layout.png) | ![风格视觉系统](./examples/visual-system-style.png) |
+### 字体
+
+![字体视觉系统](./examples/visual-system-typography.png)
+
+### 颜色
+
+![颜色视觉系统](./examples/visual-system-color.png)
+
+### 排版
+
+![排版视觉系统](./examples/visual-system-layout.png)
+
+### 风格
+
+![风格视觉系统](./examples/visual-system-style.png)
 
 修改 catalog 后，可以重新导出综合总表或四张专项总表：
 
