@@ -39,7 +39,7 @@ When the user supplies an image, preserve its identity and core factual content.
 
 Before writing the generation prompt, resolve the input into this manifest. Do not skip fields and do not expose the manifest unless the user asks for process details.
 
-Use the machine-readable catalogs in `design-system/` as the source of truth for palette IDs, typography roles, composition geometry, carrier signals, and controlled print imperfections. Read only the relevant catalog for the current decision. The prose below explains intent; when an exact value differs, the catalog wins.
+Use the machine-readable catalogs in `design-system/` as the source of truth for palette IDs, typography roles, composition geometry, carrier signals, visual rhythm, and controlled print imperfections. Read only the relevant catalog for the current decision. The prose below explains intent; when an exact value differs, the catalog wins.
 
 ```yaml
 subject: <one recognizable subject>
@@ -55,6 +55,10 @@ inks: <the palette's named ink or approved pair with exact hex values>
 plate_roles: <one explicit role per ink plate>
 layout: <one composition ID from design-system/compositions.json>
 empty_paper: <explicit percentage>
+visual_tension: <relaxed, balanced, or assertive from design-system/rhythm.json>
+focal_event: <one strong visual event from design-system/rhythm.json>
+release_zone: <one deliberately quiet region that gives the focal event room>
+unresolved_edge: <one optional edge behavior from design-system/rhythm.json or none>
 image_treatment: <one mechanical reproduction process>
 type_hierarchy: <one role ID from design-system/typography.json>
 disruption: <one deliberate disruption>
@@ -68,8 +72,12 @@ Use these defaults whenever the user has not made the choice:
 - representation: `faithful reproduction`, unless the user asks for abstract, artistic, loose, experimental, less realistic, or less photographic treatment;
 - text language: English for all invented display text, labels, and microcopy;
 - paper: warm ivory `#F5F1E8`;
-- mode and ink: pure one-ink cobalt `#2148B8`, unless the subject maps directly to another named one-ink palette below;
+- mode and ink: controlled two-ink by default. Use Cobalt + Terracotta `#2148B8` + `#C65F38` for an unspecified subject, then select the closest approved pair for the subject. The dominant plate carries 70%-85% and the accent plate carries 15%-30%. Switch to pure one-ink only when the user explicitly requests one ink, monochrome, or one named ink without a second color;
 - empty paper: `35%`;
+- visual tension: `relaxed` for reflective, travel, summer, leisure, lifestyle, and unspecified cultural subjects; `balanced` for ordinary events and editorial information; `assertive` only when the user requests a forceful declaration or the phrase itself is the subject;
+- focal event: choose exactly one strong visual event and make all other devices support or release it;
+- release zone: reserve one large quiet region with low information density; its size follows the composition rather than a universal percentage;
+- unresolved edge: use one only when it strengthens the focal event or release zone; otherwise use none;
 - image treatment: coarse halftone;
 - type hierarchy: Poetic for reflective language, Civic for events, Archival for specimens, and Typographic when the supplied phrase is the subject;
 - disruption: one off-center image crop; use one oversized word instead when there is no image.
@@ -83,10 +91,10 @@ Resolve generic color words consistently: blue to Cobalt, green to Botanical Gre
 
 ### 1. Color System
 
-Default to one ink. Use two inks only when the content needs information separation, object contrast, or visible overprint tension. The paper substrate does not count as an ink.
+Default to controlled two-ink. Give the dominant and accent plates separate content roles before composing; never use the second ink merely to decorate the page. Switch to pure one-ink when the user explicitly requests one ink, monochrome, or one named ink without a second color. The paper substrate does not count as an ink.
 
 - **Paper:** ivory, bone, or slightly gray recycled stock; target feeling `#F2F0E8` to `#FAF7ED`.
-- **Plate limit:** use one printing plate by default and never more than two ink plates.
+- **Plate limit:** use two assigned printing plates by default and never more than two ink plates; explicit one-ink requests use one plate.
 - **Ink density:** darker coverage may appear near-black and sparse halftones may appear pale. These are density changes, not extra inks.
 - **Paper exposure:** keep the paper visible. Never tint the whole page into a digital monochrome wash.
 
@@ -117,9 +125,9 @@ Use a known pair rather than improvising arbitrary colors:
 
 #### Print Modes
 
-1. **Pure one-ink:** one ink carries image, typography, and rules through density changes. This remains the default.
-2. **Chromatic ink + black:** the chromatic plate carries the photograph or dominant graphic; carbon or charcoal carries long text and precision labels.
-3. **Complementary duotone:** one dominant ink occupies 70%-85% of the printed area; the accent ink occupies 15%-30% and has a specific role such as dates, annotations, or selected objects.
+1. **Pure one-ink:** one ink carries image, typography, and rules through density changes. Use this when the user explicitly requests one ink, monochrome, or one named ink without a second color.
+2. **Chromatic ink + black:** the chromatic plate carries the photograph or dominant graphic; carbon or charcoal carries long text and precision labels. This is the default branch for quiet, observational, natural, architectural, and long-form subjects.
+3. **Complementary duotone:** one dominant ink occupies 70%-85% of the printed area; the accent ink occupies 15%-30% and has a specific role such as dates, annotations, or selected objects. This is the general default, with Cobalt + Terracotta as the fallback pair.
 4. **Overprint duotone:** two plates may overlap. The darker mixed appearance in overlap zones is a physical consequence of two inks and does not count as a third ink.
 
 Assign each plate a role before composing. Never scatter two colors as arbitrary decoration. These constraints keep the result mechanically printed rather than digitally color-graded.
@@ -135,6 +143,19 @@ Assign each plate a role before composing. Never scatter two colors as arbitrary
 - Never center every element. Never distribute objects evenly like a template.
 
 Negative space is active pacing, not leftover room.
+
+#### Visual Tension and Uneven Energy
+
+Read `design-system/rhythm.json` whenever the user asks for relaxed, loose, effortless, casual, quiet, breezy, or understated work, or when the default intent maps to `relaxed`. Treat relaxation as a compositional decision, not a soft-focus mood.
+
+Relaxation is uneven energy, not low energy. For `relaxed` work, choose exactly one strong focal event: oversized type, an extreme crop, one giant object or detail, a concentrated overprint collision, or one abnormal scale relationship. Let it feel decisive. Then release the rest of the page with open paper, pale screening, sparse support type, or one quiet alignment. Do not make every element tasteful, small, or equally calm.
+
+- Keep 25%-55% visibly empty paper, choosing the amount from the focal event rather than a fixed relaxed quota.
+- Allow display type to become large when it is the focal event; when the image or object is the focal event, type must support rather than compete.
+- Use one dominant collision or scale event. Secondary elements may be energetic only when they extend that same event rather than start a second one.
+- Avoid the safe split of headline on one side and a complete photograph on the other. The focal event must cross, crop, interrupt, or materially reorganize the page.
+- An unresolved edge is optional. Use an image fade, inferable cropped word, broken alignment, or open contour only when it strengthens the focal event; never add one as a decorative compliance mark.
+- At thumbnail size, the focal event must be immediately identifiable and the release zone must remain visibly quieter.
 
 ### Reference-Derived Composition Grammar
 
@@ -156,6 +177,8 @@ Convert all photographs and illustrations into the selected ink plate or plates 
 - clipped highlights where paper shows through and dense shadows where ink pools;
 - mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift between plates;
 - medium contrast; avoid glossy photographic depth.
+
+When no source image is supplied, do not default to a polished photorealistic hero person or a complete stock-photo figure. Prefer 2-4 identifying anchors such as a hand on a handlebar, one bent leg, a wheel arc, loose fabric, or hair direction. Build the subject from a partial editorial crop, simplified screened fragment, and one ordinary in-between gesture. For movement subjects, the object or cropped body relationship may carry the focal event while the person remains incomplete. Avoid advertising poses, victory gestures, athletic hero angles, catalog-style full bodies, and the safe headline-left/photo-right split unless the user asks for them.
 
 #### Abstract Looseness
 
@@ -203,6 +226,8 @@ Rules:
 - Default all invented words to natural English, even when the user's request is written in another language. Preserve user-supplied wording exactly and do not translate it unless asked.
 - Use exact readable wording only when the user supplies it or it carries the concept. Otherwise use plausible microtype as texture and do not invent organizations, URLs, sponsors, or event facts.
 - No gradient type, outline effects, drop shadows, inflated 3D letters, or generic luxury-fashion spacing.
+- Oversized type is valid when selected as the one focal event. Otherwise keep it subordinate to the selected image, object, crop, or overprint event.
+- In `relaxed` work, create a clear strength difference: one typographic move may be audacious while all supporting type becomes sparse and functional.
 
 ### 5. Communication Tone
 
@@ -259,7 +284,7 @@ Choose the layout from the content, not at random. Walk this list from top to bo
 Write the final prompt in five compact paragraphs, in this order:
 
 1. **Canvas and ink:** ratio, warm paper, exact one- or two-ink palette, print mode, plate roles, and flat scanned page.
-2. **Original composition:** chosen layout family, margins, empty-space percentage, grid, dominant object scale and edge crop, and one manual gesture.
+2. **Original composition:** chosen layout family, visual-tension profile, one focal event, one release zone, margins, empty-space percentage, grid, dominant object scale and edge crop, optional unresolved edge, and one manual gesture.
 3. **Subject:** what appears; for faithful reproduction, describe preservation, crop, size, halftone treatment, and paper exposure; for abstract symbol extraction, name the 2-4 identity anchors, dominant mass, structural contour, repeated rhythm, omitted detail, and where exposed paper cuts through the scene.
 4. **Typography and words:** hierarchy, type voices, exact short display text, and the explicit overlap, crossing, split, or tight alignment between headline and dominant object; include a ruled data strip only when needed.
 5. **Material and avoids:** dots, fibers, bleed, misregistration, plus the hard negative constraints and any topic-specific cliches to exclude.
@@ -311,6 +336,9 @@ Always exclude:
    - typography lacks a clear 5x or greater scale jump;
    - long text is garbled or invented branding appears;
    - the composition closely follows a supplied reference.
+   - a relaxed result has no immediately identifiable focal event or distributes equal emphasis across the whole page;
+   - a theme-only person becomes a complete stock-photo figure or the page falls into a safe headline-left/photo-right split;
+   - the release zone is filled with decorative microcopy, gestures, or secondary focal points.
 4. If exact text renders incorrectly after one retry, generate a text-light base image and state that typography should be overlaid in a layout tool. Do not pretend distorted text is correct.
 
 ## Output Format
@@ -347,6 +375,11 @@ Always exclude:
 - Does exposed paper form a visible shape inside the image through highlights, gaps, fade-outs, or knockouts?
 - Is there exactly one manual gesture family rather than several decorative doodle styles?
 - Does the type hierarchy use a 5x-12x scale jump and no more than three type voices?
+- Does the page have exactly one immediately identifiable focal event?
+- Is there one visibly quieter release zone rather than evenly distributed emptiness?
+- For relaxed work, is energy concentrated in the focal event rather than reduced everywhere?
+- If no source image was supplied, does the figure feel observed in an ordinary in-between moment rather than posed as an advertisement?
+- If type is page-filling, is it the selected focal event while the remaining devices retreat?
 - Is the language terse, specific, and non-commercial?
 - Is the user's supplied subject preserved?
 - Are at least four structural features different from every supplied reference?
