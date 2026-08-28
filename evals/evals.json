@@ -5,12 +5,12 @@
     {
       "id": 1,
       "prompt": "用 mono-color 做一张关于凌晨便利店的竖版海报，文案是‘still open’。",
-      "expected_output": "A generated vertical cobalt one-ink poster on warm paper, using an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
+      "expected_output": "A generated vertical Cobalt and Terracotta controlled two-ink poster on warm paper, using distinct plate roles, an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
       "assertions": {
         "ratio": "3:4",
-        "mode": "pure one-ink",
-        "ink_hexes": ["#2148B8"],
-        "plate_roles": ["image, typography, and rules"],
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["dominant image and typography", "one accent event"],
         "layout": "type-led declaration",
         "exact_text": "still open",
         "generates_image": true,
@@ -104,13 +104,13 @@
       "expected_output": "A production-ready five-paragraph prompt and recipe without an attempted generated image.",
       "assertions": {
         "ratio": "3:4",
-        "mode": "pure one-ink",
-        "ink_hexes": ["#2148B8"],
-        "plate_roles": ["radio, typography, and rules"],
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["dominant radio and typography", "one accent annotation"],
         "layout": "editorial cover",
         "exact_text": null,
         "generates_image": false,
-        "must_not": ["generated image claim", "second ink", "mockup"]
+        "must_not": ["generated image claim", "third ink", "mockup"]
       },
       "files": []
     },
@@ -152,9 +152,9 @@
       "expected_output": "An original transformed poster that keeps the requested words while changing at least four structural variables from the reference.",
       "assertions": {
         "ratio": "3:4",
-        "mode": "pure one-ink",
-        "ink_hexes": ["#2148B8"],
-        "plate_roles": ["image, typography, and rules"],
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["dominant transformed image and typography", "one accent event"],
         "layout": "type-led declaration",
         "exact_text": "北方来信",
         "generates_image": true,
@@ -181,16 +181,22 @@
     {
       "id": 12,
       "prompt": "做一张夏日骑行的海报，浪漫自由一点。",
-      "expected_output": "A warm-paper summer cycling poster with one dominant cropped rider, a fresh 2-8 word English headline, and a romantic sense of freedom expressed through movement, open direction, and spatial rhythm rather than decorative cliches.",
+      "expected_output": "A warm-paper Cobalt and Terracotta summer cycling poster built around one giant cropped wheel as the focal event, with only fragmentary human anchors, a fresh English headline crossing the wheel, and a broad quiet release zone.",
       "assertions": {
         "ratio": "3:4",
-        "mode": "pure one-ink",
-        "ink_hexes": ["#C65F38"],
-        "plate_roles": ["dominant cyclist, English typography, and one manual gesture"],
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["giant wheel, bicycle structure, and dominant headline", "cropped human anchors and one concentrated title intersection"],
         "layout": "editorial cover",
         "exact_text": null,
         "generates_image": true,
-        "must_not": ["Chinese invented copy", "motivational slogan", "decorative summer props", "detached safe-zone headline"]
+        "visual_tension": "relaxed",
+        "empty_paper_percent": 40,
+        "focal_event_count": 1,
+        "release_zone_required": true,
+        "focal_event": "one giant wheel crossed by the headline",
+        "unresolved_edge_count": 0,
+        "must_not": ["Chinese invented copy", "motivational slogan", "decorative summer props", "detached safe-zone headline", "complete stock-photo cyclist", "safe headline-left photo-right split", "equal emphasis", "decorative microcopy"]
       },
       "files": []
     },
@@ -207,6 +213,28 @@
         "exact_text": null,
         "generates_image": true,
         "must_not": ["full photographic scene", "generic boat symbol", "evenly scattered accent ink", "random anchor movement", "third ink"]
+      },
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "做一张没有参考照片的夏日滑板海报，要像随手观察到的瞬间，松弛、有设计感，但不要像运动品牌广告。",
+      "expected_output": "A relaxed warm-paper editorial cover with one strong cropped skateboard or body-detail event, fragmentary human anchors, and a broad release zone rather than uniformly restrained typography and imagery.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "overprint duotone",
+        "ink_hexes": ["#263E99", "#E55D2B"],
+        "plate_roles": ["dominant skateboard structure and headline", "cropped human anchors and one concentrated collision"],
+        "layout": "editorial cover",
+        "exact_text": null,
+        "generates_image": true,
+        "visual_tension": "relaxed",
+        "empty_paper_percent": 38,
+        "focal_event_count": 1,
+        "release_zone_required": true,
+        "focal_event": "one extreme skateboard or body-detail crop",
+        "unresolved_edge_count": 0,
+        "must_not": ["photorealistic advertising hero", "complete stock-photo person", "safe headline-left photo-right split", "equal emphasis", "decorative microcopy", "no thumbnail focal event"]
       },
       "files": []
     }
