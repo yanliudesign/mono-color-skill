@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "paper": {
-    "id": "paper_warm_ivory",
-    "hex": "#F5F1E8",
-    "role": "substrate",
-    "counts_as_ink": false
-  },
+  "substrates": [
+    {"id": "substrate_neutral_white", "name": "Neutral White", "hex": "#FAFAF7", "role": "substrate", "counts_as_ink": false, "use_for": ["contemporary editorial", "culture", "events", "social", "image-led color"]},
+    {"id": "substrate_cool_gray", "name": "Cool Gray", "hex": "#E9E9E5", "role": "substrate", "counts_as_ink": false, "use_for": ["architecture", "technology", "charcoal-led systems", "restrained branding"]},
+    {"id": "substrate_pale_beige", "name": "Pale Beige", "hex": "#F5F1E8", "role": "substrate", "counts_as_ink": false, "use_for": ["tactile", "food", "travel", "intimate", "archive", "explicit nostalgia"]}
+  ],
   "defaults": {
+    "substrate_id": "substrate_neutral_white",
+    "style_direction": "contemporary editorial",
     "palette_id": "palette_cobalt_terracotta",
     "mode": "controlled two-ink",
     "dominant_percent": [70, 85],
