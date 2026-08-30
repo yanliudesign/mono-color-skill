@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "selection": {
-    "effect_count": [2, 3],
+    "contemporary_effect_count": [0, 2],
+    "material_effect_count": [2, 3],
     "seed_strategy": "stable hash of subject, exact text, palette, and layout",
     "preserve_across_retries": true
   },
