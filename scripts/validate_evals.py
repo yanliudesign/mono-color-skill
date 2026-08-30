@@ -71,6 +71,8 @@ for case in evals:
         "focal_event_count",
         "release_zone_required",
         "focal_event",
+        "substrate_hex",
+        "style_direction",
     }
     missing = required - set(assertions)
     unknown = set(assertions) - required - optional
@@ -106,5 +108,9 @@ for case in evals:
         fail(f"{label} must require one release zone")
     if "focal_event" in assertions and len(assertions["focal_event"].strip()) < 3:
         fail(f"{label} has an invalid focal event")
+    if "substrate_hex" in assertions and not HEX_COLOR.fullmatch(assertions["substrate_hex"]):
+        fail(f"{label} has an invalid substrate color")
+    if "style_direction" in assertions and assertions["style_direction"] not in {"contemporary editorial", "vintage editorial", "archival aging"}:
+        fail(f"{label} has an invalid style direction")
 
 print(f"Validated {len(evals)} mono-color evaluation cases.")
