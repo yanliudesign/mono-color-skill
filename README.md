@@ -43,7 +43,7 @@ This reference set defines the visual territory, not compositions to reproduce. 
 | **Modes** | Pure one-ink, chromatic + black, complementary duotone, or overprint duotone |
 | **Image** | Halftone, risograph grain, cyanotype exposure, or photocopy breakup |
 | **Space** | 25%–55% visible empty paper on an asymmetric editorial grid |
-| **Type** | Serif editorial voice + condensed sans or monospaced utility voice |
+| **Type** | Content-responsive literary serif, cultural grotesk, condensed civic, programmatic, rotated, handwritten, or word-as-object roles |
 | **Output** | Generated raster image, exact production prompt, and a short recipe |
 
 ## Use cases
@@ -106,7 +106,7 @@ In two-ink work, the dominant plate normally carries 70%–85% of the printed ar
 2. **Paper stays visible.** The result is a printed page, not a digitally tinted monochrome wash.
 3. **Mechanical reproduction leads.** Photographs become dots, grain, clipped highlights, ink pooling, and mild registration drift between plates.
 4. **Silence has structure.** Empty paper occupies 25%–55% of the canvas and controls pacing.
-5. **Type has tension.** The largest text is 5–12 times the microcopy size, using no more than three type voices.
+5. **Type has tension and range.** Choose one content-responsive display skeleton and one utility voice; use handwriting only as a short optional interjection. A series may change display categories instead of repeating one house treatment.
 6. **Identity stays intact.** Supplied people, objects, and scenes remain recognizable.
 7. **References are grammar, not templates.** At least four structural variables change from every supplied reference.
 

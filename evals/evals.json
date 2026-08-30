@@ -257,6 +257,22 @@
         "must_not": ["beige background", "yellowed paper", "sepia aging", "retro props", "distressed border", "vintage type by default", "third ink"]
       },
       "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "做一张音乐封面，标题是‘SIDE B’，字体要有当代文化感，不要再用安静的杂志衬线体。",
+      "expected_output": "A contemporary music cover using a wide or optically interlocked Cultural Grotesk display voice with disciplined support type, rather than falling back to the same literary serif treatment used for quiet editorial subjects.",
+      "assertions": {
+        "ratio": "1:1",
+        "mode": "complementary duotone",
+        "ink_hexes": ["#2148B8", "#C65F38"],
+        "plate_roles": ["dominant music image and wide cultural grotesk title", "one concentrated accent intersection"],
+        "layout": "editorial cover",
+        "exact_text": "SIDE B",
+        "generates_image": true,
+        "must_not": ["quiet literary serif as the default display", "multiple novelty fonts", "handwritten factual information", "copied reference lettering", "copied reference line breaks"]
+      },
+      "files": []
     }
   ]
 }

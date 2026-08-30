@@ -80,7 +80,7 @@ Use these defaults whenever the user has not made the choice:
 - release zone: reserve one large quiet region with low information density; its size follows the composition rather than a universal percentage;
 - unresolved edge: use one only when it strengthens the focal event or release zone; otherwise use none;
 - image treatment: clean plate separation or medium screening for contemporary work; coarse halftone only when the subject, supplied image, or user request benefits from it;
-- type hierarchy: Poetic for reflective language, Civic for events, Archival for specimens, and Typographic when the supplied phrase is the subject;
+- type hierarchy: resolve the role from `design-system/typography.json`. Use Literary for intimate or quiet subjects, Cultural Grotesk for music and contemporary culture, Condensed Civic for public events, Programmatic when dates or structured facts lead, Rotated Display for bold covers, Handwritten Interjection only as a secondary human voice, and Typographic Object when the phrase itself is the image;
 - disruption: one off-center image crop; use one oversized word instead when there is no image.
 - imperfections: choose 0-2 subtle effects for contemporary editorial work and 2-3 effects for tactile, vintage, archival-aging, or explicitly rough work, using a stable hash of subject, exact text, palette, and layout; preserve the same seed across retries.
 
@@ -208,17 +208,21 @@ Use one dominant image zone occupying 45%-80% of the page, 1-3 isolated specimen
 
 ### 4. Typography
 
-Build tension with two voices, never more than three:
+Typography is a responsive cast, not a fixed house font. Read `design-system/typography.json` and choose one primary display skeleton from the subject, wording, and information structure. A series may move between literary serif, wide cultural grotesk, compressed civic sans, engineered program type, rotated display, and word-as-object typography. Consistency across a set comes from ink, spacing, plate logic, and disciplined microtype; do not force every image into the same serif-plus-mono treatment.
 
-- **Editorial voice:** high-contrast old-style or transitional serif, with optional italic for intimate or poetic language.
-- **Utility voice:** condensed grotesk, geometric sans, typewriter, or monospaced caps for labels, dates, credits, and coordinates.
+Build each image with one primary display voice and one functional support voice. A third voice is allowed only as one short handwritten interjection. Handwriting supplies human interruption, never dates, locations, essential facts, or long copy.
 
-Choose one hierarchy:
+Choose at most one typographic behavior per image:
 
-- **Poetic:** large serif phrase + tiny monospaced annotations.
-- **Civic:** bold condensed sans headline + small factual footer.
-- **Archival:** restrained serif title + ruled metadata table + specimen captions.
-- **Typographic:** oversized words become the main image; photograph becomes supporting evidence.
+- natural lowercase sentence breaks for intimate language;
+- wide or interlocked capitals for music, movement, and contemporary culture;
+- compressed stacked lines for public events;
+- tabular numerals and unequal ruled blocks for programs or schedules;
+- one 90-degree rotation or vertical title for a bold cover;
+- one circled handwritten aside for an invitation or personal note;
+- oversized cropped letterforms when the words are the dominant object.
+
+Do not repeat the same display category across every item in a multi-scene request unless the user explicitly asks for a unified typographic campaign.
 
 Rules:
 
@@ -230,6 +234,7 @@ Rules:
 - No gradient type, outline effects, drop shadows, inflated 3D letters, or generic luxury-fashion spacing.
 - Oversized type is valid when selected as the one focal event. Otherwise keep it subordinate to the selected image, object, crop, or overprint event.
 - In `relaxed` work, create a clear strength difference: one typographic move may be audacious while all supporting type becomes sparse and functional.
+- Do not copy a reference's distinctive lettering, exact line breaks, or word arrangement. Translate only the broader contrast, orientation, and voice relationship into an original solution.
 
 ### 5. Communication Tone
 
