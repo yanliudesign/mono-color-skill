@@ -50,6 +50,8 @@
               "focal_event_count": { "const": 1 },
               "release_zone_required": { "const": true },
               "focal_event": { "type": "string", "minLength": 3 },
+              "substrate_hex": { "type": "string", "pattern": "^#[0-9A-F]{6}$" },
+              "style_direction": { "enum": ["contemporary editorial", "vintage editorial", "archival aging"] },
               "must_not": {
                 "type": "array",
                 "minItems": 1,
