@@ -57,9 +57,15 @@ imperfections = load("imperfections.json")
 rhythm = load("rhythm.json")
 reference_analysis = load("reference-analysis.json")
 
-paper = colors.get("paper", {})
-if not HEX_COLOR.fullmatch(paper.get("hex", "")) or paper.get("counts_as_ink") is not False:
-    fail("paper must use an uppercase hex color and must not count as ink")
+substrates = colors.get("substrates", [])
+substrate_ids = require_unique(substrates, "substrate")
+if len(substrates) < 3:
+    fail("colors need at least white, gray, and pale-beige substrates")
+for substrate in substrates:
+    if not HEX_COLOR.fullmatch(substrate.get("hex", "")) or substrate.get("counts_as_ink") is not False:
+        fail(f"{substrate['id']} must use an uppercase hex color and must not count as ink")
+    if not substrate.get("use_for"):
+        fail(f"{substrate['id']} needs selection guidance")
 
 inks = colors.get("inks", [])
 ink_ids = require_unique(inks, "ink")
@@ -69,6 +75,10 @@ if any(not HEX_COLOR.fullmatch(ink.get("hex", "")) for ink in inks):
 palettes = colors.get("palettes", [])
 palette_ids = require_unique(palettes, "palette")
 defaults = colors.get("defaults", {})
+if defaults.get("substrate_id") not in substrate_ids:
+    fail("color defaults must reference a known substrate")
+if defaults.get("style_direction") != "contemporary editorial":
+    fail("contemporary editorial must be the default style direction")
 if defaults.get("palette_id") not in palette_ids:
     fail("color defaults must reference a known palette")
 if defaults.get("mode") != "controlled two-ink":
@@ -115,8 +125,8 @@ for carrier in carrier_items:
         fail(f"{carrier['id']} needs required and forbidden visual signals")
 
 selection = imperfections.get("selection", {})
-if selection.get("effect_count") != [2, 3] or selection.get("preserve_across_retries") is not True:
-    fail("imperfections must select 2-3 stable effects across retries")
+if selection.get("contemporary_effect_count") != [0, 2] or selection.get("material_effect_count") != [2, 3] or selection.get("preserve_across_retries") is not True:
+    fail("imperfections must select 0-2 effects for contemporary work and 2-3 for material or vintage work")
 if not selection.get("seed_strategy"):
     fail("imperfections need a deterministic seed strategy")
 imperfection_items = imperfections.get("effects", [])
