@@ -1,13 +1,13 @@
 ---
 name: mono-color
-description: Generate original one-ink or controlled two-ink editorial print images from any theme, sentence, article idea, object, or reference photo. Always use this skill when the user asks for 单色海报、双色印刷、单色调视觉、蓝色/绿色孔版印刷、risograph、网点照片、复古编辑排版、zine poster, monochrome editorial poster, duotone print, or asks to use the mono-color style. It preserves a warm paper base, no more than two printing inks, halftone imagery, active negative space, terse human language, and strong serif/grotesk/mono typography while never copying a source composition, wording, logo, or artwork. Produce both the final generation prompt and the generated raster image unless the user explicitly asks for prompt only.
+description: Generate original one-ink or controlled two-ink editorial images from any theme, sentence, article idea, object, or reference photo. Always use this skill when the user asks for 单色海报、双色印刷、单色调视觉、蓝色/绿色孔版印刷、risograph、网点照片、复古或当代编辑排版、zine poster, monochrome editorial poster, duotone print, or asks to use the mono-color style. It uses an adaptive white, gray, or pale-beige substrate, no more than two printing inks, active negative space, terse human language, and strong serif/grotesk/mono typography without making retro styling the default or copying a source composition, wording, logo, or artwork. Produce both the final generation prompt and the generated raster image unless the user explicitly asks for prompt only.
 ---
 
 # Monocolor Editorial Print
 
 Turn any user theme or image into an original printed editorial artifact with one stable visual language:
 
-> warm paper + one or two inks + reproduced image + typographic tension + concise human voice
+> adaptive neutral substrate + one or two inks + reproduced image + typographic tension + concise human voice
 
 Do not imitate any one reference. Recombine the system below into a new composition every time.
 
@@ -49,6 +49,7 @@ text_language: <language of supplied text, otherwise English>
 representation: <faithful reproduction or abstract symbol extraction>
 ratio: <explicit ratio or 3:4>
 carrier: <one carrier ID from design-system/carriers.json or none>
+substrate: <one substrate ID and exact hex from design-system/colors.json>
 mode: <pure one-ink, chromatic + black, complementary duotone, or overprint duotone>
 palette: <one palette ID from design-system/colors.json>
 inks: <the palette's named ink or approved pair with exact hex values>
@@ -63,7 +64,7 @@ image_treatment: <one mechanical reproduction process>
 type_hierarchy: <one role ID from design-system/typography.json>
 disruption: <one deliberate disruption>
 imperfection_seed: <stable hash derived from the resolved recipe>
-imperfections: <2-3 effect IDs from design-system/imperfections.json>
+imperfections: <0-2 restrained effect IDs for contemporary work, or 2-3 for tactile/vintage work>
 ```
 
 Use these defaults whenever the user has not made the choice:
@@ -71,17 +72,17 @@ Use these defaults whenever the user has not made the choice:
 - ratio: `3:4`;
 - representation: `faithful reproduction`, unless the user asks for abstract, artistic, loose, experimental, less realistic, or less photographic treatment;
 - text language: English for all invented display text, labels, and microcopy;
-- paper: warm ivory `#F5F1E8`;
+- substrate: select from Neutral White `#FAFAF7`, Cool Gray `#E9E9E5`, or Pale Beige `#F5F1E8` according to the subject, image values, and ink contrast. Neutral White is the unspecified default; never assume beige or aged paper merely because the work uses halftone or risograph language;
 - mode and ink: controlled two-ink by default. Use Cobalt + Terracotta `#2148B8` + `#C65F38` for an unspecified subject, then select the closest approved pair for the subject. The dominant plate carries 70%-85% and the accent plate carries 15%-30%. Switch to pure one-ink only when the user explicitly requests one ink, monochrome, or one named ink without a second color;
 - empty paper: `35%`;
 - visual tension: `relaxed` for reflective, travel, summer, leisure, lifestyle, and unspecified cultural subjects; `balanced` for ordinary events and editorial information; `assertive` only when the user requests a forceful declaration or the phrase itself is the subject;
 - focal event: choose exactly one strong visual event and make all other devices support or release it;
 - release zone: reserve one large quiet region with low information density; its size follows the composition rather than a universal percentage;
 - unresolved edge: use one only when it strengthens the focal event or release zone; otherwise use none;
-- image treatment: coarse halftone;
+- image treatment: clean plate separation or medium screening for contemporary work; coarse halftone only when the subject, supplied image, or user request benefits from it;
 - type hierarchy: Poetic for reflective language, Civic for events, Archival for specimens, and Typographic when the supplied phrase is the subject;
 - disruption: one off-center image crop; use one oversized word instead when there is no image.
-- imperfections: choose 2-3 effects using a stable hash of subject, exact text, palette, and layout; preserve the same seed across retries.
+- imperfections: choose 0-2 subtle effects for contemporary editorial work and 2-3 effects for tactile, vintage, archival-aging, or explicitly rough work, using a stable hash of subject, exact text, palette, and layout; preserve the same seed across retries.
 
 Explicit user choices override defaults unless they violate the two-ink limit or the originality firewall. For identical inputs, resolve the same manifest; do not vary palette, layout, percentages, or process merely for novelty. This stabilizes the design procedure while image-generation details may still vary.
 
@@ -93,7 +94,8 @@ Resolve generic color words consistently: blue to Cobalt, green to Botanical Gre
 
 Default to controlled two-ink. Give the dominant and accent plates separate content roles before composing; never use the second ink merely to decorate the page. Switch to pure one-ink when the user explicitly requests one ink, monochrome, or one named ink without a second color. The paper substrate does not count as an ink.
 
-- **Paper:** ivory, bone, or slightly gray recycled stock; target feeling `#F2F0E8` to `#FAF7ED`.
+- **Substrate:** choose Neutral White `#FAFAF7`, Cool Gray `#E9E9E5`, or Pale Beige `#F5F1E8`. White suits crisp cultural, social, event, and colorful image-led work; cool gray suits architecture, technology, charcoal-led systems, and restrained branding; pale beige suits tactile, food, travel, intimate, archival, or explicitly nostalgic subjects.
+- **Contemporary default:** the substrate is clean and neutral, not yellowed. Halftone and plate logic describe reproduction, not an era. Do not add fading, sepia, antique props, distressed borders, or aged-paper staining unless the user asks for retro, vintage, archival aging, or historical mood.
 - **Plate limit:** use two assigned printing plates by default and never more than two ink plates; explicit one-ink requests use one plate.
 - **Ink density:** darker coverage may appear near-black and sparse halftones may appear pale. These are density changes, not extra inks.
 - **Paper exposure:** keep the paper visible. Never tint the whole page into a digital monochrome wash.
@@ -170,12 +172,12 @@ Choose one dominant object and one dominant typographic event before adding seco
 
 ### 3. Image Treatment
 
-Convert all photographs and illustrations into the selected ink plate or plates plus paper:
+Convert photographs and illustrations into the selected ink plate or plates plus substrate. Choose reproduction intensity from the subject instead of automatically aging every image:
 
-- coarse halftone, risograph grain, cyanotype-like exposure, photocopy breakup, or newspaper screening;
+- crisp screening or clean plate separation for contemporary work; coarse halftone, risograph grain, cyanotype-like exposure, photocopy breakup, or newspaper screening when materially useful or explicitly requested;
 - visible dots at close range, recognizable subject at thumbnail scale;
 - clipped highlights where paper shows through and dense shadows where ink pools;
-- mild ink bleed, uneven coverage, scan noise, paper fibers, and optional 1-2 mm registration drift between plates;
+- optional mild ink bleed, uneven coverage, scan noise, paper fibers, or 1-2 mm registration drift between plates; use fewer imperfections for contemporary branding and clean editorial work;
 - medium contrast; avoid glossy photographic depth.
 
 When no source image is supplied, do not default to a polished photorealistic hero person or a complete stock-photo figure. Prefer 2-4 identifying anchors such as a hand on a handlebar, one bent leg, a wheel arc, loose fabric, or hair direction. Build the subject from a partial editorial crop, simplified screened fragment, and one ordinary in-between gesture. For movement subjects, the object or cropped body relationship may carry the focal event while the person remains incomplete. Avoid advertising poses, victory gestures, athletic hero angles, catalog-style full bodies, and the safe headline-left/photo-right split unless the user asks for them.
@@ -187,14 +189,14 @@ When `representation` is `abstract symbol extraction`, transform the supplied im
 1. Name 2-4 **identity anchors** that make the subject recognizable, such as a square sail, curved hull, mast, and wave direction. Preserve their relationship, not their photographic detail.
 2. Convert the anchors into **one dominant mass**, **one structural contour**, and **one repeated rhythm**. Use flat plate shapes, broken hand-drawn lines, short strokes, dots, or paper cutouts; omit incidental scenery and fine surface description.
 3. Let paper replace at least 35% of the source scene. Crop one anchor at a page edge and allow one type or line element to cross it. Abstraction must create active space, not merely blur or posterize the photo.
-4. Keep the abstract geometry deterministic. Apply looseness through slightly irregular contours, uneven repeated marks, and the recipe's 2-3 controlled print imperfections; do not randomly move anchors between retries.
+4. Keep the abstract geometry deterministic. Apply looseness through slightly irregular contours, uneven repeated marks, and the recipe's style-appropriate controlled print imperfections; do not randomly move anchors between retries.
 5. Stop before the subject becomes generic. At thumbnail scale, at least two identity anchors must still communicate the original subject without relying on the caption.
 
 For complementary duotone abstraction, assign the dominant ink to structure and rhythm, and reserve the accent ink for one identity anchor or one annotation. Do not distribute the accent evenly across the page.
 
 #### Controlled Chance
 
-Keep composition, wording, palette, and hierarchy deterministic. Introduce looseness only in the reproduction layer by selecting 2-3 effects from `design-system/imperfections.json` with the resolved recipe's stable seed.
+Keep composition, wording, palette, and hierarchy deterministic. Introduce looseness only in the reproduction layer. Contemporary work selects 0-2 restrained effects; tactile, vintage, or archival-aging work selects 2-3 effects from `design-system/imperfections.json` with the resolved recipe's stable seed.
 
 - Let uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken manual gesture create the analog variation.
 - Apply variation to large type, image plates, solid shapes, or the single gesture family; never distort microcopy or factual text.
@@ -283,7 +285,7 @@ Choose the layout from the content, not at random. Walk this list from top to bo
 
 Write the final prompt in five compact paragraphs, in this order:
 
-1. **Canvas and ink:** ratio, warm paper, exact one- or two-ink palette, print mode, plate roles, and flat scanned page.
+1. **Canvas and ink:** ratio, exact neutral substrate and reason for choosing it, exact one- or two-ink palette, print mode, plate roles, and flat front-facing page.
 2. **Original composition:** chosen layout family, visual-tension profile, one focal event, one release zone, margins, empty-space percentage, grid, dominant object scale and edge crop, optional unresolved edge, and one manual gesture.
 3. **Subject:** what appears; for faithful reproduction, describe preservation, crop, size, halftone treatment, and paper exposure; for abstract symbol extraction, name the 2-4 identity anchors, dominant mass, structural contour, repeated rhythm, omitted detail, and where exposed paper cuts through the scene.
 4. **Typography and words:** hierarchy, type voices, exact short display text, and the explicit overlap, crossing, split, or tight alignment between headline and dominant object; include a ruled data strip only when needed.
@@ -320,6 +322,7 @@ Always exclude:
 - glossy mockups, 3D depth, cinematic lighting, lens blur, hard shadows;
 - centered template symmetry, card grids, UI panels, stickers, decorative blobs;
 - scrapbook collage, uncontrolled overlap, grunge overload, or torn-paper styling;
+- automatic vintage styling, yellowed paper, sepia aging, distressed borders, nostalgic props, or retro type merely because the image uses halftone or limited inks;
 - long paragraphs, marketing copy, CTA buttons, logos, URLs, QR codes;
 - exact imitation of a supplied poster or recognizable artist signature.
 
@@ -366,7 +369,8 @@ Always exclude:
 
 ## Final Quality Gate
 
-- Is there one warm paper and no more than two printing inks?
+- Is there one intentionally selected white, gray, or pale-beige substrate and no more than two printing inks?
+- Does the result read as contemporary editorial by default, with vintage or aged styling present only when requested?
 - If there are two inks, does each plate have a clear role and does the accent remain controlled?
 - Does 25%-55% of the page remain visibly empty?
 - Is the image reproduced through dots or mechanical print texture rather than a color filter?
