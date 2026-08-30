@@ -6,6 +6,7 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 
+- Replaced the fixed warm-ivory default with adaptive Neutral White, Cool Gray, or Pale Beige substrates selected from image and ink contrast; contemporary editorial is now the default and vintage aging is opt-in.
 - Controlled two-ink is now the default: one dominant plate carries 70%-85% and one assigned accent plate carries 15%-30%; explicit one-ink requests remain pure one-ink.
 - Replaced rigid relaxed-mode budgets with an uneven-energy system: one audacious focal event plus one broad release zone.
 - Removed fixed relaxed headline-size, empty-paper, high-energy-device, and unresolved-edge requirements.
