@@ -5,7 +5,7 @@
     {
       "id": 1,
       "prompt": "用 mono-color 做一张关于凌晨便利店的竖版海报，文案是‘still open’。",
-      "expected_output": "A generated vertical Cobalt and Terracotta controlled two-ink poster on warm paper, using distinct plate roles, an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
+      "expected_output": "A generated vertical Cobalt and Terracotta controlled two-ink poster on a clean neutral substrate, using distinct plate roles, an original composition, screened convenience-store imagery, strong type scale contrast, and the exact short phrase.",
       "assertions": {
         "ratio": "3:4",
         "mode": "complementary duotone",
@@ -37,7 +37,7 @@
     {
       "id": 3,
       "prompt": "做一张关于蕨类植物观察笔记的绿色孔版印刷图，标题‘field note 07’。",
-      "expected_output": "A generated botanical-green archival plate on warm paper with a screened fern image, disciplined metadata, large negative space, and no cobalt or extra colors.",
+      "expected_output": "A generated botanical-green archival plate on a clean neutral substrate with a screened fern image, disciplined metadata, large negative space, and no cobalt or extra colors.",
       "assertions": {
         "ratio": "3:4",
         "mode": "pure one-ink",
@@ -219,7 +219,7 @@
     {
       "id": 14,
       "prompt": "做一张没有参考照片的夏日滑板海报，要像随手观察到的瞬间，松弛、有设计感，但不要像运动品牌广告。",
-      "expected_output": "A relaxed warm-paper editorial cover with one strong cropped skateboard or body-detail event, fragmentary human anchors, and a broad release zone rather than uniformly restrained typography and imagery.",
+      "expected_output": "A relaxed contemporary editorial cover on an image-responsive neutral substrate, with one strong cropped skateboard or body-detail event, fragmentary human anchors, and a broad release zone rather than uniformly restrained typography and imagery.",
       "assertions": {
         "ratio": "3:4",
         "mode": "overprint duotone",
@@ -235,6 +235,26 @@
         "focal_event": "one extreme skateboard or body-detail crop",
         "unresolved_edge_count": 0,
         "must_not": ["photorealistic advertising hero", "complete stock-photo person", "safe headline-left photo-right split", "equal emphasis", "decorative microcopy", "no thumbnail focal event"]
+      },
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "做一张当代设计展海报，标题是‘NEW CONDITIONS’，背景不要米色，也不要复古做旧。",
+      "expected_output": "A contemporary editorial exhibition poster on a clean Neutral White substrate with Charcoal and Signal Red plate roles, one decisive type-object event, and no automatic vintage aging.",
+      "assertions": {
+        "ratio": "3:4",
+        "mode": "chromatic + black",
+        "ink_hexes": ["#30343A", "#C83232"],
+        "plate_roles": ["dominant structure, image, and precision type", "one concentrated exhibition signal"],
+        "layout": "type-led declaration",
+        "exact_text": "NEW CONDITIONS",
+        "generates_image": true,
+        "substrate_hex": "#FAFAF7",
+        "style_direction": "contemporary editorial",
+        "focal_event_count": 1,
+        "release_zone_required": true,
+        "must_not": ["beige background", "yellowed paper", "sepia aging", "retro props", "distressed border", "vintage type by default", "third ink"]
       },
       "files": []
     }
