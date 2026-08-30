@@ -16,7 +16,7 @@
 
 </div>
 
-Turn a theme, sentence, object, or supplied photograph into an original editorial print. The skill defaults to controlled two-ink with one dominant plate and one narrowly assigned accent plate. Explicit one-ink or monochrome requests remain pure one-ink. Warm paper, screened imagery, active negative space, and sharp typographic contrast keep both modes inside one recognizable visual system.
+Turn a theme, sentence, object, or supplied photograph into an original editorial image. The skill defaults to controlled two-ink with one dominant plate and one narrowly assigned accent plate. Explicit one-ink or monochrome requests remain pure one-ink. White, cool gray, or pale-beige substrates are selected from the image and palette; contemporary editorial is the default, while vintage treatment appears only when requested.
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
 
@@ -39,7 +39,7 @@ This reference set defines the visual territory, not compositions to reproduce. 
 | System | Direction |
 |---|---|
 | **Input** | A theme, phrase, object, article idea, or supplied photograph |
-| **Palette** | Warm uncoated paper + a controlled two-ink recipe by default; explicit one-ink requests stay one-ink |
+| **Palette** | Adaptive neutral white, cool gray, or pale beige + controlled two-ink by default; explicit one-ink requests stay one-ink |
 | **Modes** | Pure one-ink, chromatic + black, complementary duotone, or overprint duotone |
 | **Image** | Halftone, risograph grain, cyanotype exposure, or photocopy breakup |
 | **Space** | 25%–55% visible empty paper on an asymmetric editorial grid |
@@ -96,7 +96,9 @@ All of these formats can use a single ink to reduce production costs while retai
 | ![Cyan and Brick Red](./swatches/cyan-brick-red.svg) | Cyan + Brick Red | `#159DDA` + `#B64032` |
 | ![Tangerine and Slate Blue](./swatches/tangerine-slate-blue.svg) | Tangerine + Slate Blue | `#E46C2D` + `#4773A5` |
 
-In two-ink work, the dominant plate normally carries 70%–85% of the printed area. The accent plate carries 15%–30% and must have a specific job such as dates, annotations, selected objects, or overprint intersections. Paper is not a third color, and the darker color created where two plates overlap is not a third ink.
+In two-ink work, the dominant plate normally carries 70%–85% of the printed area. The accent plate carries 15%–30% and must have a specific job such as dates, annotations, selected objects, or overprint intersections. The substrate is not a third color, and the darker color created where two plates overlap is not a third ink.
+
+**Substrate is adaptive, not nostalgic by default:** Neutral White `#FAFAF7` supports crisp cultural, social, event, and image-led work; Cool Gray `#E9E9E5` supports architecture, technology, charcoal-led systems, and restrained branding; Pale Beige `#F5F1E8` supports tactile, travel, food, intimate, archival, or explicitly nostalgic subjects. Limited inks and halftone do not automatically imply vintage styling.
 
 ## Visual rules
 
@@ -115,6 +117,7 @@ In two-ink work, the dominant plate normally carries 70%–85% of the printed ar
 - not a glossy mockup, 3D render, gradient poster, or cinematic scene
 - not a centered template, card grid, sticker collage, or decorative blob system
 - not dense scrapbook grunge or torn-paper styling
+- not automatically retro, yellowed, sepia, distressed, or nostalgic because the work uses halftone or limited inks
 - not marketing copy, invented branding, fake sponsors, URLs, or QR codes
 - not a reconstruction of a reference poster or artist signature
 
@@ -208,13 +211,13 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 ## Stability and validation
 
-Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, warm ivory paper, 35% empty paper, coarse halftone, and deterministic palette and layout rules. Supplied photos default to faithful reproduction; requests for abstract, artistic, loose, experimental, or less realistic treatment switch to deterministic symbol extraction that preserves 2-4 identity anchors. Explicit user choices still take precedence within the two-ink and originality limits.
+Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, Neutral White substrate, contemporary editorial direction, 35% empty substrate, and deterministic palette and layout rules. The substrate may switch to Cool Gray or Pale Beige when the image and ink contrast call for it. Supplied photos default to faithful reproduction; requests for abstract, artistic, loose, experimental, or less realistic treatment switch to deterministic symbol extraction that preserves 2-4 identity anchors. Explicit user choices still take precedence within the two-ink and originality limits.
 
 The `design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, visual rhythm, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
 
 `design-system/rhythm.json` defines relaxation as uneven energy rather than uniformly reduced intensity. Each page selects one audacious focal event—oversized type, an extreme crop, one giant detail, a concentrated overprint, or an abnormal scale relationship—then releases the rest through paper, pale screening, and sparse functional type. Without a supplied photograph, people become 2-4 identifying anchors and partial crops instead of complete stock figures or a safe headline-left/photo-right split. Empty paper and unresolved edges now respond to the focal event instead of fixed quotas.
 
-Controlled chance stays in the reproduction layer: each recipe deterministically selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
+Controlled chance stays in the reproduction layer: contemporary work selects 0-2 restrained effects, while tactile, vintage, or archival-aging work selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
 
 ![Mono-color visual system reference board](./examples/mono-color-design-system-board.png)
 
