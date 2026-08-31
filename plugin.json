@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mono-color",
+  "version": "1.2.0",
+  "description": "Generate original one-ink or controlled two-ink editorial print images from any theme, sentence, object, or reference photo, using an adaptive neutral substrate, halftone reproduction, active negative space, and strong editorial typography.",
+  "author": "Yan Liu",
+  "homepage": "https://github.com/yanliudesign/mono-color-skill",
+  "repository": "https://github.com/yanliudesign/mono-color-skill",
+  "license": "MIT",
+  "keywords": ["design", "poster", "monochrome", "duotone", "risograph", "editorial", "image-generation"]
+}

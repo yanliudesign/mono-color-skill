@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SYSTEM_DIR = ROOT / "design-system"
+SYSTEM_DIR = ROOT / "skills" / "mono-color" / "design-system"
 HEX_COLOR = re.compile(r"^#[0-9A-F]{6}$")
 RATIO = re.compile(r"^[1-9][0-9]*:[1-9][0-9]*$")
 EXPECTED_FILES = {

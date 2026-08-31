@@ -7,12 +7,12 @@
 **为海报、Zine、肖像、包装与视觉观察笔记而生的单色 / 受控双色编辑图像 Skill。**
 
 [![Version](https://img.shields.io/badge/VERSION-1.2.0-2ea44f?style=flat-square&labelColor=333)](./CHANGELOG.md)
-[![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
+[![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./skills/mono-color/SKILL.md)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/mono-color-skill?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/mono-color-skill/stargazers)
 [![Validate skill](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
-[![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./SKILL.md)
+[![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./skills/mono-color/SKILL.md)
 
 </div>
 
@@ -129,14 +129,21 @@
 
 ## 安装
 
-克隆到 Claude Code 的 skills 目录：
+作为 Claude Code plugin 安装：
 
-```bash
-git clone https://github.com/yanliudesign/mono-color-skill.git \
-  ~/.claude/skills/mono-color
+```text
+/plugin marketplace add yanliudesign/mono-color-skill
+/plugin install mono-color@mono-color-skill
 ```
 
-安装后重启 Claude Code。其他 Agent 环境可以直接把 [`SKILL.md`](./SKILL.md) 作为 skill 入口加载。
+或者把 skill 目录复制到 Claude Code 的 skills 目录：
+
+```bash
+git clone https://github.com/yanliudesign/mono-color-skill.git
+cp -r mono-color-skill/skills/mono-color ~/.claude/skills/mono-color
+```
+
+安装后重启 Claude Code。本仓库同时符合 [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) 1.0.0 格式（根目录 `plugin.json`），兼容的客户端可以直接作为 plugin 加载。其他 Agent 环境可以直接把 [`SKILL.md`](./skills/mono-color/SKILL.md) 作为 skill 入口加载。
 
 ## 试一试
 
@@ -206,9 +213,9 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 生成 Prompt 前，skill 会先把每次请求解析成固定的 recipe manifest。用户未指定时，统一采用 `3:4` 比例、中性白背景、当代 Editorial 方向、35% 留白，以及确定性的配色和版式选择规则；主图和油墨需要时可切换为冷灰或淡米色。输入照片默认采用保真再现；当用户要求抽象、艺术、松弛、实验性或降低写实度时，会切换为确定性的符号提取，并保留 2-4 个身份锚点。用户的明确要求仍然优先，但不能突破双色上限与原创性规则。
 
-`design-system/` 目录把视觉语法变成可以复用、检查的数据，分别保存颜色 token、字体角色、构图几何、载体识别信号、视觉节奏和受控印刷偏差。参考板、生成配方和校验器共用同一套 ID，避免视觉规则只存在于描述性文字里。
+`skills/mono-color/design-system/` 目录把视觉语法变成可以复用、检查的数据，分别保存颜色 token、字体角色、构图几何、载体识别信号、视觉节奏和受控印刷偏差。参考板、生成配方和校验器共用同一套 ID，避免视觉规则只存在于描述性文字里。
 
-`design-system/rhythm.json` 把“松弛感”定义为不均匀的能量分布，而不是统一降低强度。每张作品选择一个大胆的主视觉事件，例如超大文字、极端裁切、巨大局部、集中叠印或异常尺度；其他区域通过纸面、浅网点和稀疏功能文字主动释放。无参考照片的人物默认拆成 2–4 个识别锚点与局部裁切，避免完整图库人物和安全的“左标题、右照片”构图。留白比例与未收口边缘都由主视觉事件决定，不再强制固定数值。
+`design-system/rhythm.json`（位于 `skills/mono-color/` 下）把“松弛感”定义为不均匀的能量分布，而不是统一降低强度。每张作品选择一个大胆的主视觉事件，例如超大文字、极端裁切、巨大局部、集中叠印或异常尺度；其他区域通过纸面、浅网点和稀疏功能文字主动释放。无参考照片的人物默认拆成 2–4 个识别锚点与局部裁切，避免完整图库人物和安全的“左标题、右照片”构图。留白比例与未收口边缘都由主视觉事件决定，不再强制固定数值。
 
 “可控偶然”只发生在印刷表现层：当代 Editorial 选择 0–2 种克制效果；触觉、复古或档案做旧方向选择 2–3 种有边界的效果，例如油墨浓淡、干墨破边、网点漂移、套印偏移或一处断开的手工笔触。相同输入会复现同样的偏差，同时不移动核心构图、不损伤文字可读性。
 
@@ -251,12 +258,16 @@ python3 scripts/validate_design_system.py
 
 ```text
 mono-color-skill/
+├── .claude-plugin/   # Claude Code plugin 与 marketplace 清单
 ├── .github/workflows/ # 持续验证
-├── design-system/    # 机器可读的颜色、构图、节奏与印刷模式
+├── plugin.json       # Agent Plugins 1.0.0 清单
+├── skills/
+│   └── mono-color/
+│       ├── SKILL.md       # 触发规则、视觉系统、工作流与质量门槛
+│       └── design-system/ # 机器可读的颜色、构图、节奏与印刷模式
 ├── examples/         # README 中展示的原创生成示例
 ├── scripts/          # 评测与设计系统校验脚本
 ├── swatches/         # 单色与双色色板
-├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
 ├── README.md         # 英文说明
 ├── README.zh.md      # 中文说明
 ├── CHANGELOG.md      # 版本记录

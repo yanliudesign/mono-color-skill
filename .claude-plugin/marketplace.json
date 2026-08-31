@@ -1,0 +1,14 @@
+{
+  "name": "mono-color-skill",
+  "owner": {
+    "name": "Yan Liu",
+    "url": "https://github.com/yanliudesign"
+  },
+  "plugins": [
+    {
+      "name": "mono-color",
+      "source": "./",
+      "description": "One-ink or controlled two-ink editorial print image generation with a machine-readable design system."
+    }
+  ]
+}
