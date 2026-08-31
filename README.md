@@ -16,6 +16,10 @@
 
 </div>
 
+<p align="center">
+  <img src="./examples/cover.png" alt="Visual references for the mono-color editorial print system" width="100%">
+</p>
+
 Turn a theme, sentence, object, or supplied photograph into an original editorial image. The skill defaults to controlled two-ink with one dominant plate and one narrowly assigned accent plate. Explicit one-ink or monochrome requests remain pure one-ink. White, cool gray, or pale-beige substrates are selected from the image and palette; contemporary editorial is the default, while vintage treatment appears only when requested.
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
