@@ -266,6 +266,12 @@ mono-color-skill/
 
 当用户提供照片时，主体身份会被保留，但裁切、网点、网格、文字位置和信息标注都会重新设计。
 
+## 许可证
+
+源代码、Skill 指令和脚本采用 [MIT License](./LICENSE)。
+
+[`examples/`](./examples) 目录中的示范图片与视觉作品版权归 Yan Liu 所有，不包含在 MIT License 中。具体规则请参阅[视觉资产许可证](./ASSET-LICENSE.md)。
+
 ---
 
 Created by [Dreameryanyan](https://www.linkedin.com/in/yanliudesign/) · [LinkedIn](https://www.linkedin.com/in/yanliudesign/) · [X](https://x.com/yanliudreamer)
