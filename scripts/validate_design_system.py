@@ -16,7 +16,6 @@ EXPECTED_FILES = {
     "carriers.json",
     "imperfections.json",
     "rhythm.json",
-    "reference-analysis.json",
 }
 
 
@@ -55,7 +54,6 @@ compositions = load("compositions.json")
 carriers = load("carriers.json")
 imperfections = load("imperfections.json")
 rhythm = load("rhythm.json")
-reference_analysis = load("reference-analysis.json")
 
 substrates = colors.get("substrates", [])
 substrate_ids = require_unique(substrates, "substrate")
@@ -164,23 +162,9 @@ if len(rhythm.get("failure_signals", [])) < 5:
     fail("rhythm needs at least five observable failure signals")
 if len(rhythm.get("guardrails", [])) < 5:
     fail("rhythm needs at least five guardrails")
-
-references = reference_analysis.get("references", [])
-reference_ids = require_unique(references, "reference")
-if len(references) != 12 or reference_ids != {f"ref_{index:02d}" for index in range(1, 13)}:
-    fail("reference analysis must contain exactly ref_01 through ref_12")
-for reference in references:
-    source_path = ROOT / reference.get("file", "")
-    if not source_path.is_file():
-        fail(f"{reference['id']} points to a missing source image")
-    for axis in ("typography", "colors", "layout", "style", "signature_moves"):
-        if not reference.get(axis):
-            fail(f"{reference['id']} needs observations for {axis}")
-
 print(
     "Validated mono-color design system: "
     f"{len(inks)} inks, {len(palettes)} palettes, {len(roles)} type roles, "
     f"{len(layouts)} compositions, {len(carrier_items)} carriers, "
-    f"{len(imperfection_items)} imperfections, {len(profiles)} rhythm profiles, "
-    f"{len(references)} references."
+    f"{len(imperfection_items)} imperfections, {len(profiles)} rhythm profiles."
 )

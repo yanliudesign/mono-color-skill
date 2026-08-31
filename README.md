@@ -20,19 +20,13 @@ Turn a theme, sentence, object, or supplied photograph into an original editoria
 
 It preserves a visual system rather than copying a reference. Every composition is rebuilt around the subject, intent, words, and image role.
 
-## Visual references
+## Selected examples
 
-| 01 | 02 | 03 |
+| Summer cycling | Field study | Ordinary spaces |
 |:---:|:---:|:---:|
-| <img src="./examples/reference-01.png" alt="Mono-color editorial print reference 01" width="280"> | <img src="./examples/reference-02.png" alt="Mono-color editorial print reference 02" width="280"> | <img src="./examples/reference-03.png" alt="Mono-color editorial print reference 03" width="280"> |
-| 04 | 05 | 06 |
-| <img src="./examples/reference-04.png" alt="Mono-color editorial print reference 04" width="280"> | <img src="./examples/reference-05.png" alt="Mono-color editorial print reference 05" width="280"> | <img src="./examples/reference-06.png" alt="Mono-color editorial print reference 06" width="280"> |
-| 07 | 08 | 09 |
-| <img src="./examples/reference-07.png" alt="Mono-color editorial print reference 07" width="280"> | <img src="./examples/reference-08.png" alt="Mono-color editorial print reference 08" width="280"> | <img src="./examples/reference-09.png" alt="Mono-color editorial print reference 09" width="280"> |
-| 10 | 11 | 12 |
-| <img src="./examples/reference-10.png" alt="Mono-color editorial print reference 10" width="280"> | <img src="./examples/reference-11.jpg" alt="Mono-color editorial print reference 11" width="280"> | <img src="./examples/reference-12.jpg" alt="Mono-color editorial print reference 12" width="280"> |
+| <img src="./examples/example-cycling.png" alt="Cobalt and terracotta summer cycling editorial print" width="280"> | <img src="./examples/example-zebra.png" alt="Cobalt and orange zebra field-study editorial print" width="280"> | <img src="./examples/example-chair.png" alt="Green and oxblood chair zine editorial print" width="280"> |
 
-This reference set defines the visual territory, not compositions to reproduce. Each new result rebuilds the subject, crop, grid, type hierarchy, and print treatment from scratch.
+These original generated examples demonstrate the skill's range; they are outputs, not templates to reproduce.
 
 ## What it does
 
@@ -221,29 +215,10 @@ Controlled chance stays in the reproduction layer: contemporary work selects 0-2
 
 ![Mono-color visual system reference board](./examples/mono-color-design-system-board.png)
 
-The twelve-source evidence map in `design-system/reference-analysis.json` also compiles into four focused 1800×2400 boards:
-
-### Typography
-
-![Typography system](./examples/visual-system-typography.png)
-
-### Color
-
-![Color system](./examples/visual-system-color.png)
-
-### Layout
-
-![Layout system](./examples/visual-system-layout.png)
-
-### Style
-
-![Style system](./examples/visual-system-style.png)
-
-Regenerate the complete board or the four reference-derived boards after editing a catalog:
+Regenerate the complete board after editing a catalog:
 
 ```bash
 python3 scripts/build_design_system_board.py
-python3 scripts/build_reference_system_boards.py
 ```
 
 The evaluation contract covers defaults, supplied portraits, botanical work, overprint, event information, long-form text, prompt-only output, conflicting color requests, repeated objects, and reference-copying requests. Run it locally with:
@@ -261,7 +236,7 @@ GitHub Actions runs the same contract on every pull request and push to `main`.
 mono-color-skill/
 ├── .github/workflows/ # Continuous validation
 ├── design-system/    # Machine-readable color, composition, rhythm, and print patterns
-├── examples/         # Visual references shown in the READMEs
+├── examples/         # Original generated examples shown in the READMEs
 ├── scripts/          # Evaluation and design-system validators
 ├── swatches/         # One-ink and two-ink palette previews
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate

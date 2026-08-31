@@ -20,19 +20,13 @@
 
 它保留的是一套视觉系统，而不是照抄参考图。每次构图都会根据主体、意图、文字和图像角色重新建立。
 
-## 视觉参考
+## 精选示例
 
-| 01 | 02 | 03 |
+| 夏日骑行 | 田野观察 | 日常空间 |
 |:---:|:---:|:---:|
-| <img src="./examples/reference-01.png" alt="单色编辑印刷视觉参考 01" width="280"> | <img src="./examples/reference-02.png" alt="单色编辑印刷视觉参考 02" width="280"> | <img src="./examples/reference-03.png" alt="单色编辑印刷视觉参考 03" width="280"> |
-| 04 | 05 | 06 |
-| <img src="./examples/reference-04.png" alt="单色编辑印刷视觉参考 04" width="280"> | <img src="./examples/reference-05.png" alt="单色编辑印刷视觉参考 05" width="280"> | <img src="./examples/reference-06.png" alt="单色编辑印刷视觉参考 06" width="280"> |
-| 07 | 08 | 09 |
-| <img src="./examples/reference-07.png" alt="单色编辑印刷视觉参考 07" width="280"> | <img src="./examples/reference-08.png" alt="单色编辑印刷视觉参考 08" width="280"> | <img src="./examples/reference-09.png" alt="单色编辑印刷视觉参考 09" width="280"> |
-| 10 | 11 | 12 |
-| <img src="./examples/reference-10.png" alt="单色编辑印刷视觉参考 10" width="280"> | <img src="./examples/reference-11.jpg" alt="单色编辑印刷视觉参考 11" width="280"> | <img src="./examples/reference-12.jpg" alt="单色编辑印刷视觉参考 12" width="280"> |
+| <img src="./examples/example-cycling.png" alt="钴蓝与陶土橙夏日骑行编辑印刷作品" width="280"> | <img src="./examples/example-zebra.png" alt="钴蓝与橙色斑马田野观察编辑印刷作品" width="280"> | <img src="./examples/example-chair.png" alt="绿色与酒红椅子 Zine 编辑印刷作品" width="280"> |
 
-这组图片用于界定视觉方向，不是供复刻的固定构图。每次新作品都会从头建立主体、裁切、网格、字体层级与印刷处理。
+这三张原创生成示例用于展示 skill 的能力范围，是输出案例，不是供复刻的模板。
 
 ## 它能做什么
 
@@ -208,29 +202,10 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ![Mono-color 视觉系统参考总表](./examples/mono-color-design-system-board.png)
 
-`design-system/reference-analysis.json` 记录了 12 张参考图的证据映射，并可编译为四张 1800×2400 专项总表：
-
-### 字体
-
-![字体视觉系统](./examples/visual-system-typography.png)
-
-### 颜色
-
-![颜色视觉系统](./examples/visual-system-color.png)
-
-### 排版
-
-![排版视觉系统](./examples/visual-system-layout.png)
-
-### 风格
-
-![风格视觉系统](./examples/visual-system-style.png)
-
-修改 catalog 后，可以重新导出综合总表或四张专项总表：
+修改 catalog 后，可以重新导出综合总表：
 
 ```bash
 python3 scripts/build_design_system_board.py
-python3 scripts/build_reference_system_boards.py
 ```
 
 评测契约覆盖默认输入、人物照片、植物主题、双色叠印、活动信息、长文本、仅输出 Prompt、颜色冲突、重复物件和照抄参考图等情况。本地运行：
@@ -248,7 +223,7 @@ python3 scripts/validate_design_system.py
 mono-color-skill/
 ├── .github/workflows/ # 持续验证
 ├── design-system/    # 机器可读的颜色、构图、节奏与印刷模式
-├── examples/         # README 中展示的视觉参考
+├── examples/         # README 中展示的原创生成示例
 ├── scripts/          # 评测与设计系统校验脚本
 ├── swatches/         # 单色与双色色板
 ├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
