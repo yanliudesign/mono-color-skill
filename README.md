@@ -231,19 +231,19 @@ The four focused reference-analysis boards document the typography, color, layou
 
 ### Typography
 
-![Typography system](./examples/visual-system-typography.png)
+![Typography system](./examples/reference-system-typography.png)
 
 ### Color
 
-![Color system](./examples/visual-system-color.png)
+![Color system](./examples/reference-system-color.png)
 
 ### Layout
 
-![Layout system](./examples/visual-system-layout.png)
+![Layout system](./examples/reference-system-layout.png)
 
 ### Style
 
-![Style system](./examples/visual-system-style.png)
+![Style system](./examples/reference-system-style.png)
 
 Regenerate the catalog-driven complete board after editing a catalog:
 
