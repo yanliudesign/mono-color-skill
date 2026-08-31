@@ -279,6 +279,12 @@ This skill extracts system-level qualities such as palette, print process, spaci
 
 When a user supplies a photograph, the subject is preserved as content while the crop, screening, grid, type placement, and metadata treatment are newly constructed.
 
+## License
+
+The source code, skill instructions, and scripts are available under the [MIT License](./LICENSE).
+
+Visual examples and artwork in [`examples/`](./examples) are © 2026 Yan Liu and are not covered by the MIT License. See the [Visual Asset License](./ASSET-LICENSE.md) for details.
+
 ---
 
 Created by [Dreameryanyan](https://www.linkedin.com/in/yanliudesign/) · [LinkedIn](https://www.linkedin.com/in/yanliudesign/) · [X](https://x.com/yanliudreamer)
