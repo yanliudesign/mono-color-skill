@@ -265,6 +265,8 @@ mono-color-skill/
 │   └── mono-color/
 │       ├── SKILL.md       # 触发规则、视觉系统、工作流与质量门槛
 │       └── design-system/ # 机器可读的颜色、构图、节奏与印刷模式
+├── SKILL.md          # 兼容 symlink，指向 skills/mono-color/SKILL.md
+├── design-system     # 兼容 symlink，指向 skills/mono-color/design-system
 ├── examples/         # README 中展示的原创生成示例
 ├── scripts/          # 评测与设计系统校验脚本
 ├── swatches/         # 单色与双色色板

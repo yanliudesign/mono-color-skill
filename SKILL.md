@@ -1,0 +1,1 @@
+skills/mono-color/SKILL.md

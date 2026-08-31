@@ -278,6 +278,8 @@ mono-color-skill/
 │   └── mono-color/
 │       ├── SKILL.md       # Trigger rules, visual system, workflow, and quality gate
 │       └── design-system/ # Machine-readable color, composition, rhythm, and print patterns
+├── SKILL.md          # Compatibility symlink to skills/mono-color/SKILL.md
+├── design-system     # Compatibility symlink to skills/mono-color/design-system
 ├── examples/         # Original generated examples shown in the READMEs
 ├── scripts/          # Evaluation and design-system validators
 ├── swatches/         # One-ink and two-ink palette previews
