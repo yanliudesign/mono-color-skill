@@ -227,7 +227,7 @@ Controlled chance stays in the reproduction layer: contemporary work selects 0-2
 
 ![Mono-color visual system reference board](./examples/mono-color-design-system-board.png)
 
-The four focused boards are generated directly from the current catalogs and contain no external reference imagery:
+The four focused reference-analysis boards document the typography, color, layout, and style evidence behind the system:
 
 ### Typography
 
@@ -245,11 +245,10 @@ The four focused boards are generated directly from the current catalogs and con
 
 ![Style system](./examples/visual-system-style.png)
 
-Regenerate the complete board and all four focused boards after editing a catalog:
+Regenerate the catalog-driven complete board after editing a catalog:
 
 ```bash
 python3 scripts/build_design_system_board.py
-python3 scripts/build_focused_design_system_boards.py
 ```
 
 The evaluation contract covers defaults, supplied portraits, botanical work, overprint, event information, long-form text, prompt-only output, conflicting color requests, repeated objects, and reference-copying requests. Run it locally with:

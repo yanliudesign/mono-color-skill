@@ -214,7 +214,7 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ![Mono-color 视觉系统参考总表](./examples/mono-color-design-system-board.png)
 
-四张专项总表直接由当前 catalog 生成，不包含外部参考图：
+四张专项参考分析板分别记录字体、颜色、排版和风格证据：
 
 ### 字体
 
@@ -232,11 +232,10 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ![风格视觉系统](./examples/visual-system-style.png)
 
-修改 catalog 后，可以重新导出综合总表和四张专项总表：
+修改 catalog 后，可以重新导出由 catalog 驱动的综合总表：
 
 ```bash
 python3 scripts/build_design_system_board.py
-python3 scripts/build_focused_design_system_boards.py
 ```
 
 评测契约覆盖默认输入、人物照片、植物主题、双色叠印、活动信息、长文本、仅输出 Prompt、颜色冲突、重复物件和照抄参考图等情况。本地运行：
