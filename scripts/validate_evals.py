@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EVALS_PATH = ROOT / "evals" / "evals.json"
+COLORS_PATH = ROOT / "design-system" / "colors.json"
 ALLOWED_MODES = {
     "pure one-ink",
     "chromatic + black",
@@ -35,6 +36,20 @@ def fail(message: str) -> None:
 
 with EVALS_PATH.open(encoding="utf-8") as eval_file:
     data = json.load(eval_file)
+
+with COLORS_PATH.open(encoding="utf-8") as colors_file:
+    colors = json.load(colors_file)
+
+ink_hexes = {ink["id"]: ink["hex"] for ink in colors.get("inks", [])}
+palette_modes: dict[tuple[str, ...], str] = {}
+for palette in colors.get("palettes", []):
+    try:
+        palette_key = tuple(sorted(ink_hexes[ink_id] for ink_id in palette["ink_ids"]))
+    except KeyError as error:
+        fail(f"palette {palette.get('id', '?')} references unknown ink {error.args[0]}")
+    previous_mode = palette_modes.setdefault(palette_key, palette["mode"])
+    if previous_mode != palette["mode"]:
+        fail(f"palette {palette.get('id', '?')} conflicts with another mode for the same inks")
 
 if data.get("skill_name") != "mono-color" or data.get("schema_version") != 1:
     fail("unexpected skill_name or schema_version")
@@ -94,6 +109,9 @@ for case in evals:
     expected_ink_count = 1 if assertions["mode"] == "pure one-ink" else 2
     if len(inks) != expected_ink_count:
         fail(f"{label} ink count does not match its mode")
+    catalog_mode = palette_modes.get(tuple(sorted(inks)))
+    if catalog_mode is not None and assertions["mode"] != catalog_mode:
+        fail(f"{label} mode does not match the design-system palette mode {catalog_mode}")
     if not assertions["must_not"]:
         fail(f"{label} needs at least one negative assertion")
     if "visual_tension" in assertions and assertions["visual_tension"] not in {"relaxed", "balanced", "assertive"}:
