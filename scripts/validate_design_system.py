@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import re
+import struct
 import sys
 from pathlib import Path
 
@@ -16,6 +17,13 @@ EXPECTED_FILES = {
     "carriers.json",
     "imperfections.json",
     "rhythm.json",
+}
+EXPECTED_BOARDS = {
+    "mono-color-design-system-board.png": (1800, 3000),
+    "visual-system-typography.png": (1800, 2400),
+    "visual-system-color.png": (1800, 2400),
+    "visual-system-layout.png": (1800, 2400),
+    "visual-system-style.png": (1800, 2400),
 }
 
 
@@ -44,9 +52,24 @@ def require_unique(items: list[dict], label: str) -> set[str]:
     return set(ids)
 
 
+def png_dimensions(path: Path) -> tuple[int, int]:
+    with path.open("rb") as image:
+        header = image.read(24)
+    if len(header) != 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+        fail(f"{path.name} must be a valid PNG")
+    return struct.unpack(">II", header[16:24])
+
+
 actual_files = {path.name for path in SYSTEM_DIR.glob("*.json")}
 if actual_files != EXPECTED_FILES:
     fail(f"expected catalog files {sorted(EXPECTED_FILES)}, found {sorted(actual_files)}")
+
+for board_name, expected_dimensions in EXPECTED_BOARDS.items():
+    board_path = ROOT / "examples" / board_name
+    if not board_path.exists():
+        fail(f"missing generated board {board_name}")
+    if png_dimensions(board_path) != expected_dimensions:
+        fail(f"{board_name} must be {expected_dimensions[0]}x{expected_dimensions[1]}")
 
 colors = load("colors.json")
 typography = load("typography.json")
