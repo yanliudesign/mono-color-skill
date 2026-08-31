@@ -26,7 +26,19 @@
 |:---:|:---:|:---:|
 | <img src="./examples/example-cycling.png" alt="钴蓝与陶土橙夏日骑行编辑印刷作品" width="280"> | <img src="./examples/example-zebra.png" alt="钴蓝与橙色斑马田野观察编辑印刷作品" width="280"> | <img src="./examples/example-chair.png" alt="绿色与酒红椅子 Zine 编辑印刷作品" width="280"> |
 
-这三张原创生成示例用于展示 skill 的能力范围，是输出案例，不是供复刻的模板。
+| 沙丁鱼包装 | 耳机包装 | 防晒包装 |
+|:---:|:---:|:---:|
+| <img src="./examples/example-sardines.png" alt="紫色与橙色沙丁鱼罐头包装" width="280"> | <img src="./examples/example-headphones.png" alt="钴蓝与黑色耳机包装" width="280"> | <img src="./examples/example-sunscreen.png" alt="青蓝与珊瑚红防晒包装" width="280"> |
+
+| 留一点温度 | 品牌周边 | 慢叶茶 |
+|:---:|:---:|:---:|
+| <img src="./examples/example-teapot.png" alt="绿色网点茶壶编辑海报" width="280"> | <img src="./examples/example-merchandise.png" alt="钴蓝与橙色单色品牌周边系列" width="280"> | <img src="./examples/example-tea.png" alt="绿色网点茶叶包装" width="280"> |
+
+| 夜里还有什么 | 周日收音机 | 夜市 |
+|:---:|:---:|:---:|
+| <img src="./examples/example-night-photography.png" alt="钴蓝城市夜间摄影展海报" width="280"> | <img src="./examples/example-radio.png" alt="钴蓝与黑色收音机聆听海报" width="280"> | <img src="./examples/example-night-market.png" alt="红色与青蓝蘑菇夜市海报" width="280"> |
+
+这十二张原创生成示例用于展示 skill 的能力范围，是输出案例，不是供复刻的模板。
 
 ## 它能做什么
 

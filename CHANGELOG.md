@@ -16,7 +16,7 @@ All notable changes to this project are documented in this file.
 - Theme-only people now default to ordinary in-between gestures and partial editorial crops instead of polished advertising hero poses.
 - Added one deterministic unresolved-edge behavior per recipe so relaxed compositions can remain intentionally open without becoming random or illegible.
 - Added `design-system/rhythm.json`, validation coverage, and relaxed movement regression assertions.
-- Replaced the previous twelve-image visual reference set and its derived boards with three original generated examples.
+- Replaced the previous twelve-image visual reference set and its derived boards with twelve original generated examples.
 - Added an abstract-looseness path for supplied photos: requests for less realism now extract 2-4 identity anchors into deterministic masses, contours, rhythms, paper cutouts, and bounded print imperfections instead of applying a photographic duotone filter.
 - Added deterministic controlled chance: each recipe selects 2-3 bounded print imperfections with a stable seed while preserving composition and readability.
 - Added a machine-readable imperfection catalog for bounded print effects.

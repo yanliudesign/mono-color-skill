@@ -26,6 +26,18 @@ It preserves a visual system rather than copying a reference. Every composition 
 |:---:|:---:|:---:|
 | <img src="./examples/example-cycling.png" alt="Cobalt and terracotta summer cycling editorial print" width="280"> | <img src="./examples/example-zebra.png" alt="Cobalt and orange zebra field-study editorial print" width="280"> | <img src="./examples/example-chair.png" alt="Green and oxblood chair zine editorial print" width="280"> |
 
+| Sardine packaging | Headphone packaging | Sunscreen packaging |
+|:---:|:---:|:---:|
+| <img src="./examples/example-sardines.png" alt="Violet and orange sardine tin packaging" width="280"> | <img src="./examples/example-headphones.png" alt="Cobalt and black headphone packaging" width="280"> | <img src="./examples/example-sunscreen.png" alt="Cyan and coral sunscreen packaging" width="280"> |
+
+| A little warmth | Brand merchandise | Slow leaf |
+|:---:|:---:|:---:|
+| <img src="./examples/example-teapot.png" alt="Green halftone teapot editorial poster" width="280"> | <img src="./examples/example-merchandise.png" alt="Cobalt and orange mono-color merchandise collection" width="280"> | <img src="./examples/example-tea.png" alt="Green halftone tea packaging" width="280"> |
+
+| Night photography | Sunday radio | Night market |
+|:---:|:---:|:---:|
+| <img src="./examples/example-night-photography.png" alt="Cobalt urban night photography exhibition poster" width="280"> | <img src="./examples/example-radio.png" alt="Cobalt and black radio listening poster" width="280"> | <img src="./examples/example-night-market.png" alt="Red and cyan mushroom night market poster" width="280"> |
+
 These original generated examples demonstrate the skill's range; they are outputs, not templates to reproduce.
 
 ## What it does
