@@ -218,19 +218,19 @@ git clone https://github.com/yanliudesign/mono-color-skill.git \
 
 ### 字体
 
-![字体视觉系统](./examples/reference-system-typography.png)
+![字体视觉系统](./examples/reference-system-v2-typography.png)
 
 ### 颜色
 
-![颜色视觉系统](./examples/reference-system-color.png)
+![颜色视觉系统](./examples/reference-system-v2-color.png)
 
 ### 排版
 
-![排版视觉系统](./examples/reference-system-layout.png)
+![排版视觉系统](./examples/reference-system-v2-layout.png)
 
 ### 风格
 
-![风格视觉系统](./examples/reference-system-style.png)
+![风格视觉系统](./examples/reference-system-v2-style.png)
 
 修改 catalog 后，可以重新导出由 catalog 驱动的综合总表：
 

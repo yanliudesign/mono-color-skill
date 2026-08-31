@@ -20,10 +20,10 @@ EXPECTED_FILES = {
 }
 EXPECTED_BOARDS = {
     "mono-color-design-system-board.png": (1800, 3000),
-    "reference-system-typography.png": (1120, 1486),
-    "reference-system-color.png": (1116, 1488),
-    "reference-system-layout.png": (1116, 1486),
-    "reference-system-style.png": (1114, 1490),
+    "reference-system-v2-typography.png": (4629, 5211),
+    "reference-system-v2-color.png": (4614, 5220),
+    "reference-system-v2-layout.png": (4611, 5220),
+    "reference-system-v2-style.png": (4608, 5211),
 }
 
 

@@ -19,6 +19,7 @@ All notable changes to this project are documented in this file.
 - Replaced the previous twelve-image visual reference set and its derived boards with twelve original generated examples.
 - Restored the five-board design-system presentation with the approved typography, color, layout, and style reference-analysis boards.
 - Renamed the four focused board assets to fresh paths so GitHub renders the corrected images instead of stale cached versions.
+- Replaced all four focused boards with the approved high-resolution System 01-04 exports and fresh `v2` asset paths.
 - Added an abstract-looseness path for supplied photos: requests for less realism now extract 2-4 identity anchors into deterministic masses, contours, rhythms, paper cutouts, and bounded print imperfections instead of applying a photographic duotone filter.
 - Added deterministic controlled chance: each recipe selects 2-3 bounded print imperfections with a stable seed while preserving composition and readability.
 - Added a machine-readable imperfection catalog for bounded print effects.
