@@ -40,6 +40,20 @@
 
 这十二张原创生成示例用于展示 skill 的能力范围，是输出案例，不是供复刻的模板。
 
+## 视觉参考与署名
+
+视觉系统的研究基于一组 12 张参考图片。完整图片清单、研究笔记、署名状态与纠错入口见 [Visual References and Attribution](./REFERENCES.md)。第三方参考作品的版权归各自创作者与权利人所有。
+
+| 01 | 02 | 03 |
+|:---:|:---:|:---:|
+| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="视觉参考 01" width="280"></a> | <a href="./examples/reference-02.png"><img src="./examples/reference-02.png" alt="视觉参考 02" width="280"></a> | <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="视觉参考 03" width="280"></a> |
+| 04 | 05 | 06 |
+| <a href="./examples/reference-04.png"><img src="./examples/reference-04.png" alt="视觉参考 04" width="280"></a> | <a href="./examples/reference-05.png"><img src="./examples/reference-05.png" alt="视觉参考 05" width="280"></a> | <a href="./examples/reference-06.png"><img src="./examples/reference-06.png" alt="视觉参考 06" width="280"></a> |
+| 07 | 08 | 09 |
+| <a href="./examples/reference-07.png"><img src="./examples/reference-07.png" alt="视觉参考 07" width="280"></a> | <a href="./examples/reference-08.png"><img src="./examples/reference-08.png" alt="视觉参考 08" width="280"></a> | <a href="./examples/reference-09.png"><img src="./examples/reference-09.png" alt="视觉参考 09" width="280"></a> |
+| 10 | 11 | 12 |
+| <a href="./examples/reference-10.png"><img src="./examples/reference-10.png" alt="视觉参考 10" width="280"></a> | <a href="./examples/reference-11.jpg"><img src="./examples/reference-11.jpg" alt="视觉参考 11" width="280"></a> | <a href="./examples/reference-12.jpg"><img src="./examples/reference-12.jpg" alt="视觉参考 12" width="280"></a> |
+
 ## 它能做什么
 
 | 系统 | 方向 |
@@ -275,7 +289,7 @@ mono-color-skill/
 
 源代码、Skill 指令和脚本采用 [MIT License](./LICENSE)。
 
-[`examples/`](./examples) 目录中的示范图片与视觉作品版权归 Yan Liu 所有，不包含在 MIT License 中。具体规则请参阅[视觉资产许可证](./ASSET-LICENSE.md)。
+[`examples/`](./examples) 目录中由 Yan Liu 创作的原创示例 © 2026 Yan Liu，不包含在 MIT License 中；12 张第三方研究参考图的版权归各自创作者与权利人所有。详见[视觉资产许可证](./ASSET-LICENSE.md)与[视觉参考和署名](./REFERENCES.md)。
 
 ---
 

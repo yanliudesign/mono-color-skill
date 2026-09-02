@@ -40,6 +40,20 @@ It preserves a visual system rather than copying a reference. Every composition 
 
 These original generated examples demonstrate the skill's range; they are outputs, not templates to reproduce.
 
+## Visual references
+
+The visual system was informed by a twelve-image research set. See [Visual References and Attribution](./REFERENCES.md) for the complete image index, research notes, attribution status, and correction link. Third-party references remain the property of their respective creators and rights holders.
+
+| 01 | 02 | 03 |
+|:---:|:---:|:---:|
+| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Visual reference 01" width="280"></a> | <a href="./examples/reference-02.png"><img src="./examples/reference-02.png" alt="Visual reference 02" width="280"></a> | <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="Visual reference 03" width="280"></a> |
+| 04 | 05 | 06 |
+| <a href="./examples/reference-04.png"><img src="./examples/reference-04.png" alt="Visual reference 04" width="280"></a> | <a href="./examples/reference-05.png"><img src="./examples/reference-05.png" alt="Visual reference 05" width="280"></a> | <a href="./examples/reference-06.png"><img src="./examples/reference-06.png" alt="Visual reference 06" width="280"></a> |
+| 07 | 08 | 09 |
+| <a href="./examples/reference-07.png"><img src="./examples/reference-07.png" alt="Visual reference 07" width="280"></a> | <a href="./examples/reference-08.png"><img src="./examples/reference-08.png" alt="Visual reference 08" width="280"></a> | <a href="./examples/reference-09.png"><img src="./examples/reference-09.png" alt="Visual reference 09" width="280"></a> |
+| 10 | 11 | 12 |
+| <a href="./examples/reference-10.png"><img src="./examples/reference-10.png" alt="Visual reference 10" width="280"></a> | <a href="./examples/reference-11.jpg"><img src="./examples/reference-11.jpg" alt="Visual reference 11" width="280"></a> | <a href="./examples/reference-12.jpg"><img src="./examples/reference-12.jpg" alt="Visual reference 12" width="280"></a> |
+
 ## What it does
 
 | System | Direction |
@@ -288,7 +302,7 @@ When a user supplies a photograph, the subject is preserved as content while the
 
 The source code, skill instructions, and scripts are available under the [MIT License](./LICENSE).
 
-Visual examples and artwork in [`examples/`](./examples) are © 2026 Yan Liu and are not covered by the MIT License. See the [Visual Asset License](./ASSET-LICENSE.md) for details.
+Original examples by Yan Liu in [`examples/`](./examples) are © 2026 Yan Liu and are not covered by the MIT License. The twelve third-party research references remain the property of their respective creators and rights holders. See the [Visual Asset License](./ASSET-LICENSE.md) and [Visual References and Attribution](./REFERENCES.md).
 
 ---
 

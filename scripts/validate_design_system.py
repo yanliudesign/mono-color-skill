@@ -25,6 +25,11 @@ EXPECTED_BOARDS = {
     "reference-system-v2-layout.png": (4611, 5220),
     "reference-system-v2-style.png": (4608, 5211),
 }
+EXPECTED_REFERENCES = {
+    *(f"reference-{index:02d}.png" for index in range(1, 11)),
+    "reference-11.jpg",
+    "reference-12.jpg",
+}
 
 
 def fail(message: str) -> None:
@@ -70,6 +75,13 @@ for board_name, expected_dimensions in EXPECTED_BOARDS.items():
         fail(f"missing generated board {board_name}")
     if png_dimensions(board_path) != expected_dimensions:
         fail(f"{board_name} must be {expected_dimensions[0]}x{expected_dimensions[1]}")
+
+missing_references = [
+    name for name in sorted(EXPECTED_REFERENCES)
+    if not (ROOT / "examples" / name).is_file()
+]
+if missing_references:
+    fail(f"missing visual references {missing_references}")
 
 colors = load("colors.json")
 typography = load("typography.json")
