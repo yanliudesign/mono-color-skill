@@ -8,7 +8,7 @@ The original external URLs and creator names were not preserved when these files
 
 | Reference | Research notes | Original source |
 |---|---|---|
-| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Reference 01" width="180"></a><br>**01** | Oversized serif, object annotations, coarse blue halftone, edge-cropped hero object | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Reference 01" width="180"></a><br>**01** | Oversized serif, object annotations, coarse blue halftone, edge-cropped hero object | [Pinterest record](https://www.pinterest.com/pin/772930354844206833/) (teapot reference; user confirmed) |
 | <a href="./examples/reference-02.png"><img src="./examples/reference-02.png" alt="Reference 02" width="180"></a><br>**02** | Lowercase serif masthead, botanical one-ink photograph, framed editorial cover | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="Reference 03" width="180"></a><br>**03** | Oversized grotesk across photographs, modular grid, cobalt photocopy texture | [Pinterest record 1](https://www.pinterest.com/pin/772930354844205058/) · [Pinterest record 2](https://www.pinterest.com/pin/772930354844116748/) (image verified) |
 | <a href="./examples/reference-04.png"><img src="./examples/reference-04.png" alt="Reference 04" width="180"></a><br>**04** | Blackletter label, machine data, terracotta archival-terminal treatment | **Unverified:** original URL was not preserved |
@@ -25,7 +25,6 @@ The original external URLs and creator names were not preserved when these files
 
 These supplied Pinterest URLs currently return “We can’t find that idea,” so they cannot be matched responsibly without another screenshot or archived page:
 
-- https://www.pinterest.com/pin/772930354844206833/
 - https://www.pinterest.com/pin/772930354844205012/
 
 ## 中文说明
