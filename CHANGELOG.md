@@ -22,6 +22,7 @@ All notable changes to this project are documented in this file.
 - Replaced all four focused boards with the approved high-resolution System 01-04 exports and fresh `v2` asset paths.
 - Restored the twelve-image visual research set with a dedicated attribution index, explicit provenance gaps, and a correction channel.
 - Added four image-verified Pinterest records and preserved two unavailable historical Pin URLs for future attribution matching.
+- Added three more image-verified Pinterest records for references 03, 07, and 08.
 - Added an abstract-looseness path for supplied photos: requests for less realism now extract 2-4 identity anchors into deterministic masses, contours, rhythms, paper cutouts, and bounded print imperfections instead of applying a photographic duotone filter.
 - Added deterministic controlled chance: each recipe selects 2-3 bounded print imperfections with a stable seed while preserving composition and readability.
 - Added a machine-readable imperfection catalog for bounded print effects.
