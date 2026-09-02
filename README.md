@@ -1,6 +1,6 @@
 <div align="center">
 
-[中文](./README.zh.md) · **English**
+[中文](./README.zh.md) · **English** · [한국어](./README.ko.md)
 
 # Monocolor Editorial Print
 
@@ -286,6 +286,7 @@ mono-color-skill/
 ├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
 ├── README.zh.md      # 中文说明
+├── README.ko.md      # 한국어 문서
 ├── CHANGELOG.md      # Release history
 └── evals/
 		├── evals.json    # Representative prompts and deterministic assertions
