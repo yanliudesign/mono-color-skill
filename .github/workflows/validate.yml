@@ -24,4 +24,7 @@ jobs:
         run: |
           python -m json.tool evals/evals.json >/dev/null
           python -m json.tool evals/schema.json >/dev/null
-          for catalog in design-system/*.json; do python -m json.tool "$catalog" >/dev/null; done
+          python -m json.tool plugin.json >/dev/null
+          python -m json.tool .claude-plugin/plugin.json >/dev/null
+          python -m json.tool .claude-plugin/marketplace.json >/dev/null
+          for catalog in skills/mono-color/design-system/*.json; do python -m json.tool "$catalog" >/dev/null; done

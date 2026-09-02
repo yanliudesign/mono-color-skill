@@ -10,7 +10,7 @@ from typing import Optional
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SYSTEM_DIR = ROOT / "design-system"
+SYSTEM_DIR = ROOT / "skills" / "mono-color" / "design-system"
 WIDTH = 1800
 HEIGHT = 3000
 PAPER = "#F5F1E8"

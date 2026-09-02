@@ -7,12 +7,12 @@
 **A one-ink and controlled two-ink editorial image skill for posters, zines, portraits, packaging, and visual field notes.**
 
 [![Version](https://img.shields.io/badge/VERSION-1.2.0-2ea44f?style=flat-square&labelColor=333)](./CHANGELOG.md)
-[![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./SKILL.md)
+[![Skills](https://img.shields.io/badge/SKILLS-1-2ea44f?style=flat-square&labelColor=333)](./skills/mono-color/SKILL.md)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/mono-color-skill?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/mono-color-skill/stargazers)
 [![Validate skill](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/yanliudesign/mono-color-skill/actions/workflows/validate.yml)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
-[![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./SKILL.md)
+[![SKILL.md](https://img.shields.io/badge/Agent-SKILL.md-214f9b?style=flat-square&labelColor=1a1a1a)](./skills/mono-color/SKILL.md)
 
 </div>
 
@@ -143,14 +143,21 @@ In two-ink work, the dominant plate normally carries 70%–85% of the printed ar
 
 ## Install
 
-Clone the repository into your Claude Code skills directory:
+Install as a Claude Code plugin:
 
-```bash
-git clone https://github.com/yanliudesign/mono-color-skill.git \
-	~/.claude/skills/mono-color
+```text
+/plugin marketplace add yanliudesign/mono-color-skill
+/plugin install mono-color@mono-color-skill
 ```
 
-Restart Claude Code after installation. Other agent environments can load [`SKILL.md`](./SKILL.md) as the skill entry point.
+Or copy the skill directory into your Claude Code skills directory:
+
+```bash
+git clone https://github.com/yanliudesign/mono-color-skill.git
+cp -r mono-color-skill/skills/mono-color ~/.claude/skills/mono-color
+```
+
+Restart Claude Code after installation. The repository also conforms to the [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) 1.0.0 format via the root `plugin.json`, so compatible clients can load it as a plugin directly. Other agent environments can load [`SKILL.md`](./skills/mono-color/SKILL.md) as the skill entry point.
 
 ## Try it
 
@@ -233,9 +240,9 @@ If image generation is unavailable, the skill returns the production-ready promp
 
 Before prompt compilation, the skill resolves every request into a fixed recipe manifest. Unspecified requests use a `3:4` ratio, Neutral White substrate, contemporary editorial direction, 35% empty substrate, and deterministic palette and layout rules. The substrate may switch to Cool Gray or Pale Beige when the image and ink contrast call for it. Supplied photos default to faithful reproduction; requests for abstract, artistic, loose, experimental, or less realistic treatment switch to deterministic symbol extraction that preserves 2-4 identity anchors. Explicit user choices still take precedence within the two-ink and originality limits.
 
-The `design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, visual rhythm, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
+The `skills/mono-color/design-system/` catalogs make the visual grammar reusable and inspectable. They separate color tokens, typography roles, composition geometry, carrier-specific signals, visual rhythm, and controlled print imperfections from the prose workflow. Catalog IDs are the shared contract between reference boards, recipes, and validation.
 
-`design-system/rhythm.json` defines relaxation as uneven energy rather than uniformly reduced intensity. Each page selects one audacious focal event—oversized type, an extreme crop, one giant detail, a concentrated overprint, or an abnormal scale relationship—then releases the rest through paper, pale screening, and sparse functional type. Without a supplied photograph, people become 2-4 identifying anchors and partial crops instead of complete stock figures or a safe headline-left/photo-right split. Empty paper and unresolved edges now respond to the focal event instead of fixed quotas.
+`design-system/rhythm.json` (under `skills/mono-color/`) defines relaxation as uneven energy rather than uniformly reduced intensity. Each page selects one audacious focal event—oversized type, an extreme crop, one giant detail, a concentrated overprint, or an abnormal scale relationship—then releases the rest through paper, pale screening, and sparse functional type. Without a supplied photograph, people become 2-4 identifying anchors and partial crops instead of complete stock figures or a safe headline-left/photo-right split. Empty paper and unresolved edges now respond to the focal event instead of fixed quotas.
 
 Controlled chance stays in the reproduction layer: contemporary work selects 0-2 restrained effects, while tactile, vintage, or archival-aging work selects 2-3 bounded effects such as uneven ink density, dry-edge breakup, halftone drift, registration drift, or one broken gesture. The stable recipe seed preserves the same marks across retries without moving the composition or reducing text readability.
 
@@ -278,12 +285,18 @@ GitHub Actions runs the same contract on every pull request and push to `main`.
 
 ```text
 mono-color-skill/
+├── .claude-plugin/   # Claude Code plugin and marketplace manifests
 ├── .github/workflows/ # Continuous validation
-├── design-system/    # Machine-readable color, composition, rhythm, and print patterns
+├── plugin.json       # Agent Plugins 1.0.0 manifest
+├── skills/
+│   └── mono-color/
+│       ├── SKILL.md       # Trigger rules, visual system, workflow, and quality gate
+│       └── design-system/ # Machine-readable color, composition, rhythm, and print patterns
+├── SKILL.md          # Compatibility symlink to skills/mono-color/SKILL.md
+├── design-system     # Compatibility symlink to skills/mono-color/design-system
 ├── examples/         # Original generated examples shown in the READMEs
 ├── scripts/          # Evaluation and design-system validators
 ├── swatches/         # One-ink and two-ink palette previews
-├── SKILL.md          # Trigger rules, visual system, workflow, and quality gate
 ├── README.md         # English documentation
 ├── README.zh.md      # 中文说明
 ├── CHANGELOG.md      # Release history
