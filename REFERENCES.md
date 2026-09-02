@@ -10,16 +10,23 @@ The original external URLs and creator names were not preserved when these files
 |---|---|---|
 | <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Reference 01" width="180"></a><br>**01** | Oversized serif, object annotations, coarse blue halftone, edge-cropped hero object | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-02.png"><img src="./examples/reference-02.png" alt="Reference 02" width="180"></a><br>**02** | Lowercase serif masthead, botanical one-ink photograph, framed editorial cover | **Unverified:** original URL was not preserved |
-| <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="Reference 03" width="180"></a><br>**03** | Oversized grotesk across photographs, modular grid, cobalt photocopy texture | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="Reference 03" width="180"></a><br>**03** | Oversized grotesk across photographs, modular grid, cobalt photocopy texture | [Pinterest record](https://www.pinterest.com/pin/772930354844205058/) (image verified) |
 | <a href="./examples/reference-04.png"><img src="./examples/reference-04.png" alt="Reference 04" width="180"></a><br>**04** | Blackletter label, machine data, terracotta archival-terminal treatment | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-05.png"><img src="./examples/reference-05.png" alt="Reference 05" width="180"></a><br>**05** | Giant Didone serif, repeated objects, coarse halftone, blue marker path | **Unverified:** original URL was not preserved |
-| <a href="./examples/reference-06.png"><img src="./examples/reference-06.png" alt="Reference 06" width="180"></a><br>**06** | Geometric wordmark, cyan-coral engraving, text shaped around a specimen | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-06.png"><img src="./examples/reference-06.png" alt="Reference 06" width="180"></a><br>**06** | Geometric wordmark, cyan-coral engraving, text shaped around a specimen | [Pinterest record](https://www.pinterest.com/pin/1105493039766574425/) (image verified) |
 | <a href="./examples/reference-07.png"><img src="./examples/reference-07.png" alt="Reference 07" width="180"></a><br>**07** | Rotated display title, powder-blue photograph, red information plate | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-08.png"><img src="./examples/reference-08.png" alt="Reference 08" width="180"></a><br>**08** | Heavy grotesk, diagonal object collision, royal-blue and black composite | **Unverified:** original URL was not preserved |
-| <a href="./examples/reference-09.png"><img src="./examples/reference-09.png" alt="Reference 09" width="180"></a><br>**09** | Condensed capitals, vertical display type, cobalt-red engraving overprint | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-09.png"><img src="./examples/reference-09.png" alt="Reference 09" width="180"></a><br>**09** | Condensed capitals, vertical display type, cobalt-red engraving overprint | [Pinterest record](https://www.pinterest.com/pin/772930354844205908/) (image verified; pin credits rawpixel.com and dunno design lab) |
 | <a href="./examples/reference-10.png"><img src="./examples/reference-10.png" alt="Reference 10" width="180"></a><br>**10** | Neutral grotesk, fragmented portrait columns, green-black collage on pink | **Unverified:** original URL was not preserved |
-| <a href="./examples/reference-11.jpg"><img src="./examples/reference-11.jpg" alt="Reference 11" width="180"></a><br>**11** | Heavy date labels, magenta-teal animal halftone, small diagram marks | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-11.jpg"><img src="./examples/reference-11.jpg" alt="Reference 11" width="180"></a><br>**11** | Heavy date labels, magenta-teal animal halftone, small diagram marks | [Pinterest record](https://www.pinterest.com/pin/772930354844205927/) (image verified; pin identifies Daniel Wiesmann Büro für Gestaltung) |
 | <a href="./examples/reference-12.jpg"><img src="./examples/reference-12.jpg" alt="Reference 12" width="180"></a><br>**12** | Modular display mark, violet-orange engraving, institutional event layout | **Unverified:** original URL was not preserved |
+
+## Unmatched Historical Links
+
+These supplied Pinterest URLs currently return “We can’t find that idea,” so they cannot be matched responsibly without another screenshot or archived page:
+
+- https://www.pinterest.com/pin/772930354844206833/
+- https://www.pinterest.com/pin/772930354844205012/
 
 ## 中文说明
 
