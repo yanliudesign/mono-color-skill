@@ -8,7 +8,7 @@ The original external URLs and creator names were not preserved when these files
 
 | Reference | Research notes | Original source |
 |---|---|---|
-| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Reference 01" width="180"></a><br>**01** | Oversized serif, object annotations, coarse blue halftone, edge-cropped hero object | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-01.png"><img src="./examples/reference-01.png" alt="Reference 01" width="180"></a><br>**01** | Oversized serif, object annotations, coarse blue halftone, edge-cropped hero object | [Pinterest record](https://www.pinterest.com/pin/772930354843998787/) (image verified; pin by kliukinaan) |
 | <a href="./examples/reference-02.png"><img src="./examples/reference-02.png" alt="Reference 02" width="180"></a><br>**02** | Lowercase serif masthead, botanical one-ink photograph, framed editorial cover | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-03.png"><img src="./examples/reference-03.png" alt="Reference 03" width="180"></a><br>**03** | Oversized grotesk across photographs, modular grid, cobalt photocopy texture | [Pinterest record 1](https://www.pinterest.com/pin/772930354844205058/) · [Pinterest record 2](https://www.pinterest.com/pin/772930354844116748/) (image verified) |
 | <a href="./examples/reference-04.png"><img src="./examples/reference-04.png" alt="Reference 04" width="180"></a><br>**04** | Blackletter label, machine data, terracotta archival-terminal treatment | **Unverified:** original URL was not preserved |
@@ -19,7 +19,7 @@ The original external URLs and creator names were not preserved when these files
 | <a href="./examples/reference-09.png"><img src="./examples/reference-09.png" alt="Reference 09" width="180"></a><br>**09** | Condensed capitals, vertical display type, cobalt-red engraving overprint | [Pinterest record](https://www.pinterest.com/pin/772930354844205908/) (image verified; pin credits rawpixel.com and dunno design lab) |
 | <a href="./examples/reference-10.png"><img src="./examples/reference-10.png" alt="Reference 10" width="180"></a><br>**10** | Neutral grotesk, fragmented portrait columns, green-black collage on pink | **Unverified:** original URL was not preserved |
 | <a href="./examples/reference-11.jpg"><img src="./examples/reference-11.jpg" alt="Reference 11" width="180"></a><br>**11** | Heavy date labels, magenta-teal animal halftone, small diagram marks | [Pinterest record](https://www.pinterest.com/pin/772930354844205927/) (image verified; pin identifies Daniel Wiesmann Büro für Gestaltung) |
-| <a href="./examples/reference-12.jpg"><img src="./examples/reference-12.jpg" alt="Reference 12" width="180"></a><br>**12** | Modular display mark, violet-orange engraving, institutional event layout | **Unverified:** original URL was not preserved |
+| <a href="./examples/reference-12.jpg"><img src="./examples/reference-12.jpg" alt="Reference 12" width="180"></a><br>**12** | Modular display mark, violet-orange engraving, institutional event layout | [Psarokokalo 2012 event article](https://camerastyloonline.wordpress.com/2012/02/14/psarokokalo-2012/) (image verified; poster creator unverified) |
 
 ## Unmatched Historical Links
 
