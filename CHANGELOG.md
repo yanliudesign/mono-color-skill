@@ -23,7 +23,7 @@ All notable changes to this project are documented in this file.
 - Restored the twelve-image visual research set with a dedicated attribution index, explicit provenance gaps, and a correction channel.
 - Added four image-verified Pinterest records and preserved two unavailable historical Pin URLs for future attribution matching.
 - Added three more image-verified Pinterest records for references 03, 07, and 08.
-- Matched the user-confirmed teapot Pinterest record to reference 01.
+- Matched the user-confirmed teapot Pinterest record to reference 05.
 - Added an abstract-looseness path for supplied photos: requests for less realism now extract 2-4 identity anchors into deterministic masses, contours, rhythms, paper cutouts, and bounded print imperfections instead of applying a photographic duotone filter.
 - Added deterministic controlled chance: each recipe selects 2-3 bounded print imperfections with a stable seed while preserving composition and readability.
 - Added a machine-readable imperfection catalog for bounded print effects.
