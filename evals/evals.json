@@ -133,10 +133,10 @@
     {
       "id": 9,
       "prompt": "把一只搪瓷杯重复排成双色孔版封面，使用青蓝和砖红，不要添加品牌。",
-      "expected_output": "A generated repeated-object cover using only Cyan and Brick Red with a clear open title zone and no invented brand.",
+      "expected_output": "A generated repeated-object cover using controlled Cyan and Brick Red overprint, with a clear open title zone and no invented brand.",
       "assertions": {
         "ratio": "3:4",
-        "mode": "complementary duotone",
+        "mode": "overprint duotone",
         "ink_hexes": ["#159DDA", "#B64032"],
         "plate_roles": ["dominant repeated cups", "selected cups and factual annotations"],
         "layout": "object field",
