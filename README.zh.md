@@ -1,6 +1,6 @@
 <div align="center">
 
-**中文** · [English](./README.md)
+**中文** · [English](./README.md) · [한국어](./README.ko.md)
 
 # 单色编辑印刷
 
@@ -273,6 +273,7 @@ mono-color-skill/
 ├── SKILL.md          # 触发规则、视觉系统、工作流与质量门槛
 ├── README.md         # 英文说明
 ├── README.zh.md      # 中文说明
+├── README.ko.md      # 韩文说明
 ├── CHANGELOG.md      # 版本记录
 └── evals/
   ├── evals.json    # 典型触发语与确定性断言
